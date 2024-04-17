@@ -1,0 +1,109 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://c37q7rv7x4x28"]
+
+[ext_resource type="FontFile" uid="uid://baufk8175q5o5" path="res://Theme/Baskic8-Bold.otf" id="1_bdfbn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1wdu"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.643137)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_detail = 1
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqlhw"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.00392157, 0.0823529, 0.223529, 0.643137)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_detail = 1
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pjvuf"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.00392157, 0.0823529, 0.223529, 0.643137)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_detail = 1
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n8mpk"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.00392157, 0.0823529, 0.223529, 0.643137)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_detail = 1
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vo26"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.00392157, 0.0823529, 0.223529, 0.643137)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_detail = 1
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[resource]
+default_font = ExtResource("1_bdfbn")
+RemapButton/base_type = &"Button"
+RemapButton/colors/font_color = Color(0, 0, 0, 1)
+RemapButton/colors/font_disabled_color = Color(0, 0, 0, 1)
+RemapButton/colors/font_focus_color = Color(0, 0, 0, 1)
+RemapButton/colors/font_hover_color = Color(0, 0, 0, 1)
+RemapButton/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+RemapButton/colors/font_outline_color = Color(0, 0, 0, 1)
+RemapButton/colors/font_pressed_color = Color(0, 0, 0, 1)
+RemapButton/colors/icon_disabled_color = Color(0, 0, 0, 1)
+RemapButton/colors/icon_focus_color = Color(0, 0, 0, 1)
+RemapButton/colors/icon_hover_color = Color(0, 0, 0, 1)
+RemapButton/colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+RemapButton/colors/icon_normal_color = Color(0, 0, 0, 1)
+RemapButton/colors/icon_pressed_color = Color(0, 0, 0, 1)
+RemapButton/constants/h_separation = 0
+RemapButton/constants/icon_max_width = 0
+RemapButton/constants/outline_size = 0
+RemapButton/font_sizes/font_size = 16
+RemapButton/styles/disabled = SubResource("StyleBoxFlat_f1wdu")
+RemapButton/styles/focus = SubResource("StyleBoxFlat_mqlhw")
+RemapButton/styles/hover = SubResource("StyleBoxFlat_pjvuf")
+RemapButton/styles/normal = SubResource("StyleBoxFlat_n8mpk")
+RemapButton/styles/pressed = SubResource("StyleBoxFlat_5vo26")
