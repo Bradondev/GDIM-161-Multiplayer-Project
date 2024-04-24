@@ -1,9 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://b13e8y5ta270j"]
+[gd_scene load_steps=16 format=3 uid="uid://b13e8y5ta270j"]
 
-[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_5to2f"]
+[ext_resource type="Script" path="res://Code/main_menu.gd" id="1_5to2f"]
+[ext_resource type="Texture2D" uid="uid://buutlu5sacn03" path="res://art/Ui/start screen NO BUTTONS.png" id="2_fejxy"]
 [ext_resource type="Theme" uid="uid://c37q7rv7x4x28" path="res://Theme/RemapButton.tres" id="2_o1ngd"]
 [ext_resource type="PackedScene" uid="uid://c2klv67sy8r5k" path="res://Scenes/game_menu.tscn" id="3_0f2bh"]
-[ext_resource type="Script" path="res://Scenes/gameSaver.gd" id="4_cfa04"]
+[ext_resource type="Script" path="res://Code/gameSaver.gd" id="4_cfa04"]
+[ext_resource type="Texture2D" uid="uid://wbdy3ock77tt" path="res://art/Ui/quit.png" id="4_mpuxx"]
+[ext_resource type="Texture2D" uid="uid://c7psx2sd5p375" path="res://art/Ui/quit hover.png" id="5_pla1y"]
+[ext_resource type="Texture2D" uid="uid://2hrsq4brjr4o" path="res://art/Ui/options button.png" id="6_i1vth"]
+[ext_resource type="Texture2D" uid="uid://byfwvvirhpdjy" path="res://art/Ui/options hover.png" id="7_k4qxl"]
+[ext_resource type="Texture2D" uid="uid://cejygl8wcyp8v" path="res://art/Ui/credits.png" id="8_teipo"]
+[ext_resource type="Texture2D" uid="uid://cbx7ubsolrmpl" path="res://art/Ui/credits hover.png" id="9_1je5v"]
+[ext_resource type="Texture2D" uid="uid://c1c4empkcbdmg" path="res://art/Ui/load game.png" id="10_cyylf"]
+[ext_resource type="Texture2D" uid="uid://4wvyi4r2t55i" path="res://art/Ui/load game hover.png" id="11_cpebo"]
+[ext_resource type="Texture2D" uid="uid://derxsvjyftusd" path="res://art/Ui/new game.png" id="12_7mdu7"]
+[ext_resource type="Texture2D" uid="uid://b6j51eqfeahgh" path="res://art/Ui/new game hover.png" id="13_qv30i"]
 
 [node name="mainMenu" type="Control" node_paths=PackedStringArray("GameSaver", "SaveHodler")]
 layout_mode = 3
@@ -16,53 +27,88 @@ script = ExtResource("1_5to2f")
 GameSaver = NodePath("gameSaver")
 SaveHodler = NodePath("LoadGamePanel/SaveHolder")
 
+[node name="StartScreenMockup-1" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.001
+offset_left = -4.0
+offset_right = 1612.0
+offset_bottom = 921.1
+scale = Vector2(0.50125, 0.494444)
+mouse_filter = 2
+texture = ExtResource("2_fejxy")
+
 [node name="MainMenu" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -4.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Load" type="Button" parent="MainMenu"]
-layout_mode = 2
-offset_top = 541.0
-offset_right = 400.0
-offset_bottom = 641.0
-size_flags_vertical = 3
-theme = ExtResource("2_o1ngd")
-theme_override_font_sizes/font_size = 48
-text = "Load"
+[node name="SubButtons" type="HBoxContainer" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 285.0
+offset_top = 628.0
+offset_right = -285.0
+offset_bottom = -162.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
 
-[node name="NewGame" type="Button" parent="MainMenu"]
+[node name="Quit" type="TextureButton" parent="MainMenu/SubButtons"]
 layout_mode = 2
-offset_top = 411.0
-offset_right = 400.0
-offset_bottom = 511.0
 size_flags_vertical = 3
 theme = ExtResource("2_o1ngd")
-theme_override_font_sizes/font_size = 48
-text = "New Game"
+texture_normal = ExtResource("4_mpuxx")
+texture_pressed = ExtResource("5_pla1y")
+texture_hover = ExtResource("5_pla1y")
 
-[node name="Settings" type="Button" parent="MainMenu"]
+[node name="Settings" type="TextureButton" parent="MainMenu/SubButtons"]
 layout_mode = 2
-offset_top = 671.0
-offset_right = 400.0
-offset_bottom = 771.0
 size_flags_vertical = 3
 theme = ExtResource("2_o1ngd")
-theme_override_font_sizes/font_size = 48
-text = "Settings"
+texture_normal = ExtResource("6_i1vth")
+texture_pressed = ExtResource("7_k4qxl")
+texture_hover = ExtResource("7_k4qxl")
 
-[node name="Quit" type="Button" parent="MainMenu"]
+[node name="credit" type="TextureButton" parent="MainMenu/SubButtons"]
 layout_mode = 2
-offset_top = 801.0
-offset_right = 400.0
-offset_bottom = 901.0
 size_flags_vertical = 3
 theme = ExtResource("2_o1ngd")
-theme_override_font_sizes/font_size = 48
-text = "Quit"
+texture_normal = ExtResource("8_teipo")
+texture_pressed = ExtResource("9_1je5v")
+texture_hover = ExtResource("9_1je5v")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenu"]
+layout_mode = 0
+offset_left = 303.0
+offset_top = 484.0
+offset_right = 1301.0
+offset_bottom = 624.0
+metadata/_edit_group_ = true
+
+[node name="NewGame" type="TextureButton" parent="MainMenu/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_o1ngd")
+texture_normal = ExtResource("12_7mdu7")
+texture_pressed = ExtResource("13_qv30i")
+texture_hover = ExtResource("13_qv30i")
+
+[node name="Load" type="TextureButton" parent="MainMenu/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_o1ngd")
+texture_normal = ExtResource("10_cyylf")
+texture_hover = ExtResource("11_cpebo")
 
 [node name="Settings" type="Panel" parent="."]
 visible = false
@@ -72,9 +118,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="GameMenu" parent="Settings" instance=ExtResource("3_0f2bh")]
-layout_mode = 1
 
 [node name="back" type="Button" parent="Settings"]
 layout_mode = 0
@@ -86,6 +129,11 @@ size_flags_vertical = 3
 theme = ExtResource("2_o1ngd")
 theme_override_font_sizes/font_size = 48
 text = "Back"
+
+[node name="GameMenu" parent="Settings" instance=ExtResource("3_0f2bh")]
+layout_mode = 1
+offset_right = -6.0
+offset_bottom = -163.0
 
 [node name="gameSaver" type="Node" parent="."]
 script = ExtResource("4_cfa04")
@@ -117,9 +165,108 @@ offset_top = 100.0
 offset_right = 1280.0
 offset_bottom = 580.0
 
-[connection signal="pressed" from="MainMenu/Load" to="." method="_on_load_pressed"]
-[connection signal="pressed" from="MainMenu/NewGame" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="MainMenu/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="MainMenu/Quit" to="." method="_on_quit_pressed"]
+[node name="Credit" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Credit"]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 100.0
+offset_right = 1383.0
+offset_bottom = 809.0
+metadata/_edit_group_ = true
+
+[node name="Label8" type="Label" parent="Credit/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_o1ngd")
+theme_override_font_sizes/font_size = 64
+text = "CREDITS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Credit/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_o1ngd")
+theme_override_font_sizes/font_size = 48
+text = "Programmer - Brandon"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Credit/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_o1ngd")
+theme_override_font_sizes/font_size = 48
+text = "Producer- Euclid"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="Credit/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_o1ngd")
+theme_override_font_sizes/font_size = 48
+text = "Artist- Cat, Lizzy , Eric
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Credit/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_o1ngd")
+theme_override_font_sizes/font_size = 48
+text = "Level Designer - Lizzy
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Credit/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_o1ngd")
+theme_override_font_sizes/font_size = 48
+text = "Game Designer - Will , Christian
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Credit/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_o1ngd")
+theme_override_font_sizes/font_size = 48
+text = "Narrative Designer- Will , Christian
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="Credit/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_o1ngd")
+theme_override_font_sizes/font_size = 48
+text = "Game Designer - Will , Christian
+UX/UI Designer - Michelle ,Euclid"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="back" type="Button" parent="Credit"]
+layout_mode = 0
+offset_left = 1199.0
+offset_top = 801.0
+offset_right = 1599.0
+offset_bottom = 901.0
+size_flags_vertical = 3
+theme = ExtResource("2_o1ngd")
+theme_override_font_sizes/font_size = 48
+text = "Back"
+
+[connection signal="pressed" from="MainMenu/SubButtons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MainMenu/SubButtons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MainMenu/SubButtons/credit" to="." method="_on_credit_pressed"]
+[connection signal="pressed" from="MainMenu/HBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="MainMenu/HBoxContainer/Load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="Settings/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="LoadGamePanel/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Credit/back" to="." method="_on_back_pressed"]

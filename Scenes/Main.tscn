@@ -11,18 +11,21 @@ size = Vector2(121, 119)
 [node name="Main" type="Node2D"]
 
 [node name="Player1" parent="." instance=ExtResource("1_owqba")]
-position = Vector2(348, 385)
+position = Vector2(900, 87)
 
 [node name="Player2" parent="." instance=ExtResource("2_0fktp")]
-position = Vector2(941, 439)
+position = Vector2(1009, 772)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="GameMenu" parent="CanvasLayer" instance=ExtResource("1_iscyp")]
+offset_left = 14.0
+offset_right = 14.0
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(800, 450)
-scale = Vector2(0.203125, 7.03125)
+position = Vector2(789, 447)
+scale = Vector2(0.0468742, 7.03125)
 texture = ExtResource("4_t1upe")
 metadata/_edit_group_ = true
 

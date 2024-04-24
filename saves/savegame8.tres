@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="SavedData" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://Code/saveDateGd.gd" id="1_tktvl"]
+[ext_resource type="Script" path="res://Code/saveDateGd.gd" id="1_avohj"]
 
 [resource]
-script = ExtResource("1_tktvl")
+script = ExtResource("1_avohj")
 Scene_Path = ""
 levelsDone = 0
 Stars = Array[int]([])

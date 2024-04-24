@@ -6,6 +6,8 @@ extends Control
 @export var GameSaver : Node
 @export var SaveHodler : VBoxContainer
 @export var CurrentPanel :Control
+@onready var credit: Panel = $Credit
+@onready var creditButton: TextureButton = $MainMenu/SubButtons/credit
 
 
 func _ready() -> void:
@@ -40,3 +42,9 @@ func _on_back_pressed() -> void:
 
 
 
+
+
+func _on_credit_pressed() -> void:
+	CurrentPanel = credit
+	main_menu.visible = false
+	credit.visible = true
