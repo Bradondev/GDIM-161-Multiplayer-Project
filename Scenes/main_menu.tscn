@@ -1,0 +1,125 @@
+[gd_scene load_steps=5 format=3 uid="uid://b13e8y5ta270j"]
+
+[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_5to2f"]
+[ext_resource type="Theme" uid="uid://c37q7rv7x4x28" path="res://Theme/RemapButton.tres" id="2_o1ngd"]
+[ext_resource type="PackedScene" uid="uid://c2klv67sy8r5k" path="res://Scenes/game_menu.tscn" id="3_0f2bh"]
+[ext_resource type="Script" path="res://Scenes/gameSaver.gd" id="4_cfa04"]
+
+[node name="mainMenu" type="Control" node_paths=PackedStringArray("GameSaver", "SaveHodler")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5to2f")
+GameSaver = NodePath("gameSaver")
+SaveHodler = NodePath("LoadGamePanel/SaveHolder")
+
+[node name="MainMenu" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Load" type="Button" parent="MainMenu"]
+layout_mode = 2
+offset_top = 541.0
+offset_right = 400.0
+offset_bottom = 641.0
+size_flags_vertical = 3
+theme = ExtResource("2_o1ngd")
+theme_override_font_sizes/font_size = 48
+text = "Load"
+
+[node name="NewGame" type="Button" parent="MainMenu"]
+layout_mode = 2
+offset_top = 411.0
+offset_right = 400.0
+offset_bottom = 511.0
+size_flags_vertical = 3
+theme = ExtResource("2_o1ngd")
+theme_override_font_sizes/font_size = 48
+text = "New Game"
+
+[node name="Settings" type="Button" parent="MainMenu"]
+layout_mode = 2
+offset_top = 671.0
+offset_right = 400.0
+offset_bottom = 771.0
+size_flags_vertical = 3
+theme = ExtResource("2_o1ngd")
+theme_override_font_sizes/font_size = 48
+text = "Settings"
+
+[node name="Quit" type="Button" parent="MainMenu"]
+layout_mode = 2
+offset_top = 801.0
+offset_right = 400.0
+offset_bottom = 901.0
+size_flags_vertical = 3
+theme = ExtResource("2_o1ngd")
+theme_override_font_sizes/font_size = 48
+text = "Quit"
+
+[node name="Settings" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameMenu" parent="Settings" instance=ExtResource("3_0f2bh")]
+layout_mode = 1
+
+[node name="back" type="Button" parent="Settings"]
+layout_mode = 0
+offset_left = 1199.0
+offset_top = 801.0
+offset_right = 1599.0
+offset_bottom = 901.0
+size_flags_vertical = 3
+theme = ExtResource("2_o1ngd")
+theme_override_font_sizes/font_size = 48
+text = "Back"
+
+[node name="gameSaver" type="Node" parent="."]
+script = ExtResource("4_cfa04")
+
+[node name="LoadGamePanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="back" type="Button" parent="LoadGamePanel"]
+layout_mode = 0
+offset_left = 1199.0
+offset_top = 801.0
+offset_right = 1599.0
+offset_bottom = 901.0
+size_flags_vertical = 3
+theme = ExtResource("2_o1ngd")
+theme_override_font_sizes/font_size = 48
+text = "Back"
+
+[node name="SaveHolder" type="VBoxContainer" parent="LoadGamePanel"]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 100.0
+offset_right = 1280.0
+offset_bottom = 580.0
+
+[connection signal="pressed" from="MainMenu/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="MainMenu/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="MainMenu/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MainMenu/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Settings/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="LoadGamePanel/back" to="." method="_on_back_pressed"]

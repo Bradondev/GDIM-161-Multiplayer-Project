@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://66um0m5jq06r"]
+
+[ext_resource type="Theme" uid="uid://c37q7rv7x4x28" path="res://Theme/RemapButton.tres" id="1_jv07b"]
+
+[node name="Control" type="Button"]
+anchors_preset = -1
+anchor_right = 0.711
+anchor_bottom = 0.35
+offset_right = -525.6
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_jv07b")
+theme_override_font_sizes/font_size = 48
+text = "Save1"
