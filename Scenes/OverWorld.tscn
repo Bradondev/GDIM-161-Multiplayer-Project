@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://y36ascwbo7a0"]
+
+[ext_resource type="Script" path="res://Scenes/OverWorld.gd" id="1_8dkyf"]
+[ext_resource type="PackedScene" uid="uid://bg78qvtq5g8v" path="res://Scenes/player_1.tscn" id="1_435nc"]
+[ext_resource type="PackedScene" uid="uid://djfg44r7ydfxn" path="res://Scenes/player_2.tscn" id="2_2ejl4"]
+[ext_resource type="PackedScene" uid="uid://c0j8tgtgewtn2" path="res://transition.tscn" id="4_0j6et"]
+
+[node name="OverWorld" type="Node2D" node_paths=PackedStringArray("transition")]
+script = ExtResource("1_8dkyf")
+transition = NodePath("CanvasLayer/Control/Transition")
+
+[node name="Player1" parent="." instance=ExtResource("1_435nc")]
+position = Vector2(394, 471)
+
+[node name="Player2" parent="." instance=ExtResource("2_2ejl4")]
+position = Vector2(1306, 484)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Transition" parent="CanvasLayer/Control" instance=ExtResource("4_0j6et")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.008
+anchor_right = 1.004
+anchor_bottom = 1.015
+offset_left = 12.8
+offset_right = 0.599854
+offset_bottom = -12.5001
+color = Color(0.843137, 0.878431, 0.670588, 1)

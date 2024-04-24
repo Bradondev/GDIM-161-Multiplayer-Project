@@ -4,6 +4,8 @@ extends Control
 @onready var inputholder: VBoxContainer = $Inputholder
 @export var MainButton: Button 
  
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	create_action_remap_items()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b13e8y5ta270j"]
+[gd_scene load_steps=22 format=3 uid="uid://b13e8y5ta270j"]
 
 [ext_resource type="Script" path="res://Code/main_menu.gd" id="1_5to2f"]
 [ext_resource type="Texture2D" uid="uid://buutlu5sacn03" path="res://art/Ui/start screen NO BUTTONS.png" id="2_fejxy"]
@@ -15,8 +15,14 @@
 [ext_resource type="Texture2D" uid="uid://4wvyi4r2t55i" path="res://art/Ui/load game hover.png" id="11_cpebo"]
 [ext_resource type="Texture2D" uid="uid://derxsvjyftusd" path="res://art/Ui/new game.png" id="12_7mdu7"]
 [ext_resource type="Texture2D" uid="uid://b6j51eqfeahgh" path="res://art/Ui/new game hover.png" id="13_qv30i"]
+[ext_resource type="Texture2D" uid="uid://dw5tckxt1joye" path="res://art/Ui/new game overwrite popup.png" id="16_3p2kf"]
+[ext_resource type="Texture2D" uid="uid://ba6egkiixw1s6" path="res://art/Ui/im sure.png" id="17_6jws0"]
+[ext_resource type="Texture2D" uid="uid://c4mot5sfxf6sg" path="res://art/Ui/in sure hover.png" id="18_jo66c"]
+[ext_resource type="Texture2D" uid="uid://2l3vmcn164mb" path="res://art/Ui/no go back.png" id="19_07dti"]
+[ext_resource type="Texture2D" uid="uid://4e1fudp086tq" path="res://art/Ui/no go back hover.png" id="20_0scus"]
+[ext_resource type="PackedScene" uid="uid://c0j8tgtgewtn2" path="res://transition.tscn" id="21_phmfv"]
 
-[node name="mainMenu" type="Control" node_paths=PackedStringArray("GameSaver", "SaveHodler")]
+[node name="mainMenu" type="Control" node_paths=PackedStringArray("GameSaver", "SaveHodler", "PopUp", "TransitonNode")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,15 +32,17 @@ grow_vertical = 2
 script = ExtResource("1_5to2f")
 GameSaver = NodePath("gameSaver")
 SaveHodler = NodePath("LoadGamePanel/SaveHolder")
+PopUp = NodePath("PopUp")
+TransitonNode = NodePath("Transition")
 
 [node name="StartScreenMockup-1" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.001
+anchor_right = 0.996
+anchor_bottom = 1.0
 offset_left = -4.0
-offset_right = 1612.0
-offset_bottom = 921.1
+offset_right = 1658.4
+offset_bottom = 1007.0
 scale = Vector2(0.50125, 0.494444)
 mouse_filter = 2
 texture = ExtResource("2_fejxy")
@@ -42,11 +50,12 @@ texture = ExtResource("2_fejxy")
 [node name="MainMenu" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -4.0
-offset_bottom = 1.0
+anchors_preset = -1
+anchor_right = 0.984
+anchor_bottom = 0.982
+offset_left = 5.0
+offset_right = 24.6
+offset_bottom = 16.2
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -55,60 +64,81 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 285.0
-offset_top = 628.0
-offset_right = -285.0
-offset_bottom = -162.0
+offset_left = 420.0
+offset_top = 678.0
+offset_right = -140.0
+offset_bottom = -112.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.8, 0.8)
 metadata/_edit_group_ = true
 
-[node name="Quit" type="TextureButton" parent="MainMenu/SubButtons"]
+[node name="Quit" type="TextureButton" parent="MainMenu/SubButtons" groups=["Button"]]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_top = NodePath("../../HBoxContainer/NewGame")
+focus_neighbor_right = NodePath("../Settings")
 theme = ExtResource("2_o1ngd")
 texture_normal = ExtResource("4_mpuxx")
 texture_pressed = ExtResource("5_pla1y")
 texture_hover = ExtResource("5_pla1y")
+texture_focused = ExtResource("5_pla1y")
 
-[node name="Settings" type="TextureButton" parent="MainMenu/SubButtons"]
+[node name="Settings" type="TextureButton" parent="MainMenu/SubButtons" groups=["Button"]]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_left = NodePath("../Quit")
+focus_neighbor_top = NodePath("../../HBoxContainer/Load")
+focus_neighbor_right = NodePath("../credit")
 theme = ExtResource("2_o1ngd")
 texture_normal = ExtResource("6_i1vth")
 texture_pressed = ExtResource("7_k4qxl")
 texture_hover = ExtResource("7_k4qxl")
+texture_focused = ExtResource("7_k4qxl")
 
-[node name="credit" type="TextureButton" parent="MainMenu/SubButtons"]
+[node name="credit" type="TextureButton" parent="MainMenu/SubButtons" groups=["Button"]]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_left = NodePath("../Settings")
+focus_neighbor_top = NodePath("../../HBoxContainer/Load")
 theme = ExtResource("2_o1ngd")
 texture_normal = ExtResource("8_teipo")
 texture_pressed = ExtResource("9_1je5v")
 texture_hover = ExtResource("9_1je5v")
+texture_focused = ExtResource("9_1je5v")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MainMenu"]
 layout_mode = 0
-offset_left = 303.0
-offset_top = 484.0
-offset_right = 1301.0
-offset_bottom = 624.0
+offset_left = 431.0
+offset_top = 534.0
+offset_right = 1429.0
+offset_bottom = 674.0
+scale = Vector2(0.8, 0.8)
 metadata/_edit_group_ = true
 
-[node name="NewGame" type="TextureButton" parent="MainMenu/HBoxContainer"]
+[node name="NewGame" type="TextureButton" parent="MainMenu/HBoxContainer" groups=["Button"]]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_right = NodePath("../Load")
+focus_neighbor_bottom = NodePath("../../SubButtons/Quit")
+focus_mode = 1
 theme = ExtResource("2_o1ngd")
 texture_normal = ExtResource("12_7mdu7")
 texture_pressed = ExtResource("13_qv30i")
 texture_hover = ExtResource("13_qv30i")
+texture_focused = ExtResource("13_qv30i")
 
-[node name="Load" type="TextureButton" parent="MainMenu/HBoxContainer"]
+[node name="Load" type="TextureButton" parent="MainMenu/HBoxContainer" groups=["Button"]]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_left = NodePath("../NewGame")
+focus_neighbor_bottom = NodePath("../../SubButtons/credit")
+focus_mode = 1
 theme = ExtResource("2_o1ngd")
 texture_normal = ExtResource("10_cyylf")
+texture_pressed = ExtResource("11_cpebo")
 texture_hover = ExtResource("11_cpebo")
+texture_focused = ExtResource("11_cpebo")
 
 [node name="Settings" type="Panel" parent="."]
 visible = false
@@ -119,7 +149,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="back" type="Button" parent="Settings"]
+[node name="back" type="Button" parent="Settings" groups=["Button"]]
 layout_mode = 0
 offset_left = 1199.0
 offset_top = 801.0
@@ -147,7 +177,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="back" type="Button" parent="LoadGamePanel"]
+[node name="back" type="Button" parent="LoadGamePanel" groups=["Button"]]
 layout_mode = 0
 offset_left = 1199.0
 offset_top = 801.0
@@ -251,7 +281,7 @@ UX/UI Designer - Michelle ,Euclid"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="back" type="Button" parent="Credit"]
+[node name="back" type="Button" parent="Credit" groups=["Button"]]
 layout_mode = 0
 offset_left = 1199.0
 offset_top = 801.0
@@ -262,6 +292,63 @@ theme = ExtResource("2_o1ngd")
 theme_override_font_sizes/font_size = 48
 text = "Back"
 
+[node name="PopUp" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 48.0
+offset_top = 421.0
+offset_right = 436.0
+offset_bottom = 808.0
+texture = ExtResource("16_3p2kf")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="SubButtons" type="VBoxContainer" parent="PopUp"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -103.0
+offset_top = 182.0
+offset_right = 363.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+metadata/_edit_group_ = true
+
+[node name="Sure" type="TextureButton" parent="PopUp/SubButtons" groups=["Button"]]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../back")
+focus_neighbor_bottom = NodePath("../back")
+theme = ExtResource("2_o1ngd")
+texture_normal = ExtResource("17_6jws0")
+texture_pressed = ExtResource("18_jo66c")
+texture_hover = ExtResource("18_jo66c")
+texture_focused = ExtResource("18_jo66c")
+
+[node name="back" type="TextureButton" parent="PopUp/SubButtons" groups=["Button"]]
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Sure")
+focus_neighbor_bottom = NodePath("../Sure")
+theme = ExtResource("2_o1ngd")
+texture_normal = ExtResource("19_07dti")
+texture_pressed = ExtResource("20_0scus")
+texture_hover = ExtResource("20_0scus")
+texture_focused = ExtResource("20_0scus")
+
+[node name="Transition" parent="." instance=ExtResource("21_phmfv")]
+layout_mode = 1
+offset_left = -2.0
+offset_right = 2.0
+offset_bottom = 4.0
+mouse_filter = 2
+color = Color(0.843137, 0.878431, 0.670588, 1)
+
+[connection signal="focus_entered" from="MainMenu/SubButtons/Quit" to="." method="_on_quit_focus_entered"]
 [connection signal="pressed" from="MainMenu/SubButtons/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="MainMenu/SubButtons/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MainMenu/SubButtons/credit" to="." method="_on_credit_pressed"]
@@ -270,3 +357,5 @@ text = "Back"
 [connection signal="pressed" from="Settings/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="LoadGamePanel/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Credit/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="PopUp/SubButtons/Sure" to="." method="_PopUp_sure_pressed"]
+[connection signal="pressed" from="PopUp/SubButtons/back" to="." method="_PopUP_back_pressed"]

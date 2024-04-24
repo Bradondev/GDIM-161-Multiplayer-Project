@@ -9,21 +9,30 @@ func  Save_Game():
 	
 func MakeNewSave():
 	var NewSave = SavedData.new()
-	var dir = DirAccess.open("res://saves/")
-	var size = dir.get_files().size()
-	ResourceSaver.save(NewSave,"res://saves/savegame" + str(size)+ ".tres")
+	ResourceSaver.save(NewSave,"res://saves/savegame.tres")
 	var NewButton = LoadButton.instantiate()
-	NewButton.text = "save " + str( dir.get_files().size())
 	$"../LoadGamePanel/SaveHolder".add_child(NewButton)
 	
-func AddLoadSaves():
-	var Temp = 0
-	print_debug("load save")
-	var dir = DirAccess.open("res://saves/")
-	print_debug(dir.get_files())
-	for Saves in dir.get_files():
-		Temp+=1
-		var NewButton = LoadButton.instantiate()
-		NewButton.text = "save " + str( Temp)
-		$"../LoadGamePanel/SaveHolder".add_child(NewButton)
+	
+	
+func LoadGame():
+	var Data :SavedData = load("res://saves/savegame.tres") as SavedData
+	#UpDate the over world
+	
+	
+	
+	
+	
+	
+	
+#func AddLoadSaves():
+	#var Temp = 0
+	#print_debug("load save")
+	#var dir = DirAccess.open("res://saves/")
+	#print_debug(dir.get_files())
+	#for Saves in dir.get_files():
+		#Temp+=1
+		#var NewButton = LoadButton.instantiate()
+		#NewButton.text = "save " + str( Temp)
+		#$"../LoadGamePanel/SaveHolder".add_child(NewButton)
 		
