@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://dnicrsufbul20"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/level_base.gd" id="1_2ibyv"]
+[ext_resource type="PackedScene" uid="uid://bg78qvtq5g8v" path="res://Scenes/player_1.tscn" id="1_2our2"]
+[ext_resource type="PackedScene" uid="uid://djfg44r7ydfxn" path="res://Scenes/player_2.tscn" id="2_knrl7"]
+[ext_resource type="PackedScene" uid="uid://c0j8tgtgewtn2" path="res://transition.tscn" id="3_sktrj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qpbge"]
+size = Vector2(1, 900)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l65gg"]
+size = Vector2(11.5001, 1614)
+
+[node name="LevelBase" type="Node2D" node_paths=PackedStringArray("Transition")]
+script = ExtResource("1_2ibyv")
+Transition = NodePath("CanvasLayer/Transition")
+
+[node name="Player1" parent="." instance=ExtResource("1_2our2")]
+position = Vector2(437, 417)
+
+[node name="Player2" parent="." instance=ExtResource("2_knrl7")]
+position = Vector2(1151, 423)
+
+[node name="walls" type="Node2D" parent="."]
+
+[node name="middleWall" type="StaticBody2D" parent="walls"]
+position = Vector2(800, 0)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/middleWall"]
+position = Vector2(0, 440)
+shape = SubResource("RectangleShape2D_qpbge")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="walls"]
+position = Vector2(1601, 0)
+rotation = 1.5708
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/StaticBody2D2"]
+position = Vector2(5.25003, 797)
+shape = SubResource("RectangleShape2D_l65gg")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="walls"]
+position = Vector2(1611, 0)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/StaticBody2D3"]
+position = Vector2(0, 440)
+shape = SubResource("RectangleShape2D_qpbge")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="walls"]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/StaticBody2D4"]
+position = Vector2(0, 440)
+shape = SubResource("RectangleShape2D_qpbge")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="walls"]
+position = Vector2(1611, 898)
+rotation = 1.5708
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/StaticBody2D5"]
+position = Vector2(5.25003, 797)
+shape = SubResource("RectangleShape2D_l65gg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Transition" parent="CanvasLayer" instance=ExtResource("3_sktrj")]
+mouse_filter = 2
+color = Color(0.843137, 0.878431, 0.670588, 1)

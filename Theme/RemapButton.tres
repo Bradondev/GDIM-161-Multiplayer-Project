@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=7 format=3 uid="uid://c37q7rv7x4x28"]
 
-[ext_resource type="FontFile" uid="uid://baufk8175q5o5" path="res://Theme/Baskic8-Bold.otf" id="1_bdfbn"]
+[ext_resource type="FontFile" uid="uid://8pygeyu6tqig" path="res://Theme/Manjari-Regular.ttf" id="1_w5vhn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1wdu"]
 content_margin_left = 4.0
@@ -83,7 +83,7 @@ expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
 [resource]
-default_font = ExtResource("1_bdfbn")
+default_font = ExtResource("1_w5vhn")
 RemapButton/base_type = &"Button"
 RemapButton/colors/font_color = Color(0, 0, 0, 1)
 RemapButton/colors/font_disabled_color = Color(0, 0, 0, 1)

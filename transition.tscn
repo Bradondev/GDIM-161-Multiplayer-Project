@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://c0j8tgtgewtn2"]
 
 [ext_resource type="Shader" path="res://Transition.gdshader" id="1_y0piw"]
-[ext_resource type="Script" path="res://transition.gd" id="2_m6bdn"]
+[ext_resource type="Script" path="res://Code/transition.gd" id="2_minqc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tiodi"]
 shader = ExtResource("1_y0piw")
@@ -104,7 +104,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2_m6bdn")
+script = ExtResource("2_minqc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
