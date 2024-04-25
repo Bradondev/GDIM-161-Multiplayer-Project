@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://y36ascwbo7a0"]
+[gd_scene load_steps=27 format=3 uid="uid://y36ascwbo7a0"]
 
 [ext_resource type="Script" path="res://Code/OverWorld.gd" id="1_4f4d8"]
 [ext_resource type="Texture2D" uid="uid://bkik5y4rdeblq" path="res://art/Ui/level/level select background.png" id="2_gp3yv"]
@@ -17,12 +17,15 @@
 [ext_resource type="Texture2D" uid="uid://di206lcgj7s16" path="res://art/Ui/level/level 2 flower button default.png" id="10_5hwbc"]
 [ext_resource type="Texture2D" uid="uid://e54rnnvos1t" path="res://art/Ui/level/level 2 flower button hover.png" id="11_pcdno"]
 [ext_resource type="Texture2D" uid="uid://b0hgvtju3n1lf" path="res://art/Ui/level/level 2 flower button invalid.png" id="12_xw6ww"]
+[ext_resource type="Texture2D" uid="uid://dg41rtbdum0vc" path="res://art/Ui/level/level 2.png" id="14_2btl3"]
 [ext_resource type="Texture2D" uid="uid://sgnoowrt6axg" path="res://art/Ui/level/level 4 flower button default.png" id="16_klbky"]
 [ext_resource type="Texture2D" uid="uid://b058liq0vxg5q" path="res://art/Ui/level/level 4 flower button hover.png" id="17_q81r4"]
+[ext_resource type="Texture2D" uid="uid://6usa83yeqtwu" path="res://art/Ui/level/level 3.png" id="18_0i2yw"]
 [ext_resource type="Texture2D" uid="uid://d0gy2c42pd2hw" path="res://art/Ui/level/level 4 flower button invalid.png" id="18_hoada"]
 [ext_resource type="Texture2D" uid="uid://06dw87x3ctv1" path="res://art/Ui/level/level details overlay.png" id="19_fry3x"]
 [ext_resource type="Texture2D" uid="uid://dgtnyo7yfqma" path="res://art/Ui/level/star grayed out.png" id="21_5t34f"]
 [ext_resource type="Texture2D" uid="uid://bw0guek6j3nfu" path="res://art/Ui/level/judges placeholder.png" id="22_68bd0"]
+[ext_resource type="Texture2D" uid="uid://g03ewhxajsdg" path="res://art/Ui/level/level 4.png" id="22_h236i"]
 
 [node name="OverWorld" type="Node2D" node_paths=PackedStringArray("transition", "FirstLevel")]
 script = ExtResource("1_4f4d8")
@@ -71,6 +74,7 @@ script = ExtResource("6_e85ac")
 transition = NodePath("../Transition")
 Level = ExtResource("3_sd4n4")
 parent = NodePath("../..")
+levelIconpng = ExtResource("7_yd0wv")
 
 [node name="start" type="TextureButton" parent="CanvasLayer/flower1"]
 layout_mode = 1
@@ -112,6 +116,7 @@ texture_focused = ExtResource("11_pcdno")
 script = ExtResource("6_e85ac")
 transition = NodePath("../Transition")
 parent = NodePath("../..")
+levelIconpng = ExtResource("14_2btl3")
 
 [node name="start2" type="TextureButton" parent="CanvasLayer/flower2"]
 visible = false
@@ -154,6 +159,7 @@ texture_focused = ExtResource("6_eofyg")
 script = ExtResource("6_e85ac")
 transition = NodePath("../Transition")
 parent = NodePath("../..")
+levelIconpng = ExtResource("18_0i2yw")
 
 [node name="start" type="TextureButton" parent="CanvasLayer/flower3"]
 visible = false
@@ -198,6 +204,7 @@ texture_focused = ExtResource("17_q81r4")
 script = ExtResource("6_e85ac")
 transition = NodePath("../Transition")
 parent = NodePath("../..")
+levelIconpng = ExtResource("22_h236i")
 
 [node name="start" type="TextureButton" parent="CanvasLayer/flower4"]
 visible = false
@@ -249,7 +256,7 @@ texture = ExtResource("7_yd0wv")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="star2" type="TextureRect" parent="CanvasLayer"]
+[node name="star1" type="TextureRect" parent="CanvasLayer" groups=["star"]]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -279,7 +286,7 @@ texture = ExtResource("22_68bd0")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="star3" type="TextureRect" parent="CanvasLayer"]
+[node name="star2" type="TextureRect" parent="CanvasLayer" groups=["star"]]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -294,7 +301,7 @@ texture = ExtResource("21_5t34f")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="star4" type="TextureRect" parent="CanvasLayer"]
+[node name="star3" type="TextureRect" parent="CanvasLayer" groups=["star"]]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

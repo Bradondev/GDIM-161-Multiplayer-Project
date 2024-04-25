@@ -11,7 +11,7 @@ func MakeNewSave():
 	var NewSave = SavedData.new()
 	for x in range(4):
 		var Leveldata =LevelData.new()
-		if x == 1:
+		if x == 0:
 			Leveldata.Unlocked =true
 			
 		NewSave.Leveldata.append(Leveldata)
