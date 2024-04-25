@@ -15,8 +15,9 @@ func MakeNewSave():
 	
 	
 	
-func LoadGame():
-	var Data :SavedData = load("res://saves/savegame.tres") as SavedData
+func LoadGameData():
+	var Data = load("res://saves/savegame.tres") as SavedData
+	return Data
 	#UpDate the over world
 	
 	

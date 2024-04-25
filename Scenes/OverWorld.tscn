@@ -1,48 +1,107 @@
-[gd_scene load_steps=5 format=3 uid="uid://y36ascwbo7a0"]
+[gd_scene load_steps=22 format=3 uid="uid://y36ascwbo7a0"]
 
 [ext_resource type="Script" path="res://Code/OverWorld.gd" id="1_4f4d8"]
 [ext_resource type="PackedScene" uid="uid://duus13ngbb8og" path="res://Scenes/levelIcon.tscn" id="2_6gl5e"]
+[ext_resource type="Texture2D" uid="uid://bkik5y4rdeblq" path="res://art/Ui/level/level select background.png" id="2_gp3yv"]
 [ext_resource type="PackedScene" uid="uid://dnicrsufbul20" path="res://Scenes/Levels/level_base.tscn" id="3_sd4n4"]
 [ext_resource type="PackedScene" uid="uid://c0j8tgtgewtn2" path="res://transition.tscn" id="4_0j6et"]
+[ext_resource type="Texture2D" uid="uid://g6uw8fo5x8c4" path="res://art/Ui/level/level select.png" id="5_7idu1"]
+[ext_resource type="Texture2D" uid="uid://ceucmdsbashjd" path="res://art/Ui/level/level 3 flower button default.png" id="5_r401p"]
+[ext_resource type="Texture2D" uid="uid://ixa30t06uvk1" path="res://art/Ui/level/level 3 flower button hover.png" id="6_eofyg"]
+[ext_resource type="Texture2D" uid="uid://c0fu3v5fxsyxr" path="res://art/Ui/level/level 3 flower button invalid.png" id="7_hynel"]
+[ext_resource type="Texture2D" uid="uid://ciq6bg0dhre55" path="res://art/Ui/level/level 1.png" id="7_yd0wv"]
+[ext_resource type="Texture2D" uid="uid://c4a60sft8117v" path="res://art/Ui/level/level 1 flower button default.png" id="8_70ksy"]
+[ext_resource type="Texture2D" uid="uid://5tq1cpesi22e" path="res://art/Ui/level/level 1 flower button hover.png" id="9_c3n0h"]
+[ext_resource type="Texture2D" uid="uid://di206lcgj7s16" path="res://art/Ui/level/level 2 flower button default.png" id="10_5hwbc"]
+[ext_resource type="Texture2D" uid="uid://e54rnnvos1t" path="res://art/Ui/level/level 2 flower button hover.png" id="11_pcdno"]
+[ext_resource type="Texture2D" uid="uid://b0hgvtju3n1lf" path="res://art/Ui/level/level 2 flower button invalid.png" id="12_xw6ww"]
+[ext_resource type="Texture2D" uid="uid://dg41rtbdum0vc" path="res://art/Ui/level/level 2.png" id="13_06hv4"]
+[ext_resource type="Texture2D" uid="uid://sgnoowrt6axg" path="res://art/Ui/level/level 4 flower button default.png" id="16_klbky"]
+[ext_resource type="Texture2D" uid="uid://b058liq0vxg5q" path="res://art/Ui/level/level 4 flower button hover.png" id="17_q81r4"]
+[ext_resource type="Texture2D" uid="uid://d0gy2c42pd2hw" path="res://art/Ui/level/level 4 flower button invalid.png" id="18_hoada"]
+[ext_resource type="Texture2D" uid="uid://6usa83yeqtwu" path="res://art/Ui/level/level 3.png" id="19_r4j64"]
+[ext_resource type="Texture2D" uid="uid://g03ewhxajsdg" path="res://art/Ui/level/level 4.png" id="19_v4w3e"]
 
 [node name="OverWorld" type="Node2D" node_paths=PackedStringArray("transition", "FirstLevel")]
 script = ExtResource("1_4f4d8")
 transition = NodePath("CanvasLayer/Transition")
-FirstLevel = NodePath("levelHolder/level")
-
-[node name="levelHolder" type="HBoxContainer" parent="."]
-offset_left = 469.0
-offset_top = 281.0
-offset_right = 1000.0
-offset_bottom = 409.0
-theme_override_constants/separation = 200
-metadata/_edit_group_ = true
-metadata/_edit_use_anchors_ = true
-
-[node name="level" parent="levelHolder" node_paths=PackedStringArray("transition") instance=ExtResource("2_6gl5e")]
-layout_mode = 2
-focus_neighbor_left = NodePath("../level3")
-focus_neighbor_right = NodePath("../level2")
-NameLevel = "Level 1"
-transition = NodePath("../../CanvasLayer/Transition")
-Level = ExtResource("3_sd4n4")
-
-[node name="level2" parent="levelHolder" node_paths=PackedStringArray("transition") instance=ExtResource("2_6gl5e")]
-layout_mode = 2
-focus_neighbor_left = NodePath("../level")
-focus_neighbor_right = NodePath("../level3")
-NameLevel = "Level 2"
-transition = NodePath("../../CanvasLayer/Transition")
-
-[node name="level3" parent="levelHolder" node_paths=PackedStringArray("transition") instance=ExtResource("2_6gl5e")]
-layout_mode = 2
-focus_neighbor_left = NodePath("../level2")
-focus_neighbor_right = NodePath("../level")
-NameLevel = "level 3"
-transition = NodePath("../../CanvasLayer/Transition")
+FirstLevel = NodePath("CanvasLayer/level")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="LevelSelectBackground" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1600.0
+offset_bottom = 900.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.500625, 0.5)
+texture = ExtResource("2_gp3yv")
+
+[node name="level" parent="CanvasLayer" node_paths=PackedStringArray("transition") instance=ExtResource("2_6gl5e")]
+offset_left = 200.0
+offset_top = 374.0
+offset_right = 517.0
+offset_bottom = 680.0
+scale = Vector2(0.6, 0.6)
+focus_neighbor_left = NodePath("../level4")
+focus_neighbor_right = NodePath("../level2")
+transition = NodePath("../Transition")
+Level = ExtResource("3_sd4n4")
+FlowersTextures = Array[Texture2D]([ExtResource("8_70ksy"), ExtResource("9_c3n0h"), ExtResource("9_c3n0h"), ExtResource("9_c3n0h"), ExtResource("9_c3n0h")])
+Levelicon = ExtResource("7_yd0wv")
+
+[node name="level2" parent="CanvasLayer" node_paths=PackedStringArray("Layer", "transition") instance=ExtResource("2_6gl5e")]
+offset_left = 547.0
+offset_top = 425.0
+offset_right = 864.0
+offset_bottom = 731.0
+scale = Vector2(0.6, 0.6)
+focus_neighbor_left = NodePath("../level")
+focus_neighbor_right = NodePath("../level3")
+Layer = NodePath("../level/CanvasLayer")
+transition = NodePath("../Transition")
+Level = ExtResource("3_sd4n4")
+FlowersTextures = Array[Texture2D]([ExtResource("10_5hwbc"), ExtResource("11_pcdno"), ExtResource("11_pcdno"), ExtResource("12_xw6ww"), ExtResource("11_pcdno")])
+Levelicon = ExtResource("13_06hv4")
+
+[node name="level3" parent="CanvasLayer" node_paths=PackedStringArray("Layer", "transition") instance=ExtResource("2_6gl5e")]
+offset_left = 880.0
+offset_top = 279.0
+offset_right = 1197.0
+offset_bottom = 585.0
+scale = Vector2(0.6, 0.6)
+focus_neighbor_left = NodePath("../level2")
+focus_neighbor_right = NodePath("../level4")
+Layer = NodePath("../level/CanvasLayer")
+transition = NodePath("../Transition")
+Level = ExtResource("3_sd4n4")
+FlowersTextures = Array[Texture2D]([ExtResource("5_r401p"), ExtResource("6_eofyg"), ExtResource("6_eofyg"), ExtResource("7_hynel"), ExtResource("6_eofyg")])
+Levelicon = ExtResource("19_r4j64")
+
+[node name="level4" parent="CanvasLayer" node_paths=PackedStringArray("Layer", "transition") instance=ExtResource("2_6gl5e")]
+offset_left = 1272.0
+offset_top = 155.0
+offset_right = 1589.0
+offset_bottom = 461.0
+scale = Vector2(0.6, 0.6)
+focus_neighbor_left = NodePath("../level3")
+focus_neighbor_right = NodePath("../level")
+Layer = NodePath("../level/CanvasLayer")
+transition = NodePath("../Transition")
+Level = ExtResource("3_sd4n4")
+FlowersTextures = Array[Texture2D]([ExtResource("16_klbky"), ExtResource("17_q81r4"), ExtResource("17_q81r4"), ExtResource("18_hoada"), ExtResource("17_q81r4")])
+Levelicon = ExtResource("19_v4w3e")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = 184.0
+offset_top = 52.0
+offset_right = 1242.0
+offset_bottom = 223.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_7idu1")
+
 [node name="Transition" parent="CanvasLayer" instance=ExtResource("4_0j6et")]
 color = Color(0.843137, 0.878431, 0.670588, 1)
-metadata/_edit_lock_ = true

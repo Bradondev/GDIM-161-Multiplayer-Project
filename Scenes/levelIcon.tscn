@@ -1,101 +1,141 @@
-[gd_scene load_steps=6 format=3 uid="uid://duus13ngbb8og"]
+[gd_scene load_steps=10 format=3 uid="uid://duus13ngbb8og"]
 
 [ext_resource type="Script" path="res://Code/levelIcon.gd" id="1_qqypa"]
-[ext_resource type="Texture2D" uid="uid://byvjm7kagi452" path="res://art/icon.svg" id="2_vbtw6"]
-[ext_resource type="Theme" uid="uid://c37q7rv7x4x28" path="res://Theme/RemapButton.tres" id="3_hx1jn"]
-[ext_resource type="Texture2D" uid="uid://btcf6u2gkrprg" path="res://art/Ui/lets cook button.png" id="4_yk1t1"]
-[ext_resource type="Texture2D" uid="uid://cncs7fnovhi7q" path="res://art/Ui/lets cook hover.png" id="5_0fb4x"]
+[ext_resource type="Texture2D" uid="uid://c4a60sft8117v" path="res://art/Ui/level/level 1 flower button default.png" id="2_wgt8i"]
+[ext_resource type="Texture2D" uid="uid://5tq1cpesi22e" path="res://art/Ui/level/level 1 flower button hover.png" id="3_1qoxs"]
+[ext_resource type="Texture2D" uid="uid://06dw87x3ctv1" path="res://art/Ui/level/level details overlay.png" id="5_dfcvt"]
+[ext_resource type="Texture2D" uid="uid://dgtnyo7yfqma" path="res://art/Ui/level/star grayed out.png" id="7_3esrq"]
+[ext_resource type="Texture2D" uid="uid://ciq6bg0dhre55" path="res://art/Ui/level/level 1.png" id="7_s2p1r"]
+[ext_resource type="Texture2D" uid="uid://bw0guek6j3nfu" path="res://art/Ui/level/judges placeholder.png" id="8_dwl6b"]
+[ext_resource type="Texture2D" uid="uid://b0r6mcp8aw6cf" path="res://art/Ui/level/level start button.png" id="9_thrcg"]
+[ext_resource type="Texture2D" uid="uid://bl803hg2o056v" path="res://art/Ui/level/level start button hover.png" id="10_meb5r"]
 
-[node name="level" type="Control" node_paths=PackedStringArray("Layer", "backbutton")]
-layout_mode = 3
+[node name="flower" type="TextureButton" node_paths=PackedStringArray("Layer", "flower", "levelicon")]
+anchors_preset = -1
+anchor_right = 1.001
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = -1302.6
+offset_bottom = -612.0
+focus_neighbor_bottom = NodePath("../StarButton")
+texture_normal = ExtResource("2_wgt8i")
+texture_pressed = ExtResource("3_1qoxs")
+texture_hover = ExtResource("3_1qoxs")
+texture_focused = ExtResource("3_1qoxs")
+script = ExtResource("1_qqypa")
+Layer = NodePath("CanvasLayer")
+flower = NodePath("StarButton")
+levelicon = NodePath("CanvasLayer/Level")
+
+[node name="StarButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 5.3
+anchor_bottom = 3.082
+offset_left = 26.0
+offset_top = 300.0
+offset_right = -1169.9
+offset_bottom = -339.944
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("9_thrcg")
+texture_pressed = ExtResource("10_meb5r")
+texture_hover = ExtResource("10_meb5r")
+texture_focused = ExtResource("10_meb5r")
+stretch_mode = 4
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Box" type="MarginContainer" parent="CanvasLayer"]
+offset_left = 1150.0
+offset_top = 460.0
+offset_right = 1602.0
+offset_bottom = 896.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="background" type="TextureRect" parent="CanvasLayer/Box"]
+layout_mode = 2
+texture = ExtResource("5_dfcvt")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Level" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 13.0
-offset_top = 5.0
-offset_right = -1459.0
-offset_bottom = -767.0
+offset_left = 1271.0
+offset_top = 460.0
+offset_right = -107.0
+offset_bottom = -372.0
 grow_horizontal = 2
 grow_vertical = 2
-focus_mode = 2
-script = ExtResource("1_qqypa")
-Layer = NodePath("CanvasLayer")
-backbutton = NodePath("CanvasLayer/back")
+texture = ExtResource("7_s2p1r")
+expand_mode = 1
+stretch_mode = 4
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 128.0
-offset_bottom = 128.0
-texture = ExtResource("2_vbtw6")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = -64.0
-offset_top = -44.0
-offset_right = 188.0
-offset_bottom = -8.0
-theme = ExtResource("3_hx1jn")
-theme_override_font_sizes/normal_font_size = 32
-bbcode_enabled = true
-text = "[center] Level 1"
-fit_content = true
-scroll_active = false
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="Panel" type="Panel" parent="CanvasLayer"]
-offset_right = 1600.0
-offset_bottom = 900.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -362.0
-offset_top = -445.0
-offset_right = 350.0
-offset_bottom = -326.0
+[node name="star2" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1217.0
+offset_top = 610.0
+offset_right = -303.0
+offset_bottom = -210.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("3_hx1jn")
-theme_override_font_sizes/normal_font_size = 64
-bbcode_enabled = true
-text = "[center] Level 1"
-fit_content = true
-scroll_active = false
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("7_3esrq")
+expand_mode = 1
+stretch_mode = 4
 
-[node name="back" type="Button" parent="CanvasLayer" groups=["Button"]]
-offset_left = 1198.0
-offset_top = 799.0
-offset_right = 1598.0
-offset_bottom = 899.0
-size_flags_vertical = 3
-focus_neighbor_top = NodePath("../Cook")
-focus_neighbor_bottom = NodePath("../Cook")
-theme = ExtResource("3_hx1jn")
-theme_override_font_sizes/font_size = 48
-text = "Back"
+[node name="judges" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1232.0
+offset_top = 720.0
+offset_right = -294.0
+offset_bottom = -146.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+texture = ExtResource("8_dwl6b")
+expand_mode = 1
+stretch_mode = 4
 
-[node name="Cook" type="TextureButton" parent="CanvasLayer" groups=["Button"]]
-offset_left = 553.0
-offset_top = 403.0
-offset_right = 1050.0
-offset_bottom = 543.0
-size_flags_vertical = 3
-focus_neighbor_top = NodePath("../back")
-focus_neighbor_bottom = NodePath(".")
-focus_mode = 1
-theme = ExtResource("3_hx1jn")
-texture_normal = ExtResource("4_yk1t1")
-texture_pressed = ExtResource("5_0fb4x")
-texture_hover = ExtResource("5_0fb4x")
-texture_focused = ExtResource("5_0fb4x")
+[node name="star3" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1334.0
+offset_top = 555.0
+offset_right = -186.0
+offset_bottom = -265.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("7_3esrq")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="star4" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1440.0
+offset_top = 610.0
+offset_right = -80.0
+offset_bottom = -210.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("7_3esrq")
+expand_mode = 1
+stretch_mode = 4
 
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
 [connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
-[connection signal="pressed" from="CanvasLayer/back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="CanvasLayer/Cook" to="." method="LoadLevel"]

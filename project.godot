@@ -14,6 +14,10 @@ config/name="Gdim-161-multiplayer-project"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://art/icon.svg"
 
+[autoload]
+
+GameSaver="*res://Code/gameSaver.gd"
+
 [display]
 
 window/size/viewport_width=1600
