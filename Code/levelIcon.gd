@@ -1,67 +1,80 @@
-extends Control
+extends TextureButton
 
+class_name  LevelButton
 
-@export var Layer:CanvasLayer
-
-@export var NameLevel: int
 @export var transition: transitionNode
 @export var Level: PackedScene
-@export var flower: TextureButton
-
+var Leveldata :LevelData
+@export var parent : Node
 var PlayAble:int
 var Stars:int
-@export var levelicon: TextureRect 
-
-@export var FlowersTextures: Array[Texture2D]
-@export var Levelicon : Texture2D
-
 var stars 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	flower.texture_normal = FlowersTextures[0]
-	flower.texture_pressed = FlowersTextures[1]
-	flower.texture_hover = FlowersTextures[2]
-	flower.texture_disabled = FlowersTextures[3]
-	flower.texture_focused = FlowersTextures[4]
-	levelicon.texture = Levelicon
-
-	
-	
-	
-	SetToInvaild()
-
-
-func _on_focus_entered() -> void:
-	print_debug("enter fopcus")
-	$StarButton.visible = true
-	$StarButton.grab_focus()
-
-func _on_focus_exited() -> void:
-	#Layer.visible = false
-	$StarButton.visible = false
-	pass
-
-func _on_gui_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept") and  has_focus():
-		Layer.visible = true
-
-
-
-func _on_back_pressed() -> void:
-	Layer.visible = false
-	grab_focus()
-
+	await parent.setupdone
+	print_debug("ready")
+	if !Leveldata.Unlocked:
+		disabled = true
+		texture_hover = texture_disabled
+		texture_focused = texture_disabled
+		texture_pressed = texture_disabled
 
 func SetToInvaild():
 	pass
 
 
-
-
 func LoadLevel():
-	#transition.transition_out()
-	#await transition.transition_out_done
+	transition.transition_out()
+	await transition.transition_out_done
 	get_tree().change_scene_to_packed(Level)
 
 
+func _on_start_focus_exited() -> void:
+	$start.visible = false
+	
 
+func _on_start_2_focus_exited() -> void:
+	$"../flower2/start2".visible = false
+
+func _on_start3focus_exited() -> void:
+	$"../flower3/start".visible = false
+
+
+func _on_start4_focus_exited() -> void:
+	$"../flower4/start".visible = false
+
+
+func _on_focusflower_entered() -> void:
+	$start.visible = true
+
+
+func _on_flower_2_focus_entered() -> void:
+	$"../flower2/start2".visible = true
+
+
+func _on_flower_3_focus_entered() -> void:
+	$"../flower3/start".visible = true
+
+
+func _on_flower_4_focus_entered() -> void:
+	$"../flower4/start".visible = true
+
+
+func _on_flower_4_focus_exited() -> void:
+	$"../flower4/start".visible = false
+
+
+func _on_flower_3_focus_exited() -> void:
+	$"../flower3/start".visible = false
+
+
+func _on_flower_2_focus_exited() -> void:
+	$"../flower2/start2".visible = false
+
+
+func _on_focusflowqer_exited() -> void:
+	$start.visible = false
+
+
+func _on_pressed() -> void:
+	LoadLevel()

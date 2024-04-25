@@ -1,9 +1,28 @@
-[gd_resource type="Resource" script_class="SavedData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="SavedData" load_steps=7 format=3 uid="uid://bf03m3qi4xdfr"]
 
+[ext_resource type="Script" path="res://Code/LevelData.gd" id="1_0xg75"]
 [ext_resource type="Script" path="res://Code/saveDateGd.gd" id="1_ftetb"]
+
+[sub_resource type="Resource" id="Resource_64qsi"]
+script = ExtResource("1_0xg75")
+stars = 0
+Unlocked = true
+
+[sub_resource type="Resource" id="Resource_lqbsj"]
+script = ExtResource("1_0xg75")
+stars = 0
+Unlocked = false
+
+[sub_resource type="Resource" id="Resource_dftwm"]
+script = ExtResource("1_0xg75")
+stars = 0
+Unlocked = false
+
+[sub_resource type="Resource" id="Resource_0dlud"]
+script = ExtResource("1_0xg75")
+stars = 0
+Unlocked = false
 
 [resource]
 script = ExtResource("1_ftetb")
-Scene_Path = ""
-levelsDone = 0
-Stars = Array[int]([])
+Leveldata = Array[ExtResource("1_0xg75")]([SubResource("Resource_64qsi"), SubResource("Resource_lqbsj"), SubResource("Resource_dftwm"), SubResource("Resource_0dlud")])

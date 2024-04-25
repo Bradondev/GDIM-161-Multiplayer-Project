@@ -9,6 +9,12 @@ func  Save_Game():
 	
 func MakeNewSave():
 	var NewSave = SavedData.new()
+	for x in range(4):
+		var Leveldata =LevelData.new()
+		if x == 1:
+			Leveldata.Unlocked =true
+			
+		NewSave.Leveldata.append(Leveldata)
 	ResourceSaver.save(NewSave,"res://saves/savegame.tres")
 	var NewButton = LoadButton.instantiate()
 	$"../LoadGamePanel/SaveHolder".add_child(NewButton)

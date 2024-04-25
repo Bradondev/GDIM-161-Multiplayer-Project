@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b0r6mcp8aw6cf" path="res://art/Ui/level/level start button.png" id="9_thrcg"]
 [ext_resource type="Texture2D" uid="uid://bl803hg2o056v" path="res://art/Ui/level/level start button hover.png" id="10_meb5r"]
 
-[node name="flower" type="TextureButton" node_paths=PackedStringArray("Layer", "flower", "levelicon")]
+[node name="flower" type="TextureButton"]
 anchors_preset = -1
 anchor_right = 1.001
 anchor_bottom = 1.0
@@ -24,9 +24,6 @@ texture_pressed = ExtResource("3_1qoxs")
 texture_hover = ExtResource("3_1qoxs")
 texture_focused = ExtResource("3_1qoxs")
 script = ExtResource("1_qqypa")
-Layer = NodePath("CanvasLayer")
-flower = NodePath("StarButton")
-levelicon = NodePath("CanvasLayer/Level")
 
 [node name="StarButton" type="TextureButton" parent="."]
 layout_mode = 1
