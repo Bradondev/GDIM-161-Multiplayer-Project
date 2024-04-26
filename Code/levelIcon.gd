@@ -14,9 +14,7 @@ var PlayAble:int
 var Stars:int
 
 @onready var levellabel: TextureRect = $"../Level"
-@onready var star_1: TextureRect = $"../star1"
-@onready var star_2: TextureRect = $"../star2"
-@onready var star_3: TextureRect = $"../star3"
+@onready var star_3: TextureRect = $"../star1"
 @onready var judges: TextureRect = $"../judges"
 
 @export var levelIconpng :Texture2D
@@ -106,6 +104,7 @@ func FixLabels(Data):
 		star[temp].texture = load("res://art/Ui/level/star grayed out.png")
 		temp +=1
 	temp = 0
+	
 	for x in Data.Leveldata.stars:
 		star[temp].texture = fullStar
 		temp +=1

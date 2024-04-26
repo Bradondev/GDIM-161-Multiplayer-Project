@@ -1,11 +1,14 @@
-[gd_scene load_steps=27 format=3 uid="uid://y36ascwbo7a0"]
+[gd_scene load_steps=32 format=3 uid="uid://y36ascwbo7a0"]
 
 [ext_resource type="Script" path="res://Code/OverWorld.gd" id="1_4f4d8"]
 [ext_resource type="Texture2D" uid="uid://bkik5y4rdeblq" path="res://art/Ui/level/level select background.png" id="2_gp3yv"]
 [ext_resource type="PackedScene" uid="uid://dnicrsufbul20" path="res://Scenes/Levels/level_base.tscn" id="3_sd4n4"]
 [ext_resource type="PackedScene" uid="uid://c0j8tgtgewtn2" path="res://transition.tscn" id="4_0j6et"]
+[ext_resource type="Texture2D" uid="uid://bb35vc7tyh0op" path="res://art/Ui/level/back button.png" id="4_sl6ql"]
 [ext_resource type="Texture2D" uid="uid://g6uw8fo5x8c4" path="res://art/Ui/level/level select.png" id="5_7idu1"]
+[ext_resource type="Texture2D" uid="uid://1ts0sbax2kmt" path="res://art/Ui/level/back button hover.png" id="5_cgcc6"]
 [ext_resource type="Texture2D" uid="uid://ceucmdsbashjd" path="res://art/Ui/level/level 3 flower button default.png" id="5_r401p"]
+[ext_resource type="Script" path="res://Code/backButton.gd" id="6_d4kw1"]
 [ext_resource type="Script" path="res://Code/levelIcon.gd" id="6_e85ac"]
 [ext_resource type="Texture2D" uid="uid://ixa30t06uvk1" path="res://art/Ui/level/level 3 flower button hover.png" id="6_eofyg"]
 [ext_resource type="Texture2D" uid="uid://b0r6mcp8aw6cf" path="res://art/Ui/level/level start button.png" id="6_sc4kk"]
@@ -26,6 +29,8 @@
 [ext_resource type="Texture2D" uid="uid://dgtnyo7yfqma" path="res://art/Ui/level/star grayed out.png" id="21_5t34f"]
 [ext_resource type="Texture2D" uid="uid://bw0guek6j3nfu" path="res://art/Ui/level/judges placeholder.png" id="22_68bd0"]
 [ext_resource type="Texture2D" uid="uid://g03ewhxajsdg" path="res://art/Ui/level/level 4.png" id="22_h236i"]
+[ext_resource type="Texture2D" uid="uid://diuwjqxj1tvkp" path="res://art/Ui/level/cleared!.png" id="25_ouj8p"]
+[ext_resource type="Theme" uid="uid://c37q7rv7x4x28" path="res://Theme/RemapButton.tres" id="26_eqp1b"]
 
 [node name="OverWorld" type="Node2D" node_paths=PackedStringArray("transition", "FirstLevel")]
 script = ExtResource("1_4f4d8")
@@ -53,6 +58,26 @@ texture = ExtResource("5_7idu1")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="back arrow" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = -1350.0
+offset_bottom = -693.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+focus_neighbor_left = NodePath("../flower1")
+focus_neighbor_right = NodePath("../flower3")
+texture_normal = ExtResource("4_sl6ql")
+texture_pressed = ExtResource("5_cgcc6")
+texture_hover = ExtResource("5_cgcc6")
+texture_disabled = ExtResource("5_cgcc6")
+texture_focused = ExtResource("5_cgcc6")
+script = ExtResource("6_d4kw1")
+
 [node name="flower1" type="TextureButton" parent="CanvasLayer" node_paths=PackedStringArray("transition", "parent") groups=["level"]]
 anchors_preset = 15
 anchor_right = 1.0
@@ -65,7 +90,9 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.6, 0.6)
 focus_neighbor_left = NodePath("../flower4")
+focus_neighbor_top = NodePath("../back arrow")
 focus_neighbor_right = NodePath("../flower2")
+focus_neighbor_bottom = NodePath("../back arrow")
 texture_normal = ExtResource("8_70ksy")
 texture_pressed = ExtResource("9_c3n0h")
 texture_hover = ExtResource("9_c3n0h")
@@ -99,15 +126,17 @@ stretch_mode = 4
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 464.0
-offset_top = 304.0
-offset_right = -806.0
-offset_bottom = -304.0
+offset_left = 479.0
+offset_top = 389.0
+offset_right = -791.0
+offset_bottom = -219.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.6, 0.6)
 focus_neighbor_left = NodePath("../flower1")
+focus_neighbor_top = NodePath("../back arrow")
 focus_neighbor_right = NodePath("../flower3")
+focus_neighbor_bottom = NodePath("../back arrow")
 texture_normal = ExtResource("10_5hwbc")
 texture_pressed = ExtResource("11_pcdno")
 texture_hover = ExtResource("11_pcdno")
@@ -150,7 +179,9 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.6, 0.6)
 focus_neighbor_left = NodePath("../flower2")
+focus_neighbor_top = NodePath("../back arrow")
 focus_neighbor_right = NodePath("../flower4")
+focus_neighbor_bottom = NodePath("../back arrow")
 texture_normal = ExtResource("5_r401p")
 texture_pressed = ExtResource("6_eofyg")
 texture_hover = ExtResource("6_eofyg")
@@ -193,9 +224,9 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 focus_neighbor_left = NodePath("../flower3")
-focus_neighbor_top = NodePath("start")
+focus_neighbor_top = NodePath("../back arrow")
 focus_neighbor_right = NodePath("../flower1")
-focus_neighbor_bottom = NodePath("start")
+focus_neighbor_bottom = NodePath("../back arrow")
 texture_normal = ExtResource("16_klbky")
 texture_pressed = ExtResource("17_q81r4")
 texture_hover = ExtResource("17_q81r4")
@@ -214,10 +245,10 @@ anchor_left = -0.655
 anchor_top = -2.58
 anchor_right = 8.157
 anchor_bottom = 2.557
-offset_left = 342.715
-offset_top = 1511.92
-offset_right = -3271.12
-offset_bottom = -532.168
+offset_left = 312.715
+offset_top = 925.92
+offset_right = -3301.12
+offset_bottom = -1118.17
 focus_neighbor_left = NodePath("../../flower3")
 focus_neighbor_right = NodePath("../../flower1")
 texture_normal = ExtResource("6_sc4kk")
@@ -260,16 +291,43 @@ stretch_mode = 4
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1217.0
-offset_top = 610.0
-offset_right = -303.0
-offset_bottom = -210.0
+offset_left = 1472.0
+offset_top = 519.0
+offset_right = -40.0
+offset_bottom = -304.0
 grow_horizontal = 2
 grow_vertical = 2
+rotation = 0.26529
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("21_5t34f")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="Label" type="TextureRect" parent="CanvasLayer" groups=["star"]]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1234.0
+offset_top = 549.0
+offset_right = -188.0
+offset_bottom = -302.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("25_ouj8p")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 1291.0
+offset_top = 619.0
+offset_right = 1449.0
+offset_bottom = 655.0
+theme = ExtResource("26_eqp1b")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "High Score
+"
 
 [node name="judges" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = 15
@@ -286,39 +344,10 @@ texture = ExtResource("22_68bd0")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="star2" type="TextureRect" parent="CanvasLayer" groups=["star"]]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1334.0
-offset_top = 555.0
-offset_right = -186.0
-offset_bottom = -265.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("21_5t34f")
-expand_mode = 1
-stretch_mode = 4
-
-[node name="star3" type="TextureRect" parent="CanvasLayer" groups=["star"]]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1440.0
-offset_top = 610.0
-offset_right = -80.0
-offset_bottom = -210.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("21_5t34f")
-expand_mode = 1
-stretch_mode = 4
-
 [node name="Transition" parent="CanvasLayer" instance=ExtResource("4_0j6et")]
 color = Color(0.843137, 0.878431, 0.670588, 1)
 
+[connection signal="pressed" from="CanvasLayer/back arrow" to="CanvasLayer/back arrow" method="_on_pressed"]
 [connection signal="focus_entered" from="CanvasLayer/flower1" to="CanvasLayer/flower1" method="_on_focusflower_entered"]
 [connection signal="focus_exited" from="CanvasLayer/flower1" to="CanvasLayer/flower1" method="_on_focusflowqer_exited"]
 [connection signal="pressed" from="CanvasLayer/flower1" to="CanvasLayer/flower1" method="_on_pressed"]
