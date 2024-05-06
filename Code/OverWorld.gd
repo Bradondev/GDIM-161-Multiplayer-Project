@@ -3,7 +3,7 @@ extends Node2D
 @export var transition: transitionNode
 signal  setupdone
 @export var FirstLevel: Control
-var GameData :SavedData
+var GameData 
 
 func _ready() -> void:
 	

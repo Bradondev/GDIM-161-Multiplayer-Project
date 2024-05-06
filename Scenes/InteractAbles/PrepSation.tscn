@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://babtox1ycle0v"]
+
+[ext_resource type="Texture2D" uid="uid://c00pwbkugh8na" path="res://art/food/Prep station.png" id="1_fga8m"]
+[ext_resource type="Script" path="res://Code/item/InterActAble.gd" id="1_x3cp7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thkrs"]
+size = Vector2(446, 389)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vyyoh"]
+size = Vector2(674, 556)
+
+[node name="Stove" type="StaticBody2D" node_paths=PackedStringArray("inter_act_area")]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_x3cp7")
+inter_act_area = NodePath("InterActArea")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fga8m")
+
+[node name="hitBox" type="CollisionShape2D" parent="."]
+position = Vector2(6, 57.5)
+shape = SubResource("RectangleShape2D_thkrs")
+
+[node name="InterActArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterActArea"]
+position = Vector2(1, 42)
+shape = SubResource("RectangleShape2D_vyyoh")

@@ -7,8 +7,10 @@
 radius = 63.0
 height = 126.0
 
-[node name="Player2" type="CharacterBody2D"]
+[node name="Player2" type="CharacterBody2D" node_paths=PackedStringArray("HoldItemSprite")]
 script = ExtResource("1_14yyl")
+PlayerType = "PlayerTwo"
+HoldItemSprite = NodePath("item icon")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(1, 0, 1, 1)
@@ -16,3 +18,7 @@ texture = ExtResource("2_tyujm")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_7xd8e")
+
+[node name="item icon" type="Sprite2D" parent="."]
+position = Vector2(-1, -62)
+scale = Vector2(0.25, 0.25)

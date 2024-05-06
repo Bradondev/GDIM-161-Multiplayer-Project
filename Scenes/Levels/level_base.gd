@@ -7,6 +7,6 @@ func _ready() -> void:
 	Transition.transition_in()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Called every frame. 'delta' iss the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

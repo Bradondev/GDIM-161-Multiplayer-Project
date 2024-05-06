@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b13e8y5ta270j"]
+[gd_scene load_steps=22 format=3 uid="uid://diex1v7ycromx"]
 
 [ext_resource type="Script" path="res://Code/main_menu.gd" id="1_5to2f"]
 [ext_resource type="Texture2D" uid="uid://buutlu5sacn03" path="res://art/Ui/start screen NO BUTTONS.png" id="2_fejxy"]
@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://derxsvjyftusd" path="res://art/Ui/new game.png" id="12_7mdu7"]
 [ext_resource type="Texture2D" uid="uid://b6j51eqfeahgh" path="res://art/Ui/new game hover.png" id="13_qv30i"]
 [ext_resource type="Texture2D" uid="uid://dw5tckxt1joye" path="res://art/Ui/new game overwrite popup.png" id="16_3p2kf"]
-[ext_resource type="Texture2D" uid="uid://ba6egkiixw1s6" path="res://art/Ui/im sure.png" id="17_6jws0"]
+[ext_resource type="Texture2D" uid="uid://ba6egkiixw1s6" path="res://art/Ui/level/im sure.png" id="17_1t6hh"]
 [ext_resource type="Texture2D" uid="uid://c4mot5sfxf6sg" path="res://art/Ui/in sure hover.png" id="18_jo66c"]
 [ext_resource type="Texture2D" uid="uid://2l3vmcn164mb" path="res://art/Ui/no go back.png" id="19_07dti"]
 [ext_resource type="Texture2D" uid="uid://4e1fudp086tq" path="res://art/Ui/no go back hover.png" id="20_0scus"]
@@ -325,7 +325,7 @@ size_flags_vertical = 3
 focus_neighbor_top = NodePath("../back")
 focus_neighbor_bottom = NodePath("../back")
 theme = ExtResource("2_o1ngd")
-texture_normal = ExtResource("17_6jws0")
+texture_normal = ExtResource("17_1t6hh")
 texture_pressed = ExtResource("18_jo66c")
 texture_hover = ExtResource("18_jo66c")
 texture_focused = ExtResource("18_jo66c")

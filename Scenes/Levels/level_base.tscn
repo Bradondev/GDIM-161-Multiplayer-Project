@@ -1,9 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://dnicrsufbul20"]
+[gd_scene load_steps=13 format=3 uid="uid://dnicrsufbul20"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_base.gd" id="1_2ibyv"]
 [ext_resource type="PackedScene" uid="uid://bg78qvtq5g8v" path="res://Scenes/player_1.tscn" id="1_2our2"]
 [ext_resource type="PackedScene" uid="uid://djfg44r7ydfxn" path="res://Scenes/player_2.tscn" id="2_knrl7"]
+[ext_resource type="Texture2D" uid="uid://dqkuknvup8pp5" path="res://art/food/Red Truck.png" id="3_miodf"]
 [ext_resource type="PackedScene" uid="uid://c0j8tgtgewtn2" path="res://transition.tscn" id="3_sktrj"]
+[ext_resource type="Texture2D" uid="uid://bmuynlhmy60gy" path="res://art/food/Tomato_512.PNG" id="5_j157m"]
+[ext_resource type="PackedScene" uid="uid://q82akbgxgsnp" path="res://Scenes/InteractAbles/Stove.tscn" id="7_xfdwp"]
+[ext_resource type="PackedScene" uid="uid://babtox1ycle0v" path="res://Scenes/InteractAbles/PrepSation.tscn" id="9_4vhhh"]
+[ext_resource type="PackedScene" uid="uid://dhsumpnl5nn26" path="res://Scenes/InteractAbles/SeedCrate.tscn" id="10_1fgj5"]
+[ext_resource type="PackedScene" uid="uid://bjklfnse13on0" path="res://Scenes/InteractAbles/framplot.tscn" id="10_7w2y3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpbge"]
 size = Vector2(1, 900)
@@ -15,8 +21,17 @@ size = Vector2(11.5001, 1614)
 script = ExtResource("1_2ibyv")
 Transition = NodePath("CanvasLayer/Transition")
 
+[node name="RedTruck" type="Sprite2D" parent="."]
+position = Vector2(506, 126)
+texture = ExtResource("3_miodf")
+
+[node name="Tomato512" type="Sprite2D" parent="."]
+position = Vector2(142, 179)
+scale = Vector2(0.330078, 0.317383)
+texture = ExtResource("5_j157m")
+
 [node name="Player1" parent="." instance=ExtResource("1_2our2")]
-position = Vector2(437, 417)
+position = Vector2(378, 454)
 
 [node name="Player2" parent="." instance=ExtResource("2_knrl7")]
 position = Vector2(1151, 423)
@@ -64,8 +79,24 @@ metadata/_edit_group_ = true
 position = Vector2(5.25003, 797)
 shape = SubResource("RectangleShape2D_l65gg")
 
+[node name="Stove3" parent="." instance=ExtResource("7_xfdwp")]
+position = Vector2(931, 134)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Transition" parent="CanvasLayer" instance=ExtResource("3_sktrj")]
 mouse_filter = 2
 color = Color(0.843137, 0.878431, 0.670588, 1)
+
+[node name="Stove" parent="." instance=ExtResource("9_4vhhh")]
+position = Vector2(1292, 172)
+
+[node name="Stove2" parent="." instance=ExtResource("10_1fgj5")]
+position = Vector2(616, 718)
+
+[node name="Stove4" parent="." instance=ExtResource("10_7w2y3")]
+position = Vector2(152, 450)
+
+[node name="Stove5" parent="." instance=ExtResource("10_7w2y3")]
+position = Vector2(150, 631)

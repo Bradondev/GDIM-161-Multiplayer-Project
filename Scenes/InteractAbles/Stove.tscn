@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://q82akbgxgsnp"]
+
+[ext_resource type="Texture2D" uid="uid://14i4rlwtamm0" path="res://art/food/Stove.png" id="1_8fwhf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thkrs"]
+size = Vector2(446, 389)
+
+[node name="Stove" type="StaticBody2D"]
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8fwhf")
+
+[node name="hitBox" type="CollisionShape2D" parent="."]
+position = Vector2(6, 57.5)
+shape = SubResource("RectangleShape2D_thkrs")
+
+[node name="InterActArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba6egkiixw1s6"
-path="res://.godot/imported/im sure.png-a8d8ab33bf172dc70bf9d090a5e32183.ctex"
+uid="uid://dm33x01gqt1go"
+path="res://.godot/imported/mature basil plant.png-2a82386d5f75a445b003a5ee42df7e40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Ui/im sure.png"
-dest_files=["res://.godot/imported/im sure.png-a8d8ab33bf172dc70bf9d090a5e32183.ctex"]
+source_file="res://art/food/mature basil plant.png"
+dest_files=["res://.godot/imported/mature basil plant.png-2a82386d5f75a445b003a5ee42df7e40.ctex"]
 
 [params]
 
