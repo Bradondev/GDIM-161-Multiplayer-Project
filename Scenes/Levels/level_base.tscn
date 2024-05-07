@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://dnicrsufbul20"]
+[gd_scene load_steps=12 format=3 uid="uid://dnicrsufbul20"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_base.gd" id="1_2ibyv"]
 [ext_resource type="PackedScene" uid="uid://bg78qvtq5g8v" path="res://Scenes/player_1.tscn" id="1_2our2"]
 [ext_resource type="PackedScene" uid="uid://djfg44r7ydfxn" path="res://Scenes/player_2.tscn" id="2_knrl7"]
 [ext_resource type="PackedScene" uid="uid://c0j8tgtgewtn2" path="res://transition.tscn" id="3_sktrj"]
-[ext_resource type="Texture2D" uid="uid://bmuynlhmy60gy" path="res://art/food/Tomato_512.PNG" id="5_j157m"]
 [ext_resource type="PackedScene" uid="uid://q82akbgxgsnp" path="res://Scenes/InteractAbles/Stove.tscn" id="7_xfdwp"]
 [ext_resource type="PackedScene" uid="uid://babtox1ycle0v" path="res://Scenes/InteractAbles/PrepSation.tscn" id="9_4vhhh"]
 [ext_resource type="PackedScene" uid="uid://dhsumpnl5nn26" path="res://Scenes/InteractAbles/SeedCrate.tscn" id="10_1fgj5"]
@@ -20,11 +19,6 @@ size = Vector2(11.5001, 1614)
 [node name="LevelBase" type="Node2D" node_paths=PackedStringArray("Transition")]
 script = ExtResource("1_2ibyv")
 Transition = NodePath("CanvasLayer/Transition")
-
-[node name="Tomato512" type="Sprite2D" parent="."]
-position = Vector2(142, 179)
-scale = Vector2(0.330078, 0.317383)
-texture = ExtResource("5_j157m")
 
 [node name="Player1" parent="." instance=ExtResource("1_2our2")]
 position = Vector2(378, 454)
@@ -86,7 +80,7 @@ mouse_filter = 2
 color = Color(0.843137, 0.878431, 0.670588, 1)
 
 [node name="Stove" parent="." instance=ExtResource("9_4vhhh")]
-position = Vector2(1292, 172)
+position = Vector2(1263, 135)
 
 [node name="Stove2" parent="." instance=ExtResource("10_1fgj5")]
 position = Vector2(616, 718)

@@ -6,15 +6,20 @@ extends InterActAble
 
 
 func InterAct():
+	if Items.size() == 3:
+		SendItem()
+		return	
 	if 	!CurrentBody.CurrentItem:
 		return
+	
+	
 	if CurrentBody.CurrentItem.CanBeSent:
 		Items.append( CurrentBody.CurrentItem)
 		print_debug("added tyhing to truck" , Items)
 		CurrentBody.DropItem()
 		UpdateIcon()
 		return
-
+	
 		
 		
 	
@@ -34,4 +39,5 @@ func UpdateIcon():
 		icons[temp].texture= item.Icon
 		temp+=1
 func SendItem():
+	Items.clear()
 	UpdateIcon()
