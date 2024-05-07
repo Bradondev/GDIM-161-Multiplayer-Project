@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://Scenes/Levels/level_base.gd" id="1_2ibyv"]
 [ext_resource type="PackedScene" uid="uid://bg78qvtq5g8v" path="res://Scenes/player_1.tscn" id="1_2our2"]
 [ext_resource type="PackedScene" uid="uid://djfg44r7ydfxn" path="res://Scenes/player_2.tscn" id="2_knrl7"]
-[ext_resource type="Texture2D" uid="uid://dqkuknvup8pp5" path="res://art/food/Red Truck.png" id="3_miodf"]
 [ext_resource type="PackedScene" uid="uid://c0j8tgtgewtn2" path="res://transition.tscn" id="3_sktrj"]
 [ext_resource type="Texture2D" uid="uid://bmuynlhmy60gy" path="res://art/food/Tomato_512.PNG" id="5_j157m"]
 [ext_resource type="PackedScene" uid="uid://q82akbgxgsnp" path="res://Scenes/InteractAbles/Stove.tscn" id="7_xfdwp"]
 [ext_resource type="PackedScene" uid="uid://babtox1ycle0v" path="res://Scenes/InteractAbles/PrepSation.tscn" id="9_4vhhh"]
 [ext_resource type="PackedScene" uid="uid://dhsumpnl5nn26" path="res://Scenes/InteractAbles/SeedCrate.tscn" id="10_1fgj5"]
 [ext_resource type="PackedScene" uid="uid://bjklfnse13on0" path="res://Scenes/InteractAbles/framplot.tscn" id="10_7w2y3"]
+[ext_resource type="PackedScene" uid="uid://dmtw43q7lj1ff" path="res://Scenes/InteractAbles/Truck.tscn" id="10_h1gp7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpbge"]
 size = Vector2(1, 900)
@@ -20,10 +20,6 @@ size = Vector2(11.5001, 1614)
 [node name="LevelBase" type="Node2D" node_paths=PackedStringArray("Transition")]
 script = ExtResource("1_2ibyv")
 Transition = NodePath("CanvasLayer/Transition")
-
-[node name="RedTruck" type="Sprite2D" parent="."]
-position = Vector2(506, 126)
-texture = ExtResource("3_miodf")
 
 [node name="Tomato512" type="Sprite2D" parent="."]
 position = Vector2(142, 179)
@@ -100,3 +96,7 @@ position = Vector2(152, 450)
 
 [node name="Stove5" parent="." instance=ExtResource("10_7w2y3")]
 position = Vector2(150, 631)
+
+[node name="truck" parent="." instance=ExtResource("10_h1gp7")]
+position = Vector2(577, 125)
+scale = Vector2(0.8, 0.8)

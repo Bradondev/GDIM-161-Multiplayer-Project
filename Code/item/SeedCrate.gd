@@ -1,15 +1,19 @@
 extends InterActAble
 
 
-@export var SeedType: ingredient
-@export var SeedIcon: Texture2D
+@export var SeedType: Seed
+
 
 func InterAct():
 	if CurrentBody.CurrentItem == SeedType:
 		CurrentBody.DropItem()
 		return
-	SeedType.Icon = SeedIcon
-	CurrentBody.PickUpItem(SeedType)
+		
+	if !CurrentBody.CurrentItem:
+		CurrentBody.PickUpItem(SeedType)
+		return
+	
+	
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if CurrentBody:

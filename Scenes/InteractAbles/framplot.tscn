@@ -41,8 +41,6 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_1v1f8")
 offset = Vector2(0, -200)
 
-[node name="Timer" type="Timer" parent="."]
-
 [node name="Label" type="RichTextLabel" parent="."]
 visible = false
 offset_left = 28.0

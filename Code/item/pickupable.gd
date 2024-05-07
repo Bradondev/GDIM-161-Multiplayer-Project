@@ -1,13 +1,7 @@
-extends InterActAble
+extends Resource
 class_name  PickUpable
 
 @export var Name: String
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+@export var Icon:Texture2D
+@export var IsSeed :bool =false
+@export var CanBeSent: bool = false

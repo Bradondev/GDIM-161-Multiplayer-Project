@@ -5,8 +5,9 @@
 
 [resource]
 script = ExtResource("2_0v71i")
-Name = "Tomato"
-Icon = ExtResource("1_t4exb")
 Diet = "Vegen"
 IsSpice = 0
 IsHot = 0
+Name = "Tomato"
+Icon = ExtResource("1_t4exb")
+IsSeed = false

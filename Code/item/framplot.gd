@@ -1,36 +1,45 @@
 extends InterActAble
 
 
-@export var SeedType: ingredient
+@export var SeedType: Seed
 @export var plant: Sprite2D 
 @export var label: RichTextLabel 
 var Ready :bool = false
 #var tween :Tween 
 
 func InterAct():
-	if CurrentBody.CurrentItem:
+	
+	
+	if SeedType and Ready and !CurrentBody.CurrentItem:
+		CurrentBody.PickUpItem(SeedType.SeedType)
+		plant.scale = Vector2(.1,.1)
+		ShowLabel(false)
+		return
+	
+	if !CurrentBody.CurrentItem:
+		return
+		
+	if CurrentBody.CurrentItem.IsSeed:
 		SeedType = CurrentBody.CurrentItem
 		CurrentBody.DropItem()
-		plant.visible = true
 		Growplant()
 		return
 		
-	if SeedType and Ready:
-			CurrentBody.PickUpItem(SeedType)
-			plant.scale = Vector2(.1,.1)
-			plant.visible = false
-			ShowLabel(false)
-			return
+	
+		
+	
 func _unhandled_input(event: InputEvent) -> void:
 	if CurrentBody:
 		if event.is_action_pressed("PlayerOne_Interact"):
 			InterAct()
 
 func Growplant():
+	plant.visible = true
 	var tween  = get_tree().create_tween()
 	tween.tween_property(plant, "scale", Vector2(.6,.6), 5)
 	await  tween.finished
 	ShowLabel(true)
 func  ShowLabel(canbeseen):
+	plant.visible = canbeseen
 	label.visible = canbeseen
 	Ready = canbeseen

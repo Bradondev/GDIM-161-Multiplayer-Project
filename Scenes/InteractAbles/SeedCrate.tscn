@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhsumpnl5nn26"]
+[gd_scene load_steps=7 format=3 uid="uid://dhsumpnl5nn26"]
 
 [ext_resource type="Script" path="res://Code/item/SeedCrate.gd" id="1_7jlrr"]
 [ext_resource type="Texture2D" uid="uid://vtn6re27j38l" path="res://art/food/Blank seed crate.png" id="1_qucr8"]
-[ext_resource type="Resource" uid="uid://ctb5a4pntvmpj" path="res://Resource/Tomato.tres" id="2_bp1wg"]
-[ext_resource type="Texture2D" uid="uid://bgt7qw3u33044" path="res://art/food/Seed.png" id="3_hltdi"]
+[ext_resource type="Resource" uid="uid://d1uccolequdcw" path="res://Resource/TomatoSeed.tres" id="2_7c2uw"]
 [ext_resource type="Texture2D" uid="uid://bmuynlhmy60gy" path="res://art/food/Tomato_512.PNG" id="3_mcb5i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thkrs"]
@@ -15,8 +14,7 @@ size = Vector2(674, 556)
 [node name="SeedCrate" type="StaticBody2D" node_paths=PackedStringArray("inter_act_area")]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_7jlrr")
-SeedType = ExtResource("2_bp1wg")
-SeedIcon = ExtResource("3_hltdi")
+SeedType = ExtResource("2_7c2uw")
 inter_act_area = NodePath("InterActArea")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -40,8 +38,8 @@ scale = Vector2(0.473, 0.5)
 texture = ExtResource("3_mcb5i")
 
 [node name="Tomato513" type="Sprite2D" parent="."]
-position = Vector2(132, 48)
+position = Vector2(132.24, 47.8984)
 rotation = -0.39968
-scale = Vector2(0.350937, 0.387347)
+scale = Vector2(0.349918, 0.387347)
 skew = 0.287979
 texture = ExtResource("3_mcb5i")
