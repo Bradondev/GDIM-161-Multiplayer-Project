@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="Repices" load_steps=13 format=3 uid="uid://blwfsybhtd2ax"]
+
+[ext_resource type="Texture2D" uid="uid://h7gkvku0vrrc" path="res://art/food/Tomato Basil Soup.png" id="1_6aqjn"]
+[ext_resource type="Texture2D" uid="uid://by808hh6b8i68" path="res://art/food/Un Prepped broth.png" id="2_uqx3l"]
+[ext_resource type="Texture2D" uid="uid://bmfts3cfapa82" path="res://art/food/Open Can of Soup.png" id="3_hs3w4"]
+[ext_resource type="Script" path="res://Code/food/repices.gd" id="3_tsnls"]
+[ext_resource type="Script" path="res://Code/food/ingredients.gd" id="4_v0lsd"]
+[ext_resource type="Texture2D" uid="uid://cc0hht2gejx0t" path="res://art/food/UnPrepped Basil.png" id="5_cjbwi"]
+[ext_resource type="Texture2D" uid="uid://dy6tjdgvm7d2i" path="res://art/food/Prepped Basil.png" id="6_x2q8c"]
+[ext_resource type="Texture2D" uid="uid://bmuynlhmy60gy" path="res://art/food/Tomato_512.PNG" id="7_6w5xm"]
+[ext_resource type="Texture2D" uid="uid://wcmeg3jiemok" path="res://art/food/Cut Tomatoes.png" id="8_7eynr"]
+
+[sub_resource type="Resource" id="Resource_vbk1g"]
+script = ExtResource("4_v0lsd")
+Diet = "Meat"
+IsSpice = 0
+IsHot = 1
+IsPrepped = true
+CanBePreped = true
+PrepedIcon = ExtResource("3_hs3w4")
+Name = "Soupbroth"
+Icon = ExtResource("2_uqx3l")
+IsSeed = false
+CanBeSent = false
+IsAnIngredient = true
+
+[sub_resource type="Resource" id="Resource_670xk"]
+script = ExtResource("4_v0lsd")
+Diet = "Vegen"
+IsSpice = 0
+IsHot = 0
+IsPrepped = true
+CanBePreped = true
+PrepedIcon = ExtResource("6_x2q8c")
+Name = "Basil"
+Icon = ExtResource("5_cjbwi")
+IsSeed = false
+CanBeSent = true
+IsAnIngredient = true
+
+[sub_resource type="Resource" id="Resource_nx3he"]
+script = ExtResource("4_v0lsd")
+Diet = "Vegen"
+IsSpice = 0
+IsHot = 0
+IsPrepped = true
+CanBePreped = false
+PrepedIcon = ExtResource("8_7eynr")
+Name = "Tomato"
+Icon = ExtResource("7_6w5xm")
+IsSeed = false
+CanBeSent = true
+IsAnIngredient = true
+
+[resource]
+script = ExtResource("3_tsnls")
+ingredients = Array[ExtResource("4_v0lsd")]([SubResource("Resource_vbk1g"), SubResource("Resource_670xk"), SubResource("Resource_nx3he")])
+Name = "TomatoBasilSoup"
+Icon = ExtResource("1_6aqjn")
+IsSeed = false
+CanBeSent = false
+IsAnIngredient = false

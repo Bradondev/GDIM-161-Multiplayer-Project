@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c00pwbkugh8na"
-path="res://.godot/imported/Prep station.png-63216ee193b05c38c4baf1ae19c6d316.ctex"
+uid="uid://dbsl2tns6xsdc"
+path="res://.godot/imported/TEMP TRASH.png-d061ef9c304764c1b404a7d012e49371.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/food/Prep station.png"
-dest_files=["res://.godot/imported/Prep station.png-63216ee193b05c38c4baf1ae19c6d316.ctex"]
+source_file="res://art/food/TEMP TRASH.png"
+dest_files=["res://.godot/imported/TEMP TRASH.png-d061ef9c304764c1b404a7d012e49371.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bjklfnse13on0"]
 
-[ext_resource type="Texture2D" uid="uid://dvugo56nivato" path="res://art/food/Farm Plot.png" id="1_5jo1k"]
 [ext_resource type="Script" path="res://Code/item/framplot.gd" id="1_u0bhg"]
+[ext_resource type="Texture2D" uid="uid://dvugo56nivato" path="res://art/Objects/Farm Plot.png" id="2_00vj4"]
 [ext_resource type="Texture2D" uid="uid://bonkvb3kb866l" path="res://art/food/plant.PNG" id="3_1v1f8"]
 [ext_resource type="FontFile" uid="uid://8pygeyu6tqig" path="res://Theme/Manjari-Regular.ttf" id="4_usqjt"]
 
@@ -9,7 +9,7 @@
 size = Vector2(270, 238)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fkefc"]
-size = Vector2(423.568, 278.208)
+size = Vector2(402.309, 208.927)
 
 [node name="fram" type="StaticBody2D" node_paths=PackedStringArray("plant", "label", "inter_act_area")]
 scale = Vector2(0.5, 0.5)
@@ -21,16 +21,17 @@ inter_act_area = NodePath("InterActArea2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(7, -7)
 shape = SubResource("RectangleShape2D_u4sbu")
+disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_5jo1k")
+texture = ExtResource("2_00vj4")
 
 [node name="InterActArea2" type="Area2D" parent="."]
 collision_layer = 8
 collision_mask = 8
 
 [node name="hitBox" type="CollisionShape2D" parent="InterActArea2"]
-position = Vector2(3, 8.22329)
+position = Vector2(2.86102e-06, -5)
 scale = Vector2(1.22294, 1.23488)
 shape = SubResource("RectangleShape2D_fkefc")
 

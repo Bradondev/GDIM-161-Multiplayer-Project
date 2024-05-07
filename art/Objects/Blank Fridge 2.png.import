@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvugo56nivato"
-path="res://.godot/imported/Farm Plot.png-cb2e910b7421ac69a440ee9e88907f7b.ctex"
+uid="uid://bbf2u72s50yra"
+path="res://.godot/imported/Blank Fridge 2.png-ac468a8b200a2ff271b7ec30c3450db2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/food/Farm Plot.png"
-dest_files=["res://.godot/imported/Farm Plot.png-cb2e910b7421ac69a440ee9e88907f7b.ctex"]
+source_file="res://art/Objects/Blank Fridge 2.png"
+dest_files=["res://.godot/imported/Blank Fridge 2.png-ac468a8b200a2ff271b7ec30c3450db2.ctex"]
 
 [params]
 

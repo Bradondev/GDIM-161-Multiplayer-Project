@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="ingredient" load_steps=3 format=3 uid="uid://ctb5a4pntvmpj"]
+[gd_resource type="Resource" script_class="ingredient" load_steps=4 format=3 uid="uid://ctb5a4pntvmpj"]
 
 [ext_resource type="Texture2D" uid="uid://bmuynlhmy60gy" path="res://art/food/Tomato_512.PNG" id="1_ahdt0"]
 [ext_resource type="Script" path="res://Code/food/ingredients.gd" id="2_ddund"]
+[ext_resource type="Texture2D" uid="uid://wcmeg3jiemok" path="res://art/food/Cut Tomatoes.png" id="2_du0xn"]
 
 [resource]
 script = ExtResource("2_ddund")
@@ -9,9 +10,11 @@ Diet = "Vegen"
 IsSpice = 0
 IsHot = 0
 IsPrepped = false
-CanBePreped = false
+CanBePreped = true
+PrepedIcon = ExtResource("2_du0xn")
 Name = "Tomato"
 Icon = ExtResource("1_ahdt0")
 IsSeed = false
 CanBeSent = true
 IsAnIngredient = true
+CanBeCooked = false

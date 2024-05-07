@@ -9,6 +9,8 @@ extends InterActAble
 #var tween :Tween 
 
 func InterAct():
+	if CurrentBody.speed == 0:
+		return
 	var CurrentItem = CurrentBody.CurrentItem
 	
 	if !CurrentItem:
@@ -31,7 +33,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func  StartPrepping():
 	ShowLabel(true)
-	progress_bar.texture_progress = ItemToPrep.PrepedIcon
+	CurrentBody.speed = 0
+	progress_bar.texture_progress = ItemToPrep.Icon
 	var tween  = get_tree().create_tween()
 	tween.tween_property(progress_bar, "value", 100, 4)
 	await  tween.finished
@@ -39,9 +42,10 @@ func  StartPrepping():
 	var PreppedItem = ItemToPrep.duplicate(true)
 	PreppedItem.Icon = PreppedItem.PrepedIcon
 	PreppedItem.IsPrepped = true
+	PreppedItem.CanBeCooked = true
 	print_debug(CurrentBody)
 	CurrentBody.PickUpItem(PreppedItem)
-
+	CurrentBody.speed = 400
 func  ShowLabel(canbeseen):
 	label.visible = canbeseen
 	progress_bar.visible = canbeseen

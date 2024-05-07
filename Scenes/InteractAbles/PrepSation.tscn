@@ -1,15 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://babtox1ycle0v"]
+[gd_scene load_steps=8 format=3 uid="uid://babtox1ycle0v"]
 
 [ext_resource type="Script" path="res://Code/item/PrepTable.gd" id="1_cg5io"]
-[ext_resource type="Texture2D" uid="uid://c00pwbkugh8na" path="res://art/food/Prep station.png" id="1_fga8m"]
+[ext_resource type="Texture2D" uid="uid://c00pwbkugh8na" path="res://art/Objects/Prep station.png" id="2_tkpcd"]
 [ext_resource type="FontFile" uid="uid://8pygeyu6tqig" path="res://Theme/Manjari-Regular.ttf" id="3_c45vu"]
+[ext_resource type="Texture2D" uid="uid://qpfg0x41wrop" path="res://art/food/Circle.png" id="4_6ht3p"]
 [ext_resource type="Texture2D" uid="uid://bmuynlhmy60gy" path="res://art/food/Tomato_512.PNG" id="4_a1fq8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thkrs"]
 size = Vector2(446, 389)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vyyoh"]
-size = Vector2(674, 556)
+size = Vector2(500, 458)
 
 [node name="Prep" type="StaticBody2D" node_paths=PackedStringArray("label", "progress_bar", "inter_act_area")]
 scale = Vector2(0.5, 0.5)
@@ -19,7 +20,7 @@ progress_bar = NodePath("ProgressBar")
 inter_act_area = NodePath("InterActArea")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_fga8m")
+texture = ExtResource("2_tkpcd")
 
 [node name="hitBox" type="CollisionShape2D" parent="."]
 position = Vector2(6, 57.5)
@@ -30,14 +31,14 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InterActArea"]
-position = Vector2(1, 42)
+position = Vector2(-6, -7)
 shape = SubResource("RectangleShape2D_vyyoh")
 
 [node name="Label" type="RichTextLabel" parent="."]
 visible = false
-offset_left = 196.0
+offset_left = -646.0
 offset_top = -414.0
-offset_right = 606.0
+offset_right = -236.0
 offset_bottom = -200.0
 theme_override_fonts/normal_font = ExtResource("3_c45vu")
 theme_override_font_sizes/normal_font_size = 96
@@ -47,10 +48,11 @@ fit_content = true
 
 [node name="ProgressBar" type="TextureProgressBar" parent="."]
 visible = false
-offset_left = 290.0
+offset_left = -552.0
 offset_top = -192.0
-offset_right = 802.0
+offset_right = -40.0
 offset_bottom = 320.0
 scale = Vector2(0.5, 0.5)
 fill_mode = 4
+texture_under = ExtResource("4_6ht3p")
 texture_progress = ExtResource("4_a1fq8")

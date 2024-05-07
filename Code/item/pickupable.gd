@@ -6,3 +6,4 @@ class_name  PickUpable
 @export var IsSeed :bool =false
 @export var CanBeSent: bool = false
 @export var IsAnIngredient :bool = false 
+@export var  CanBeCooked : bool = false

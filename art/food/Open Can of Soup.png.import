@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vtn6re27j38l"
-path="res://.godot/imported/Blank seed crate.png-7598db9743b81f68b4cef512850088b3.ctex"
+uid="uid://bmfts3cfapa82"
+path="res://.godot/imported/Open Can of Soup.png-ed0b56a9acbde4582f44465d25b9383d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/food/Blank seed crate.png"
-dest_files=["res://.godot/imported/Blank seed crate.png-7598db9743b81f68b4cef512850088b3.ctex"]
+source_file="res://art/food/Open Can of Soup.png"
+dest_files=["res://.godot/imported/Open Can of Soup.png-ed0b56a9acbde4582f44465d25b9383d.ctex"]
 
 [params]
 

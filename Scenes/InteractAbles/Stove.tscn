@@ -1,20 +1,78 @@
-[gd_scene load_steps=3 format=3 uid="uid://q82akbgxgsnp"]
+[gd_scene load_steps=9 format=3 uid="uid://q82akbgxgsnp"]
 
-[ext_resource type="Texture2D" uid="uid://14i4rlwtamm0" path="res://art/food/Stove.png" id="1_8fwhf"]
+[ext_resource type="Script" path="res://Code/item/Stove.gd" id="1_33n4v"]
+[ext_resource type="Resource" uid="uid://blwfsybhtd2ax" path="res://Code/food/TomatoBasilSoup.tres" id="2_5x00n"]
+[ext_resource type="Texture2D" uid="uid://14i4rlwtamm0" path="res://art/Objects/Stove.png" id="2_p5j0s"]
+[ext_resource type="Texture2D" uid="uid://qpfg0x41wrop" path="res://art/food/Circle.png" id="4_4kxot"]
+[ext_resource type="Texture2D" uid="uid://bmuynlhmy60gy" path="res://art/food/Tomato_512.PNG" id="4_8kpve"]
+[ext_resource type="FontFile" uid="uid://8pygeyu6tqig" path="res://Theme/Manjari-Regular.ttf" id="5_0vd5y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thkrs"]
 size = Vector2(446, 389)
 
-[node name="Stove" type="StaticBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltpib"]
+size = Vector2(452, 112)
+
+[node name="Stove" type="StaticBody2D" node_paths=PackedStringArray("label", "progress_bar", "IconContainer", "inter_act_area")]
 scale = Vector2(0.5, 0.5)
+script = ExtResource("1_33n4v")
+possibleReices = Array[Resource("res://Code/food/repices.gd")]([ExtResource("2_5x00n")])
+label = NodePath("Label")
+progress_bar = NodePath("ProgressBar")
+IconContainer = NodePath("boc")
+inter_act_area = NodePath("InterActArea")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_8fwhf")
+texture = ExtResource("2_p5j0s")
 
 [node name="hitBox" type="CollisionShape2D" parent="."]
-position = Vector2(6, 57.5)
+position = Vector2(6, 28)
 shape = SubResource("RectangleShape2D_thkrs")
 
 [node name="InterActArea" type="Area2D" parent="."]
 collision_layer = 8
 collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterActArea"]
+position = Vector2(6, 248)
+shape = SubResource("RectangleShape2D_ltpib")
+
+[node name="boc" type="HBoxContainer" parent="."]
+offset_left = -220.0
+offset_top = -212.0
+offset_right = 194.0
+offset_bottom = 8.0
+scale = Vector2(0.2, 0.2)
+
+[node name="TextureRect" type="TextureRect" parent="boc"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="boc"]
+layout_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="boc"]
+layout_mode = 2
+
+[node name="ProgressBar" type="TextureProgressBar" parent="."]
+visible = false
+offset_left = 274.0
+offset_top = -288.0
+offset_right = 786.0
+offset_bottom = 224.0
+scale = Vector2(0.5, 0.5)
+fill_mode = 4
+texture_under = ExtResource("4_4kxot")
+texture_progress = ExtResource("4_8kpve")
+
+[node name="Label" type="RichTextLabel" parent="."]
+visible = false
+z_index = 1
+offset_left = 204.0
+offset_top = 20.0
+offset_right = 614.0
+offset_bottom = 234.0
+theme_override_fonts/normal_font = ExtResource("5_0vd5y")
+theme_override_font_sizes/normal_font_size = 96
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1][center]  Cooking"
+fit_content = true

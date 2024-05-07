@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://14i4rlwtamm0"
-path="res://.godot/imported/Stove.png-41b2c96a0e178cd6a1a241da840f3308.ctex"
+path="res://.godot/imported/Stove.png-0fca10550d17f539199e8dcce2d4a815.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/food/Stove.png"
-dest_files=["res://.godot/imported/Stove.png-41b2c96a0e178cd6a1a241da840f3308.ctex"]
+source_file="res://art/Objects/Stove.png"
+dest_files=["res://.godot/imported/Stove.png-0fca10550d17f539199e8dcce2d4a815.ctex"]
 
 [params]
 

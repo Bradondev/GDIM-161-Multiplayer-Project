@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dnicrsufbul20"]
+[gd_scene load_steps=18 format=3 uid="uid://dnicrsufbul20"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_base.gd" id="1_2ibyv"]
 [ext_resource type="PackedScene" uid="uid://bg78qvtq5g8v" path="res://Scenes/player_1.tscn" id="1_2our2"]
@@ -11,6 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://bjklfnse13on0" path="res://Scenes/InteractAbles/framplot.tscn" id="10_7w2y3"]
 [ext_resource type="Resource" uid="uid://g5phjwsg3ymc" path="res://Resource/seeds/BasilSeed.tres" id="10_f7hcd"]
 [ext_resource type="PackedScene" uid="uid://dmtw43q7lj1ff" path="res://Scenes/InteractAbles/Truck.tscn" id="10_h1gp7"]
+[ext_resource type="PackedScene" uid="uid://dbj6yjbsd0a5t" path="res://Scenes/InteractAbles/frig.tscn" id="12_3wmcu"]
+[ext_resource type="Resource" uid="uid://ctb5a4pntvmpj" path="res://Resource/ingredients/Tomato.tres" id="13_ce8ik"]
+[ext_resource type="Resource" uid="uid://da0fmypn5lm81" path="res://Resource/ingredients/Soupbroth.tres" id="14_ftd6i"]
+[ext_resource type="PackedScene" uid="uid://dm2puwp3hqmgg" path="res://Scenes/InteractAbles/TrashCan.tscn" id="15_ijq7m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpbge"]
 size = Vector2(1, 900)
@@ -22,11 +26,24 @@ size = Vector2(11.5001, 1614)
 script = ExtResource("1_2ibyv")
 Transition = NodePath("CanvasLayer/Transition")
 
+[node name="Grass" type="ColorRect" parent="."]
+offset_right = 802.0
+offset_bottom = 904.0
+color = Color(0.352941, 0.592157, 0.458824, 1)
+
+[node name="Grass2" type="ColorRect" parent="."]
+offset_left = 802.0
+offset_right = 1604.0
+offset_bottom = 904.0
+color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+
 [node name="Player1" parent="." instance=ExtResource("1_2our2")]
-position = Vector2(378, 454)
+z_index = 1
+position = Vector2(408, 630)
 
 [node name="Player2" parent="." instance=ExtResource("2_knrl7")]
-position = Vector2(1151, 423)
+z_index = 1
+position = Vector2(1090, 507)
 CurrentItem = ExtResource("4_gipwi")
 
 [node name="walls" type="Node2D" parent="."]
@@ -73,31 +90,45 @@ position = Vector2(5.25003, 797)
 shape = SubResource("RectangleShape2D_l65gg")
 
 [node name="Stove3" parent="." instance=ExtResource("7_xfdwp")]
-position = Vector2(931, 134)
+position = Vector2(1222, 156)
+
+[node name="prep" parent="." instance=ExtResource("9_4vhhh")]
+position = Vector2(1362, 768)
+
+[node name="Crate" parent="." instance=ExtResource("10_1fgj5")]
+position = Vector2(128, 628)
+
+[node name="Stove4" parent="." instance=ExtResource("10_7w2y3")]
+position = Vector2(653, 739)
+
+[node name="Stove5" parent="." instance=ExtResource("10_7w2y3")]
+position = Vector2(653, 440)
+
+[node name="truck" parent="." instance=ExtResource("10_h1gp7")]
+position = Vector2(571, 160)
+scale = Vector2(0.8, 0.8)
+
+[node name="SeedCrate" parent="." instance=ExtResource("10_1fgj5")]
+position = Vector2(131, 376)
+SeedType = ExtResource("10_f7hcd")
+
+[node name="fridge" parent="." instance=ExtResource("12_3wmcu")]
+position = Vector2(908, 752)
+Type = ExtResource("13_ce8ik")
+
+[node name="fridge2" parent="." instance=ExtResource("12_3wmcu")]
+position = Vector2(902, 485)
+Type = ExtResource("4_gipwi")
+
+[node name="fridge3" parent="." instance=ExtResource("12_3wmcu")]
+position = Vector2(898, 215)
+Type = ExtResource("14_ftd6i")
+
+[node name="trashCan" parent="." instance=ExtResource("15_ijq7m")]
+position = Vector2(1488, 465)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Transition" parent="CanvasLayer" instance=ExtResource("3_sktrj")]
 mouse_filter = 2
 color = Color(0.843137, 0.878431, 0.670588, 1)
-
-[node name="prep" parent="." instance=ExtResource("9_4vhhh")]
-position = Vector2(1263, 135)
-
-[node name="Crate" parent="." instance=ExtResource("10_1fgj5")]
-position = Vector2(658, 771)
-
-[node name="Stove4" parent="." instance=ExtResource("10_7w2y3")]
-position = Vector2(146, 288)
-
-[node name="Stove5" parent="." instance=ExtResource("10_7w2y3")]
-position = Vector2(145, 526)
-
-[node name="truck" parent="." instance=ExtResource("10_h1gp7")]
-position = Vector2(580, 176)
-scale = Vector2(0.8, 0.8)
-
-[node name="SeedCrate" parent="." instance=ExtResource("10_1fgj5")]
-position = Vector2(214, 768)
-SeedType = ExtResource("10_f7hcd")

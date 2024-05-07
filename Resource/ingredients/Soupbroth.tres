@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ingredient" load_steps=4 format=3 uid="uid://da0fmypn5lm81"]
+
+[ext_resource type="Texture2D" uid="uid://by808hh6b8i68" path="res://art/food/Un Prepped broth.png" id="1_6ea6a"]
+[ext_resource type="Texture2D" uid="uid://bmfts3cfapa82" path="res://art/food/Open Can of Soup.png" id="2_xsuux"]
+[ext_resource type="Script" path="res://Code/food/ingredients.gd" id="3_7yo16"]
+
+[resource]
+script = ExtResource("3_7yo16")
+Diet = "Meat"
+IsSpice = 0
+IsHot = 1
+IsPrepped = false
+CanBePreped = true
+PrepedIcon = ExtResource("2_xsuux")
+Name = "Soupbroth"
+Icon = ExtResource("1_6ea6a")
+IsSeed = false
+CanBeSent = false
+IsAnIngredient = true
