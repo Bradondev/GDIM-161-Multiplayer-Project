@@ -8,3 +8,7 @@ class_name ingredient
 @export_enum("Not Spicy", "Spicy") var IsSpice:int
 @export_enum("Cold","Hot") var IsHot: int
 
+@export var IsPrepped :bool = false
+
+@export var CanBePreped :bool = false
+@export var PrepedIcon : Texture2D

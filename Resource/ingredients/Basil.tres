@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ingredient" load_steps=4 format=3 uid="uid://cscspajefkqpy"]
+
+[ext_resource type="Script" path="res://Code/food/ingredients.gd" id="1_du7l6"]
+[ext_resource type="Texture2D" uid="uid://cc0hht2gejx0t" path="res://art/food/UnPrepped Basil.png" id="1_xb384"]
+[ext_resource type="Texture2D" uid="uid://dy6tjdgvm7d2i" path="res://art/food/Prepped Basil.png" id="2_ptd0a"]
+
+[resource]
+script = ExtResource("1_du7l6")
+Diet = "Vegen"
+IsSpice = 0
+IsHot = 0
+IsPrepped = false
+CanBePreped = true
+PrepedIcon = ExtResource("2_ptd0a")
+Name = "Basil"
+Icon = ExtResource("1_xb384")
+IsSeed = false
+CanBeSent = true
+IsAnIngredient = true

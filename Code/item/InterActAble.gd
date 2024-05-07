@@ -17,6 +17,7 @@ func _physics_process(delta: float) -> void:
 
 func PlayerEnteredArea(body):
 	CanInterAct = true
+	print_debug(body)
 	CurrentBody = body
 	
 func PlayerExitedArea(body):

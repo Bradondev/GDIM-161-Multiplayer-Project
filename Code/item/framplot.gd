@@ -22,7 +22,9 @@ func InterAct():
 		return
 		
 	if CurrentBody.CurrentItem.IsSeed:
+		
 		SeedType = CurrentBody.CurrentItem
+		plant.texture = SeedType.PlantImage
 		CurrentBody.DropItem()
 		Growplant()
 		return

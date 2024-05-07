@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://babtox1ycle0v"]
+[gd_scene load_steps=7 format=3 uid="uid://babtox1ycle0v"]
 
+[ext_resource type="Script" path="res://Code/item/PrepTable.gd" id="1_cg5io"]
 [ext_resource type="Texture2D" uid="uid://c00pwbkugh8na" path="res://art/food/Prep station.png" id="1_fga8m"]
-[ext_resource type="Script" path="res://Code/item/InterActAble.gd" id="1_x3cp7"]
+[ext_resource type="FontFile" uid="uid://8pygeyu6tqig" path="res://Theme/Manjari-Regular.ttf" id="3_c45vu"]
+[ext_resource type="Texture2D" uid="uid://bmuynlhmy60gy" path="res://art/food/Tomato_512.PNG" id="4_a1fq8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thkrs"]
 size = Vector2(446, 389)
@@ -9,9 +11,11 @@ size = Vector2(446, 389)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vyyoh"]
 size = Vector2(674, 556)
 
-[node name="Stove" type="StaticBody2D" node_paths=PackedStringArray("inter_act_area")]
+[node name="Prep" type="StaticBody2D" node_paths=PackedStringArray("label", "progress_bar", "inter_act_area")]
 scale = Vector2(0.5, 0.5)
-script = ExtResource("1_x3cp7")
+script = ExtResource("1_cg5io")
+label = NodePath("Label")
+progress_bar = NodePath("ProgressBar")
 inter_act_area = NodePath("InterActArea")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -28,3 +32,25 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InterActArea"]
 position = Vector2(1, 42)
 shape = SubResource("RectangleShape2D_vyyoh")
+
+[node name="Label" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 196.0
+offset_top = -414.0
+offset_right = 606.0
+offset_bottom = -200.0
+theme_override_fonts/normal_font = ExtResource("3_c45vu")
+theme_override_font_sizes/normal_font_size = 96
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1][center]  Prepping"
+fit_content = true
+
+[node name="ProgressBar" type="TextureProgressBar" parent="."]
+visible = false
+offset_left = 290.0
+offset_top = -192.0
+offset_right = 802.0
+offset_bottom = 320.0
+scale = Vector2(0.5, 0.5)
+fill_mode = 4
+texture_progress = ExtResource("4_a1fq8")

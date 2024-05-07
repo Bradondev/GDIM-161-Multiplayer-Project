@@ -5,3 +5,4 @@ class_name  PickUpable
 @export var Icon:Texture2D
 @export var IsSeed :bool =false
 @export var CanBeSent: bool = false
+@export var IsAnIngredient :bool = false 
