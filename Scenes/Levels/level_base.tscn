@@ -98,5 +98,5 @@ position = Vector2(152, 450)
 position = Vector2(150, 631)
 
 [node name="truck" parent="." instance=ExtResource("10_h1gp7")]
-position = Vector2(577, 125)
+position = Vector2(569, 182)
 scale = Vector2(0.8, 0.8)

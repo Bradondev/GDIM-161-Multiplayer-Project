@@ -10,3 +10,4 @@ SeedType = ExtResource("2_o0erc")
 Name = "Seed"
 Icon = ExtResource("1_x63fc")
 IsSeed = true
+CanBeSent = false

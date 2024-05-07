@@ -14,8 +14,8 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func PickUpItem(NewItem : PickUpable):
-	HoldItemSprite.texture = NewItem.Icon
 	CurrentItem = NewItem
+	HoldItemSprite.texture = CurrentItem.Icon
 func DropItem():
 	HoldItemSprite.texture = null
 	CurrentItem = null

@@ -11,3 +11,4 @@ IsHot = 0
 Name = "Tomato"
 Icon = ExtResource("1_t4exb")
 IsSeed = false
+CanBeSent = true

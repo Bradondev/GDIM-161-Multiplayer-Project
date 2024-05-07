@@ -8,11 +8,13 @@ var Ready :bool = false
 #var tween :Tween 
 
 func InterAct():
-	
+	if SeedType and CurrentBody.CurrentItem:
+		return
 	
 	if SeedType and Ready and !CurrentBody.CurrentItem:
 		CurrentBody.PickUpItem(SeedType.SeedType)
 		plant.scale = Vector2(.1,.1)
+		SeedType = null
 		ShowLabel(false)
 		return
 	
