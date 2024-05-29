@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ingredient" load_steps=4 format=3 uid="uid://fieeynuj64v2"]
+
+[ext_resource type="Texture2D" uid="uid://bvtpdpp2i7tth" path="res://art/food/Unprepared lettuce.png" id="1_aa5v5"]
+[ext_resource type="Texture2D" uid="uid://dp2fewqhoc4er" path="res://art/food/Prepped lettuce.png" id="2_0cite"]
+[ext_resource type="Script" path="res://Code/food/ingredients.gd" id="3_u7i52"]
+
+[resource]
+script = ExtResource("3_u7i52")
+Diet = "Meat"
+IsSpice = 0
+IsHot = 1
+IsPrepped = false
+CanBePreped = true
+PrepedIcon = ExtResource("2_0cite")
+Name = "Soupbroth"
+Icon = ExtResource("1_aa5v5")
+IsSeed = false
+CanBeSent = false
+IsAnIngredient = true
+CanBeCooked = false

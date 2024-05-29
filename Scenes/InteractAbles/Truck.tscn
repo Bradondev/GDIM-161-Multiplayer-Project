@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Code/item/Car.gd" id="1_uam8h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thkrs"]
-size = Vector2(457, 256)
+size = Vector2(465, 268)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4l2js"]
 size = Vector2(263.299, 215.406)
@@ -19,7 +19,7 @@ inter_act_area = NodePath("InterActArea2")
 texture = ExtResource("1_c51xi")
 
 [node name="hitBox" type="CollisionShape2D" parent="."]
-position = Vector2(11.5, 30)
+position = Vector2(15.5, 36)
 shape = SubResource("RectangleShape2D_thkrs")
 
 [node name="InterActArea2" type="Area2D" parent="."]

@@ -23,6 +23,7 @@ Icon = ExtResource("2_uqx3l")
 IsSeed = false
 CanBeSent = false
 IsAnIngredient = true
+CanBeCooked = false
 
 [sub_resource type="Resource" id="Resource_670xk"]
 script = ExtResource("4_v0lsd")
@@ -37,6 +38,7 @@ Icon = ExtResource("5_cjbwi")
 IsSeed = false
 CanBeSent = true
 IsAnIngredient = true
+CanBeCooked = false
 
 [sub_resource type="Resource" id="Resource_nx3he"]
 script = ExtResource("4_v0lsd")
@@ -51,6 +53,7 @@ Icon = ExtResource("7_6w5xm")
 IsSeed = false
 CanBeSent = true
 IsAnIngredient = true
+CanBeCooked = false
 
 [resource]
 script = ExtResource("3_tsnls")
@@ -60,3 +63,4 @@ Icon = ExtResource("1_6aqjn")
 IsSeed = false
 CanBeSent = false
 IsAnIngredient = false
+CanBeCooked = false

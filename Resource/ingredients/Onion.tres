@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ingredient" load_steps=4 format=3 uid="uid://b2e120mjh32sg"]
+
+[ext_resource type="Texture2D" uid="uid://v7mevbk75bxl" path="res://art/food/Onion un prepped.png" id="1_1ek04"]
+[ext_resource type="Texture2D" uid="uid://cc1v743qsw51h" path="res://art/food/Onion prepped.png" id="2_km0jw"]
+[ext_resource type="Script" path="res://Code/food/ingredients.gd" id="3_ogsvd"]
+
+[resource]
+script = ExtResource("3_ogsvd")
+Diet = "Vegen"
+IsSpice = 0
+IsHot = 0
+IsPrepped = false
+CanBePreped = true
+PrepedIcon = ExtResource("2_km0jw")
+Name = "Tomato"
+Icon = ExtResource("1_1ek04")
+IsSeed = false
+CanBeSent = true
+IsAnIngredient = true
+CanBeCooked = false

@@ -1,20 +1,20 @@
 [gd_scene load_steps=9 format=3 uid="uid://q82akbgxgsnp"]
 
 [ext_resource type="Script" path="res://Code/item/Stove.gd" id="1_33n4v"]
-[ext_resource type="Resource" uid="uid://blwfsybhtd2ax" path="res://Code/food/TomatoBasilSoup.tres" id="2_5x00n"]
-[ext_resource type="Texture2D" uid="uid://14i4rlwtamm0" path="res://art/Objects/Stove.png" id="2_p5j0s"]
+[ext_resource type="Resource" uid="uid://blwfsybhtd2ax" path="res://Resource/food/TomatoBasilSoup.tres" id="2_5x00n"]
+[ext_resource type="Texture2D" uid="uid://ms8jatuxk05o" path="res://art/Objects/IMG_0197.PNG" id="3_vi05e"]
 [ext_resource type="Texture2D" uid="uid://qpfg0x41wrop" path="res://art/food/Circle.png" id="4_4kxot"]
 [ext_resource type="Texture2D" uid="uid://bmuynlhmy60gy" path="res://art/food/Tomato_512.PNG" id="4_8kpve"]
 [ext_resource type="FontFile" uid="uid://8pygeyu6tqig" path="res://Theme/Manjari-Regular.ttf" id="5_0vd5y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thkrs"]
-size = Vector2(446, 389)
+size = Vector2(310, 306)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltpib"]
-size = Vector2(452, 112)
+size = Vector2(374, 391.667)
 
 [node name="Stove" type="StaticBody2D" node_paths=PackedStringArray("label", "progress_bar", "IconContainer", "inter_act_area")]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.3, 0.3)
 script = ExtResource("1_33n4v")
 possibleReices = Array[Resource("res://Code/food/repices.gd")]([ExtResource("2_5x00n")])
 label = NodePath("Label")
@@ -23,10 +23,11 @@ IconContainer = NodePath("boc")
 inter_act_area = NodePath("InterActArea")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_p5j0s")
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_vi05e")
 
 [node name="hitBox" type="CollisionShape2D" parent="."]
-position = Vector2(6, 28)
+position = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_thkrs")
 
 [node name="InterActArea" type="Area2D" parent="."]
@@ -34,7 +35,7 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InterActArea"]
-position = Vector2(6, 248)
+position = Vector2(-5, 40.8333)
 shape = SubResource("RectangleShape2D_ltpib")
 
 [node name="boc" type="HBoxContainer" parent="."]

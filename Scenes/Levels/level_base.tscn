@@ -90,10 +90,10 @@ position = Vector2(5.25003, 797)
 shape = SubResource("RectangleShape2D_l65gg")
 
 [node name="Stove3" parent="." instance=ExtResource("7_xfdwp")]
-position = Vector2(1222, 156)
+position = Vector2(947, 102)
 
 [node name="prep" parent="." instance=ExtResource("9_4vhhh")]
-position = Vector2(1362, 768)
+position = Vector2(1094, 835)
 
 [node name="Crate" parent="." instance=ExtResource("10_1fgj5")]
 position = Vector2(128, 628)
@@ -113,22 +113,34 @@ position = Vector2(131, 376)
 SeedType = ExtResource("10_f7hcd")
 
 [node name="fridge" parent="." instance=ExtResource("12_3wmcu")]
-position = Vector2(908, 752)
+position = Vector2(870, 680)
 Type = ExtResource("13_ce8ik")
 
 [node name="fridge2" parent="." instance=ExtResource("12_3wmcu")]
-position = Vector2(902, 485)
+position = Vector2(872, 506)
 Type = ExtResource("4_gipwi")
 
 [node name="fridge3" parent="." instance=ExtResource("12_3wmcu")]
-position = Vector2(898, 215)
+position = Vector2(874, 334)
 Type = ExtResource("14_ftd6i")
 
 [node name="trashCan" parent="." instance=ExtResource("15_ijq7m")]
-position = Vector2(1488, 465)
+position = Vector2(1485, 714)
+
+[node name="Stove6" parent="." instance=ExtResource("7_xfdwp")]
+position = Vector2(1142, 284)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Transition" parent="CanvasLayer" instance=ExtResource("3_sktrj")]
 mouse_filter = 2
 color = Color(0.843137, 0.878431, 0.670588, 1)
+
+[node name="Stove7" parent="." instance=ExtResource("7_xfdwp")]
+position = Vector2(1242, 102)
+
+[node name="prep2" parent="." instance=ExtResource("9_4vhhh")]
+position = Vector2(1249, 836)
+
+[node name="prep3" parent="." instance=ExtResource("9_4vhhh")]
+position = Vector2(1405, 836)

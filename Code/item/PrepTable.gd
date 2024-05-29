@@ -19,7 +19,7 @@ func InterAct():
 		
 	if CurrentItem.IsAnIngredient and CurrentItem.CanBePreped:
 		ItemToPrep =CurrentItem
-		print_debug(CurrentBody)
+
 		StartPrepping()
 		pass
 	
@@ -28,7 +28,6 @@ func InterAct():
 func _unhandled_input(event: InputEvent) -> void:
 	if CurrentBody:
 		if event.is_action_pressed("PlayerTwo_Interact"):
-			print_debug(CurrentBody)
 			InterAct()
 
 func  StartPrepping():
@@ -43,7 +42,6 @@ func  StartPrepping():
 	PreppedItem.Icon = PreppedItem.PrepedIcon
 	PreppedItem.IsPrepped = true
 	PreppedItem.CanBeCooked = true
-	print_debug(CurrentBody)
 	CurrentBody.PickUpItem(PreppedItem)
 	CurrentBody.speed = 400
 func  ShowLabel(canbeseen):

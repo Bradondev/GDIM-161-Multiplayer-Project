@@ -7,10 +7,10 @@
 size = Vector2(252, 336.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utub6"]
-size = Vector2(320, 398)
+size = Vector2(290, 380)
 
 [node name="trashCan" type="StaticBody2D" node_paths=PackedStringArray("inter_act_area")]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.2, 0.2)
 script = ExtResource("1_qkvd1")
 inter_act_area = NodePath("InterActArea")
 
@@ -26,5 +26,5 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InterActArea"]
-position = Vector2(2, 4)
+position = Vector2(-5, 0)
 shape = SubResource("RectangleShape2D_utub6")

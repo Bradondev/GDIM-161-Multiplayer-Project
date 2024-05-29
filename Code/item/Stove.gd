@@ -15,9 +15,9 @@ func InterAct():
 	if IsReady and CurrentDish:
 		CurrentBody.PickUpItem(CurrentDish)
 		ShowLabel(false)
+		SendItem()
 		return
 	if Currentingredients.size() == 3:
-		print_debug(Currentingredients.size() )
 		CookItem()
 		return	
 	if 	!CurrentBody.CurrentItem:
@@ -49,11 +49,12 @@ func UpdateIcon():
 		icons[temp].texture= item.Icon
 		temp+=1
 func CookItem():
-	ShowLabel(true)
+	
 	var Repice = FindReices()
 	if !Repice:
+		SendItem()
 		return
-		
+	ShowLabel(true)
 	progress_bar.texture_progress = Repice.Icon
 	var tween  = get_tree().create_tween()
 	tween.tween_property(progress_bar, "value", 100, 4)
@@ -71,17 +72,23 @@ func CookItem():
 	
 	
 func FindReices():
+	# fix this
+	var IndexTemp = 0
 	for Reices in possibleReices:
+		var NeededIngrendients =  Reices.ingredients.duplicate(true)
 		var temp = 0
+		for  ingredients in Reices.ingredients :
 		
-		for ingredien in Currentingredients:
-			
-			for  ingredients in Reices.ingredients :
-				
-				if ingredients.Name == ingredien.Name:
+		
+			for Cingredients in Currentingredients:
+				if Cingredients.Name ==  ingredients.Name:
+					Currentingredients.remove_at(Currentingredients.find(Cingredients))
+					print_debug(Cingredients.Name)
 					temp +=1 
-					
+
+
 				if temp >=3:
+					print_debug(Reices)
 					return Reices
 	return null
 	
@@ -90,3 +97,8 @@ func  ShowLabel(canbeseen):
 	label.visible = canbeseen
 	progress_bar.visible = canbeseen
 	progress_bar.value = 0
+func SendItem():
+	CurrentDish = null 
+	IsReady = false
+	Currentingredients.clear()
+	UpdateIcon()

@@ -1,28 +1,28 @@
 [gd_resource type="Resource" script_class="SavedData" load_steps=7 format=3]
 
-[ext_resource type="Script" path="res://Code/LevelData.gd" id="1_arkw5"]
-[ext_resource type="Script" path="res://Code/saveDateGd.gd" id="2_e42rh"]
+[ext_resource type="Script" path="res://Code/LevelData.gd" id="1_e3svv"]
+[ext_resource type="Script" path="res://Code/saveDateGd.gd" id="2_c7m6c"]
 
-[sub_resource type="Resource" id="Resource_i151k"]
-script = ExtResource("1_arkw5")
+[sub_resource type="Resource" id="Resource_hcy12"]
+script = ExtResource("1_e3svv")
 stars = 0
 Unlocked = true
 
-[sub_resource type="Resource" id="Resource_rhkbp"]
-script = ExtResource("1_arkw5")
+[sub_resource type="Resource" id="Resource_khsu3"]
+script = ExtResource("1_e3svv")
 stars = 0
 Unlocked = false
 
-[sub_resource type="Resource" id="Resource_lx4xu"]
-script = ExtResource("1_arkw5")
+[sub_resource type="Resource" id="Resource_uq64h"]
+script = ExtResource("1_e3svv")
 stars = 0
 Unlocked = false
 
-[sub_resource type="Resource" id="Resource_0bvjk"]
-script = ExtResource("1_arkw5")
+[sub_resource type="Resource" id="Resource_a5o36"]
+script = ExtResource("1_e3svv")
 stars = 0
 Unlocked = false
 
 [resource]
-script = ExtResource("2_e42rh")
-Leveldata = Array[ExtResource("1_arkw5")]([SubResource("Resource_i151k"), SubResource("Resource_rhkbp"), SubResource("Resource_lx4xu"), SubResource("Resource_0bvjk")])
+script = ExtResource("2_c7m6c")
+Leveldata = Array[ExtResource("1_e3svv")]([SubResource("Resource_hcy12"), SubResource("Resource_khsu3"), SubResource("Resource_uq64h"), SubResource("Resource_a5o36")])
