@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Seed" load_steps=6 format=3 uid="uid://c8vk6io2kpkua"]
+
+[ext_resource type="Texture2D" uid="uid://bgt7qw3u33044" path="res://art/food/Seed.png" id="1_l6dy4"]
+[ext_resource type="Texture2D" uid="uid://c7c4n406hkmnm" path="res://art/food/Baby Onion Plant.png" id="2_avwgk"]
+[ext_resource type="Texture2D" uid="uid://bcvsdebja8boh" path="res://art/food/Mature Onion Plant.png" id="3_ckb2w"]
+[ext_resource type="Resource" uid="uid://b2e120mjh32sg" path="res://Resource/ingredients/Onion.tres" id="4_sphkc"]
+[ext_resource type="Script" path="res://Code/food/Seed.gd" id="5_f2i64"]
+
+[resource]
+script = ExtResource("5_f2i64")
+SeedType = ExtResource("4_sphkc")
+PlantImage = ExtResource("2_avwgk")
+ReadyPlantImage = ExtResource("3_ckb2w")
+Name = "lettuceSeed"
+Icon = ExtResource("1_l6dy4")
+IsSeed = true
+CanBeSent = false
+IsAnIngredient = false
+CanBeCooked = false

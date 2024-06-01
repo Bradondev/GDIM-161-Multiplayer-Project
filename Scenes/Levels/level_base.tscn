@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dnicrsufbul20"]
+[gd_scene load_steps=31 format=3 uid="uid://dnicrsufbul20"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_base.gd" id="1_2ibyv"]
 [ext_resource type="PackedScene" uid="uid://bg78qvtq5g8v" path="res://Scenes/player_1.tscn" id="1_2our2"]
@@ -24,6 +24,10 @@
 [ext_resource type="PackedScene" uid="uid://t3p2rgu6ospk" path="res://Scenes/InteractAbles/OrderPlace.tscn" id="19_8kfqs"]
 [ext_resource type="PackedScene" uid="uid://d2xif7uepbuw2" path="res://level_manager.tscn" id="20_s5576"]
 [ext_resource type="Resource" uid="uid://bm28gkic3ilm8" path="res://Resource/seeds/Lettuce.tres" id="21_8sdr2"]
+[ext_resource type="Resource" uid="uid://c8vk6io2kpkua" path="res://Resource/seeds/OnionSeed.tres" id="21_r3i0o"]
+[ext_resource type="Resource" uid="uid://b2e120mjh32sg" path="res://Resource/ingredients/Onion.tres" id="25_gp628"]
+[ext_resource type="Resource" uid="uid://chm7gvmhjygy3" path="res://Resource/ingredients/Dough.tres" id="25_uff61"]
+[ext_resource type="Resource" uid="uid://d33jbrvd0njvq" path="res://Resource/ingredients/Cheese.tres" id="27_lm63j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpbge"]
 size = Vector2(1, 900)
@@ -99,7 +103,7 @@ position = Vector2(5.25003, 797)
 shape = SubResource("RectangleShape2D_l65gg")
 
 [node name="prep" parent="." instance=ExtResource("9_4vhhh")]
-position = Vector2(1176, 836)
+position = Vector2(1241, 846)
 
 [node name="Crate" parent="." instance=ExtResource("10_1fgj5")]
 position = Vector2(75, 428)
@@ -111,7 +115,7 @@ position = Vector2(653, 739)
 position = Vector2(653, 440)
 
 [node name="truck" parent="." instance=ExtResource("10_h1gp7")]
-position = Vector2(570, 101)
+position = Vector2(573, 163)
 scale = Vector2(0.8, 0.8)
 
 [node name="SeedCrate" parent="." instance=ExtResource("10_1fgj5")]
@@ -119,25 +123,26 @@ position = Vector2(80, 256)
 SeedType = ExtResource("10_f7hcd")
 
 [node name="fridge" parent="." instance=ExtResource("12_3wmcu")]
-position = Vector2(853, 698)
+position = Vector2(848, 381)
 Type = ExtResource("13_ce8ik")
 
 [node name="fridge2" parent="." instance=ExtResource("12_3wmcu")]
-position = Vector2(851, 528)
+position = Vector2(847, 239)
 Type = ExtResource("4_gipwi")
 
 [node name="fridge3" parent="." instance=ExtResource("12_3wmcu")]
-position = Vector2(851, 366)
+position = Vector2(847, 77)
 Type = ExtResource("14_ftd6i")
 
 [node name="trashCan" parent="." instance=ExtResource("15_ijq7m")]
-position = Vector2(999, 841)
+position = Vector2(1110, 852)
 
 [node name="Stove2" parent="." instance=ExtResource("7_xfdwp")]
-position = Vector2(1336, 826)
+position = Vector2(1395, 838)
+possibleReices = Array[Resource("res://Code/food/repices.gd")]([ExtResource("18_ksds2"), ExtResource("19_4epeh"), ExtResource("17_0uuu5")])
 
 [node name="Stove3" parent="." instance=ExtResource("7_xfdwp")]
-position = Vector2(1495, 826)
+position = Vector2(1525, 834)
 possibleReices = Array[Resource("res://Code/food/repices.gd")]([ExtResource("17_0uuu5"), ExtResource("18_ksds2"), ExtResource("19_4epeh")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -147,11 +152,9 @@ visible = false
 mouse_filter = 2
 color = Color(0.843137, 0.878431, 0.670588, 1)
 
-[node name="Crate2" parent="." node_paths=PackedStringArray("icon_1", "inter_act_area") instance=ExtResource("10_1fgj5")]
+[node name="Crate2" parent="." instance=ExtResource("10_1fgj5")]
 position = Vector2(75, 598)
-SeedType = ExtResource("21_8sdr2")
-icon_1 = NodePath("../Crate/Icon1")
-inter_act_area = NodePath("../Crate/InterActArea")
+SeedType = ExtResource("21_r3i0o")
 
 [node name="Farm3" parent="." instance=ExtResource("10_7w2y3")]
 position = Vector2(384, 433)
@@ -177,7 +180,7 @@ position = Vector2(1244, 294)
 position = Vector2(1535, 294)
 
 [node name="LevelManager" parent="." node_paths=PackedStringArray("SpawnArea", "ExitArea") instance=ExtResource("20_s5576")]
-position = Vector2(732, 17)
+position = Vector2(644, 29)
 possibleReices = Array[Resource("res://Code/food/repices.gd")]([ExtResource("17_0uuu5"), ExtResource("18_ksds2"), ExtResource("19_4epeh")])
 SpawnArea = NodePath("../Spawn")
 ExitArea = NodePath("../Exit")
@@ -187,3 +190,21 @@ position = Vector2(1726, -13)
 
 [node name="Exit" type="Marker2D" parent="."]
 position = Vector2(1301, -246)
+
+[node name="fridge4" parent="." instance=ExtResource("12_3wmcu")]
+position = Vector2(845, 524)
+Type = ExtResource("25_gp628")
+
+[node name="fridge5" parent="." instance=ExtResource("12_3wmcu")]
+position = Vector2(843, 666)
+Type = ExtResource("25_uff61")
+Amount = 99
+
+[node name="fridge6" parent="." instance=ExtResource("12_3wmcu")]
+position = Vector2(849, 813)
+Type = ExtResource("27_lm63j")
+Amount = 99
+
+[node name="Crate3" parent="." instance=ExtResource("10_1fgj5")]
+position = Vector2(75, 753)
+SeedType = ExtResource("21_8sdr2")

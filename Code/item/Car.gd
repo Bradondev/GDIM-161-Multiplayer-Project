@@ -3,6 +3,7 @@ extends InterActAble
 
 @export var Items:Array[PickUpable] = []
 @export var IconContainer: HBoxContainer 
+
 signal  Add
 
 func InterAct():
@@ -39,5 +40,14 @@ func UpdateIcon():
 		icons[temp].texture= item.Icon
 		temp+=1
 func SendItem():
+	var frigs = get_tree().get_nodes_in_group("frig")
+	var NewSeat
+	
+	for frig in frigs:
+		for item in Items:
+			if frig.Type.Name== item.Name:
+				frig.AddAmount(1)
+				Items.remove_at(Items.find(item))
+	
 	Items.clear()
 	UpdateIcon()

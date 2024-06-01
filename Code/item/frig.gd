@@ -7,22 +7,23 @@ extends InterActAble
 @export var label: Label 
 
 
-var Amount : int 
+@export var Amount : int = 0
 
 func _ready() -> void:
 	
 	icon_1.texture =Type.Icon
 	inter_act_area.body_entered.connect(PlayerEnteredArea)
 	inter_act_area.body_exited.connect( PlayerExitedArea)
-	
+	UpdataAmount()
 func InterAct():
 	if CurrentBody.CurrentItem == Type:
 		CurrentBody.DropItem()
+		AddAmount(1)
 		return
 		
-	if !CurrentBody.CurrentItem:
+	if !CurrentBody.CurrentItem and Amount >0:
 		CurrentBody.PickUpItem(Type)
-	#	AddAmount(-1)
+		AddAmount(-1)
 		return
 	
 func _unhandled_input(event: InputEvent) -> void:
