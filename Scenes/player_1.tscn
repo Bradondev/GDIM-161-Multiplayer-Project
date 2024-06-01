@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bg78qvtq5g8v"]
 
 [ext_resource type="Script" path="res://Code/player_1.gd" id="1_403ia"]
-[ext_resource type="Texture2D" uid="uid://byvjm7kagi452" path="res://art/icon.svg" id="2_p6pqe"]
+[ext_resource type="Texture2D" uid="uid://c6y38nnyp6er2" path="res://art/Objects/avocado farmer.PNG" id="2_sjiso"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pbnkd"]
 radius = 63.0
@@ -15,7 +15,9 @@ PlayerType = "PlayerOne"
 HoldItemSprite = NodePath("item icon")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_p6pqe")
+position = Vector2(8, -23)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_sjiso")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_pbnkd")

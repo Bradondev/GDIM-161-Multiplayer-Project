@@ -2,13 +2,11 @@ extends InterActAble
 
 
 @export var SeedType: Seed
-@export var icon_2: Sprite2D
 @export var icon_1: Sprite2D 
 
 
 
 func _ready() -> void:
-	icon_2.texture = SeedType.SeedType.Icon
 	icon_1.texture = SeedType.SeedType.Icon
 	inter_act_area.body_entered.connect(PlayerEnteredArea)
 	inter_act_area.body_exited.connect( PlayerExitedArea)

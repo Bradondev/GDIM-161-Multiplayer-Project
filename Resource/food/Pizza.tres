@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Repices" load_steps=7 format=3 uid="uid://ctsll4ykanoch"]
+
+[ext_resource type="Texture2D" uid="uid://cenesl05k8qry" path="res://art/food/pizza.png" id="1_mjwkp"]
+[ext_resource type="Texture2D" uid="uid://biwa463intodk" path="res://art/food/spicy pizza.png" id="2_1uyip"]
+[ext_resource type="Resource" uid="uid://chm7gvmhjygy3" path="res://Resource/ingredients/Dough.tres" id="2_4ug5y"]
+[ext_resource type="Resource" uid="uid://d33jbrvd0njvq" path="res://Resource/ingredients/Cheese.tres" id="3_b3tdh"]
+[ext_resource type="Resource" uid="uid://ctb5a4pntvmpj" path="res://Resource/ingredients/Tomato.tres" id="4_ailp1"]
+[ext_resource type="Script" path="res://Code/food/repices.gd" id="9_ymay8"]
+
+[resource]
+script = ExtResource("9_ymay8")
+ingredients = Array[Resource("res://Code/food/ingredients.gd")]([ExtResource("2_4ug5y"), ExtResource("3_b3tdh"), ExtResource("4_ailp1")])
+IsSpicy = false
+SpicyIcon = ExtResource("2_1uyip")
+Name = "TomatoBasilSoup"
+Icon = ExtResource("1_mjwkp")
+IsSeed = false
+CanBeSent = false
+IsAnIngredient = false
+CanBeCooked = false

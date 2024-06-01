@@ -12,7 +12,7 @@ size = Vector2(270, 238)
 size = Vector2(402.309, 208.927)
 
 [node name="fram" type="StaticBody2D" node_paths=PackedStringArray("plant", "label", "inter_act_area")]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.4, 0.4)
 script = ExtResource("1_u0bhg")
 plant = NodePath("Plant")
 label = NodePath("Label")

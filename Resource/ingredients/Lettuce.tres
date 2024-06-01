@@ -15,6 +15,6 @@ PrepedIcon = ExtResource("2_0cite")
 Name = "Soupbroth"
 Icon = ExtResource("1_aa5v5")
 IsSeed = false
-CanBeSent = false
+CanBeSent = true
 IsAnIngredient = true
 CanBeCooked = false

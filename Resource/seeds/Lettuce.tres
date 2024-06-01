@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Seed" load_steps=6 format=3 uid="uid://bm28gkic3ilm8"]
+
+[ext_resource type="Texture2D" uid="uid://bgt7qw3u33044" path="res://art/food/Seed.png" id="1_fhbgr"]
+[ext_resource type="Texture2D" uid="uid://c1ldnb6vnj1c2" path="res://art/food/Baby lettuce plant.png" id="2_p35a0"]
+[ext_resource type="Texture2D" uid="uid://bhuw4x6uw583a" path="res://art/food/Mature lettuce plant.png" id="3_b1lq2"]
+[ext_resource type="Resource" uid="uid://fieeynuj64v2" path="res://Resource/ingredients/Lettuce.tres" id="4_1l2sp"]
+[ext_resource type="Script" path="res://Code/food/Seed.gd" id="5_oo1my"]
+
+[resource]
+script = ExtResource("5_oo1my")
+SeedType = ExtResource("4_1l2sp")
+PlantImage = ExtResource("2_p35a0")
+ReadyPlantImage = ExtResource("3_b1lq2")
+Name = "lettuceSeed"
+Icon = ExtResource("1_fhbgr")
+IsSeed = true
+CanBeSent = false
+IsAnIngredient = false
+CanBeCooked = false

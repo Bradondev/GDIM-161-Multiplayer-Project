@@ -15,6 +15,6 @@ PrepedIcon = ExtResource("2_j8idk")
 Name = "Basil"
 Icon = ExtResource("1_5d3b1")
 IsSeed = false
-CanBeSent = true
+CanBeSent = false
 IsAnIngredient = true
 CanBeCooked = false

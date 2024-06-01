@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://djfg44r7ydfxn"]
 
 [ext_resource type="Script" path="res://Code/player_2.gd" id="1_14yyl"]
-[ext_resource type="Texture2D" uid="uid://byvjm7kagi452" path="res://art/icon.svg" id="2_tyujm"]
+[ext_resource type="Texture2D" uid="uid://dp12e6o6gmdvp" path="res://art/Objects/chef donut.PNG" id="2_i7x5h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7xd8e"]
 radius = 63.0
@@ -15,10 +15,10 @@ PlayerType = "PlayerTwo"
 HoldItemSprite = NodePath("item icon")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(1, 0, 1, 1)
 light_mask = 9
 visibility_layer = 9
-texture = ExtResource("2_tyujm")
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_i7x5h")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 z_index = 1

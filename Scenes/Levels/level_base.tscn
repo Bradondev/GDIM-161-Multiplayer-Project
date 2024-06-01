@@ -1,8 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://dnicrsufbul20"]
+[gd_scene load_steps=27 format=3 uid="uid://dnicrsufbul20"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_base.gd" id="1_2ibyv"]
 [ext_resource type="PackedScene" uid="uid://bg78qvtq5g8v" path="res://Scenes/player_1.tscn" id="1_2our2"]
 [ext_resource type="PackedScene" uid="uid://djfg44r7ydfxn" path="res://Scenes/player_2.tscn" id="2_knrl7"]
+[ext_resource type="Texture2D" uid="uid://dgi01t8h5o1w4" path="res://art/Objects/farm bg base.PNG" id="2_xjuck"]
+[ext_resource type="Texture2D" uid="uid://cvupes1rsxsb5" path="res://art/Objects/kitchen bg base.PNG" id="3_o1der"]
 [ext_resource type="PackedScene" uid="uid://c0j8tgtgewtn2" path="res://transition.tscn" id="3_sktrj"]
 [ext_resource type="Resource" uid="uid://cscspajefkqpy" path="res://Resource/ingredients/Basil.tres" id="4_gipwi"]
 [ext_resource type="PackedScene" uid="uid://q82akbgxgsnp" path="res://Scenes/InteractAbles/Stove.tscn" id="7_xfdwp"]
@@ -15,6 +17,13 @@
 [ext_resource type="Resource" uid="uid://ctb5a4pntvmpj" path="res://Resource/ingredients/Tomato.tres" id="13_ce8ik"]
 [ext_resource type="Resource" uid="uid://da0fmypn5lm81" path="res://Resource/ingredients/Soupbroth.tres" id="14_ftd6i"]
 [ext_resource type="PackedScene" uid="uid://dm2puwp3hqmgg" path="res://Scenes/InteractAbles/TrashCan.tscn" id="15_ijq7m"]
+[ext_resource type="Texture2D" uid="uid://boejrlbthoag2" path="res://art/food/Watering can.png" id="16_nb00k"]
+[ext_resource type="Resource" uid="uid://dmy86cw12k6ha" path="res://Resource/food/Salad.tres" id="17_0uuu5"]
+[ext_resource type="Resource" uid="uid://blwfsybhtd2ax" path="res://Resource/food/TomatoBasilSoup.tres" id="18_ksds2"]
+[ext_resource type="Resource" uid="uid://ctsll4ykanoch" path="res://Resource/food/Pizza.tres" id="19_4epeh"]
+[ext_resource type="PackedScene" uid="uid://t3p2rgu6ospk" path="res://Scenes/InteractAbles/OrderPlace.tscn" id="19_8kfqs"]
+[ext_resource type="PackedScene" uid="uid://d2xif7uepbuw2" path="res://level_manager.tscn" id="20_s5576"]
+[ext_resource type="Resource" uid="uid://bm28gkic3ilm8" path="res://Resource/seeds/Lettuce.tres" id="21_8sdr2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpbge"]
 size = Vector2(1, 900)
@@ -26,16 +35,16 @@ size = Vector2(11.5001, 1614)
 script = ExtResource("1_2ibyv")
 Transition = NodePath("CanvasLayer/Transition")
 
-[node name="Grass" type="ColorRect" parent="."]
+[node name="Grass" type="TextureRect" parent="."]
 offset_right = 802.0
 offset_bottom = 904.0
-color = Color(0.352941, 0.592157, 0.458824, 1)
+texture = ExtResource("2_xjuck")
 
-[node name="Grass2" type="ColorRect" parent="."]
+[node name="Grass2" type="TextureRect" parent="."]
 offset_left = 802.0
 offset_right = 1604.0
 offset_bottom = 904.0
-color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+texture = ExtResource("3_o1der")
 
 [node name="Player1" parent="." instance=ExtResource("1_2our2")]
 z_index = 1
@@ -89,58 +98,92 @@ metadata/_edit_group_ = true
 position = Vector2(5.25003, 797)
 shape = SubResource("RectangleShape2D_l65gg")
 
-[node name="Stove3" parent="." instance=ExtResource("7_xfdwp")]
-position = Vector2(947, 102)
-
 [node name="prep" parent="." instance=ExtResource("9_4vhhh")]
-position = Vector2(1094, 835)
+position = Vector2(1176, 836)
 
 [node name="Crate" parent="." instance=ExtResource("10_1fgj5")]
-position = Vector2(128, 628)
+position = Vector2(75, 428)
 
-[node name="Stove4" parent="." instance=ExtResource("10_7w2y3")]
+[node name="Farm" parent="." instance=ExtResource("10_7w2y3")]
 position = Vector2(653, 739)
 
-[node name="Stove5" parent="." instance=ExtResource("10_7w2y3")]
+[node name="Farm2" parent="." instance=ExtResource("10_7w2y3")]
 position = Vector2(653, 440)
 
 [node name="truck" parent="." instance=ExtResource("10_h1gp7")]
-position = Vector2(571, 160)
+position = Vector2(570, 101)
 scale = Vector2(0.8, 0.8)
 
 [node name="SeedCrate" parent="." instance=ExtResource("10_1fgj5")]
-position = Vector2(131, 376)
+position = Vector2(80, 256)
 SeedType = ExtResource("10_f7hcd")
 
 [node name="fridge" parent="." instance=ExtResource("12_3wmcu")]
-position = Vector2(870, 680)
+position = Vector2(853, 698)
 Type = ExtResource("13_ce8ik")
 
 [node name="fridge2" parent="." instance=ExtResource("12_3wmcu")]
-position = Vector2(872, 506)
+position = Vector2(851, 528)
 Type = ExtResource("4_gipwi")
 
 [node name="fridge3" parent="." instance=ExtResource("12_3wmcu")]
-position = Vector2(874, 334)
+position = Vector2(851, 366)
 Type = ExtResource("14_ftd6i")
 
 [node name="trashCan" parent="." instance=ExtResource("15_ijq7m")]
-position = Vector2(1485, 714)
+position = Vector2(999, 841)
 
-[node name="Stove6" parent="." instance=ExtResource("7_xfdwp")]
-position = Vector2(1142, 284)
+[node name="Stove2" parent="." instance=ExtResource("7_xfdwp")]
+position = Vector2(1336, 826)
+
+[node name="Stove3" parent="." instance=ExtResource("7_xfdwp")]
+position = Vector2(1495, 826)
+possibleReices = Array[Resource("res://Code/food/repices.gd")]([ExtResource("17_0uuu5"), ExtResource("18_ksds2"), ExtResource("19_4epeh")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Transition" parent="CanvasLayer" instance=ExtResource("3_sktrj")]
 mouse_filter = 2
 color = Color(0.843137, 0.878431, 0.670588, 1)
 
-[node name="Stove7" parent="." instance=ExtResource("7_xfdwp")]
-position = Vector2(1242, 102)
+[node name="Crate2" parent="." node_paths=PackedStringArray("icon_1", "inter_act_area") instance=ExtResource("10_1fgj5")]
+position = Vector2(75, 598)
+SeedType = ExtResource("21_8sdr2")
+icon_1 = NodePath("../Crate/Icon1")
+inter_act_area = NodePath("../Crate/InterActArea")
 
-[node name="prep2" parent="." instance=ExtResource("9_4vhhh")]
-position = Vector2(1249, 836)
+[node name="Farm3" parent="." instance=ExtResource("10_7w2y3")]
+position = Vector2(384, 433)
 
-[node name="prep3" parent="." instance=ExtResource("9_4vhhh")]
-position = Vector2(1405, 836)
+[node name="Farm4" parent="." instance=ExtResource("10_7w2y3")]
+position = Vector2(376, 739)
+
+[node name="WateringCan" type="Sprite2D" parent="."]
+position = Vector2(145, 86)
+scale = Vector2(0.327977, 0.289784)
+texture = ExtResource("16_nb00k")
+
+[node name="con" parent="." instance=ExtResource("19_8kfqs")]
+position = Vector2(1116, 294)
+
+[node name="con3" parent="." instance=ExtResource("19_8kfqs")]
+position = Vector2(1387, 294)
+
+[node name="con2" parent="." instance=ExtResource("19_8kfqs")]
+position = Vector2(1244, 294)
+
+[node name="con4" parent="." instance=ExtResource("19_8kfqs")]
+position = Vector2(1535, 294)
+
+[node name="LevelManager" parent="." node_paths=PackedStringArray("SpawnArea", "ExitArea") instance=ExtResource("20_s5576")]
+position = Vector2(732, 17)
+possibleReices = Array[Resource("res://Code/food/repices.gd")]([ExtResource("17_0uuu5"), ExtResource("18_ksds2"), ExtResource("19_4epeh")])
+SpawnArea = NodePath("../Spawn")
+ExitArea = NodePath("../Exit")
+
+[node name="Spawn" type="Marker2D" parent="."]
+position = Vector2(1726, -13)
+
+[node name="Exit" type="Marker2D" parent="."]
+position = Vector2(1301, -246)

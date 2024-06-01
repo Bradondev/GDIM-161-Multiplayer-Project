@@ -11,7 +11,7 @@
 size = Vector2(310, 306)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltpib"]
-size = Vector2(374, 391.667)
+size = Vector2(310, 466.667)
 
 [node name="Stove" type="StaticBody2D" node_paths=PackedStringArray("label", "progress_bar", "IconContainer", "inter_act_area")]
 scale = Vector2(0.3, 0.3)
@@ -35,7 +35,7 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InterActArea"]
-position = Vector2(-5, 40.8333)
+position = Vector2(5.0001, -23.3333)
 shape = SubResource("RectangleShape2D_ltpib")
 
 [node name="boc" type="HBoxContainer" parent="."]

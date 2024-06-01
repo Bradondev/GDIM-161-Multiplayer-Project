@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="Repices" load_steps=13 format=3 uid="uid://blwfsybhtd2ax"]
+[gd_resource type="Resource" script_class="Repices" load_steps=14 format=3 uid="uid://blwfsybhtd2ax"]
 
 [ext_resource type="Texture2D" uid="uid://h7gkvku0vrrc" path="res://art/food/Tomato Basil Soup.png" id="1_6aqjn"]
+[ext_resource type="Texture2D" uid="uid://bfmit2t7qomb3" path="res://art/food/spicy tomato soup.png" id="2_ml7v1"]
 [ext_resource type="Texture2D" uid="uid://by808hh6b8i68" path="res://art/food/Un Prepped broth.png" id="2_uqx3l"]
 [ext_resource type="Texture2D" uid="uid://bmfts3cfapa82" path="res://art/food/Open Can of Soup.png" id="3_hs3w4"]
 [ext_resource type="Script" path="res://Code/food/repices.gd" id="3_tsnls"]
@@ -58,6 +59,8 @@ CanBeCooked = false
 [resource]
 script = ExtResource("3_tsnls")
 ingredients = Array[ExtResource("4_v0lsd")]([SubResource("Resource_vbk1g"), SubResource("Resource_670xk"), SubResource("Resource_nx3he")])
+IsSpicy = false
+SpicyIcon = ExtResource("2_ml7v1")
 Name = "TomatoBasilSoup"
 Icon = ExtResource("1_6aqjn")
 IsSeed = false

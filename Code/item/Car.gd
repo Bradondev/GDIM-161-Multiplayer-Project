@@ -3,7 +3,7 @@ extends InterActAble
 
 @export var Items:Array[PickUpable] = []
 @export var IconContainer: HBoxContainer 
-
+signal  Add
 
 func InterAct():
 	if Items.size() == 3:

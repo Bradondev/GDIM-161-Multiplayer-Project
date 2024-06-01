@@ -4,6 +4,8 @@ extends InterActAble
 
 @export var Type: ingredient
 @export var icon_1: Sprite2D 
+@export var label: Label 
+
 
 var Amount : int 
 
@@ -20,6 +22,7 @@ func InterAct():
 		
 	if !CurrentBody.CurrentItem:
 		CurrentBody.PickUpItem(Type)
+	#	AddAmount(-1)
 		return
 	
 func _unhandled_input(event: InputEvent) -> void:
@@ -29,3 +32,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			
 func  AddAmount( AmountToAdd :int):
 	Amount += AmountToAdd
+	UpdataAmount()
+func UpdataAmount():
+	label.text = str(Amount)

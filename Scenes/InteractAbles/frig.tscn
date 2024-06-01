@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbj6yjbsd0a5t"]
+[gd_scene load_steps=7 format=3 uid="uid://dbj6yjbsd0a5t"]
 
 [ext_resource type="Script" path="res://Code/item/frig.gd" id="1_cakk7"]
 [ext_resource type="Texture2D" uid="uid://bppoab45fa2sq" path="res://art/Objects/Fridge.png" id="2_1vbdm"]
 [ext_resource type="Texture2D" uid="uid://bmuynlhmy60gy" path="res://art/food/Tomato_512.PNG" id="4_1y0df"]
+[ext_resource type="Theme" uid="uid://c37q7rv7x4x28" path="res://Theme/RemapButton.tres" id="4_soxkj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thkrs"]
 size = Vector2(176, 282)
@@ -36,3 +37,15 @@ shape = SubResource("RectangleShape2D_utub6")
 position = Vector2(4, 42)
 scale = Vector2(0.202234, 0.203125)
 texture = ExtResource("4_1y0df")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -70.0
+offset_top = -120.0
+offset_right = 62.0
+offset_bottom = -50.0
+theme = ExtResource("4_soxkj")
+theme_override_font_sizes/font_size = 64
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1

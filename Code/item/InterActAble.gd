@@ -18,7 +18,6 @@ func _physics_process(delta: float) -> void:
 func PlayerEnteredArea(body):
 	CanInterAct = true
 	CurrentBody = body
-	
 func PlayerExitedArea(body):
 	CanInterAct = false
 	CurrentBody = null

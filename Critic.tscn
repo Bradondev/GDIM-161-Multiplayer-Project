@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://blor6iwpyc8nk"]
+
+[ext_resource type="Script" path="res://customer.gd" id="1_m54r1"]
+[ext_resource type="Texture2D" uid="uid://buktgv7av30b2" path="res://art/Objects/capybara.PNG" id="2_mdoxd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtl20"]
+size = Vector2(76.0463, 131.187)
+
+[node name="Customer" type="Node2D" node_paths=PackedStringArray("inter_act_area")]
+script = ExtResource("1_m54r1")
+Sprites = Array[Texture2D]([ExtResource("2_mdoxd")])
+WaitTime = 40
+inter_act_area = NodePath("InterActArea2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_mdoxd")
+
+[node name="InterActArea2" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="hitBox" type="CollisionShape2D" parent="InterActArea2"]
+position = Vector2(-3.5, -12)
+scale = Vector2(1.22294, 1.23488)
+shape = SubResource("RectangleShape2D_vtl20")
+
+[node name="item icon" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -120)
+scale = Vector2(0.25, 0.25)
+
+[node name="Timer" type="Timer" parent="."]

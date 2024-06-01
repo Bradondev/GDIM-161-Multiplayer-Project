@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Repices" load_steps=7 format=3 uid="uid://dmy86cw12k6ha"]
+
+[ext_resource type="Texture2D" uid="uid://cu7rs7pqbdudg" path="res://art/food/salad.png" id="1_8ebc6"]
+[ext_resource type="Texture2D" uid="uid://v3hbeh3f581b" path="res://art/food/spicy salad.png" id="2_5gtad"]
+[ext_resource type="Resource" uid="uid://fieeynuj64v2" path="res://Resource/ingredients/Lettuce.tres" id="3_s4tcr"]
+[ext_resource type="Resource" uid="uid://b2e120mjh32sg" path="res://Resource/ingredients/Onion.tres" id="4_gnk0o"]
+[ext_resource type="Resource" uid="uid://ctb5a4pntvmpj" path="res://Resource/ingredients/Tomato.tres" id="5_c50y2"]
+[ext_resource type="Script" path="res://Code/food/repices.gd" id="6_3wfvj"]
+
+[resource]
+script = ExtResource("6_3wfvj")
+ingredients = Array[Resource("res://Code/food/ingredients.gd")]([ExtResource("3_s4tcr"), ExtResource("4_gnk0o"), ExtResource("5_c50y2")])
+IsSpicy = false
+SpicyIcon = ExtResource("2_5gtad")
+Name = "Salad"
+Icon = ExtResource("1_8ebc6")
+IsSeed = false
+CanBeSent = false
+IsAnIngredient = false
+CanBeCooked = false
