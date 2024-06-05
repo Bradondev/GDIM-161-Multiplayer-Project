@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://Code/item/Car.gd" id="1_uam8h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thkrs"]
-size = Vector2(465, 268)
+size = Vector2(465, 236)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4l2js"]
-size = Vector2(263.299, 215.406)
+size = Vector2(405.579, 247.798)
 
 [node name="truck" type="StaticBody2D" node_paths=PackedStringArray("IconContainer", "inter_act_area")]
 scale = Vector2(0.5, 0.5)
@@ -19,7 +19,7 @@ inter_act_area = NodePath("InterActArea2")
 texture = ExtResource("1_c51xi")
 
 [node name="hitBox" type="CollisionShape2D" parent="."]
-position = Vector2(15.5, 36)
+position = Vector2(15.5, 20)
 shape = SubResource("RectangleShape2D_thkrs")
 
 [node name="InterActArea2" type="Area2D" parent="."]
@@ -27,7 +27,7 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="hitBox" type="CollisionShape2D" parent="InterActArea2"]
-position = Vector2(-94.9996, 35)
+position = Vector2(-7.99953, 54.9999)
 scale = Vector2(1.22294, 1.23488)
 shape = SubResource("RectangleShape2D_4l2js")
 
@@ -36,7 +36,7 @@ offset_left = -220.0
 offset_top = -212.0
 offset_right = 194.0
 offset_bottom = 8.0
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.4, 0.4)
 
 [node name="TextureRect" type="TextureRect" parent="boc"]
 layout_mode = 2

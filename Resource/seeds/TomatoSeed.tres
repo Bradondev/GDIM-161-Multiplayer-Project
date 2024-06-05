@@ -1,16 +1,18 @@
 [gd_resource type="Resource" script_class="Seed" load_steps=5 format=3 uid="uid://d1uccolequdcw"]
 
-[ext_resource type="Texture2D" uid="uid://bgt7qw3u33044" path="res://art/food/Seed.png" id="1_6cy80"]
-[ext_resource type="Texture2D" uid="uid://bonkvb3kb866l" path="res://art/food/plant.PNG" id="2_66olo"]
+[ext_resource type="Texture2D" uid="uid://da8xlg7pnun6l" path="res://art/food/new seeds.png" id="1_1tx0n"]
+[ext_resource type="Texture2D" uid="uid://b3jvhly0qlu4h" path="res://art/food/new Mature_Tomato_Plant.png" id="2_cl8ar"]
 [ext_resource type="Resource" uid="uid://ctb5a4pntvmpj" path="res://Resource/ingredients/Tomato.tres" id="3_5sij1"]
 [ext_resource type="Script" path="res://Code/food/Seed.gd" id="4_vd400"]
 
 [resource]
 script = ExtResource("4_vd400")
 SeedType = ExtResource("3_5sij1")
-PlantImage = ExtResource("2_66olo")
-ReadyPlantImage = ExtResource("2_66olo")
-Name = "Seed"
-Icon = ExtResource("1_6cy80")
+PlantImage = ExtResource("2_cl8ar")
+ReadyPlantImage = ExtResource("2_cl8ar")
+Name = "TomatoSeed"
+Icon = ExtResource("1_1tx0n")
 IsSeed = true
 CanBeSent = false
+IsAnIngredient = false
+CanBeCooked = false

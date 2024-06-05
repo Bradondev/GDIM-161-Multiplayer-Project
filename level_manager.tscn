@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://d2xif7uepbuw2"]
 
 [ext_resource type="Script" path="res://Code/level_manager.gd" id="1_2vt5k"]
-[ext_resource type="Theme" uid="uid://c37q7rv7x4x28" path="res://Theme/RemapButton.tres" id="2_7t27v"]
-[ext_resource type="PackedScene" uid="uid://dktn02lg17y1f" path="res://customer.tscn" id="2_de33h"]
+[ext_resource type="Theme" uid="uid://c37q7rv7x4x28" path="res://Scenes/Theme/RemapButton.tres" id="2_7t27v"]
+[ext_resource type="PackedScene" uid="uid://dktn02lg17y1f" path="res://Scenes/customer.tscn" id="2_de33h"]
 [ext_resource type="PackedScene" uid="uid://blor6iwpyc8nk" path="res://Critic.tscn" id="3_2nu1r"]
 
 [node name="LevelManager" type="Node2D" node_paths=PackedStringArray("LevelTimer", "label")]

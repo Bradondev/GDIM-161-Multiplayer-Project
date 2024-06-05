@@ -12,7 +12,7 @@ size = Vector2(246.667, 240)
 size = Vector2(276.667, 289)
 
 [node name="SeedCrate" type="StaticBody2D" node_paths=PackedStringArray("icon_1", "inter_act_area")]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.4, 0.4)
 script = ExtResource("1_7jlrr")
 SeedType = ExtResource("2_7c2uw")
 icon_1 = NodePath("Icon1")
@@ -31,8 +31,9 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InterActArea"]
 shape = SubResource("RectangleShape2D_utub6")
+one_way_collision_margin = 7.5
 
 [node name="Icon1" type="Sprite2D" parent="."]
-position = Vector2(-7.62939e-06, 0)
-scale = Vector2(0.190927, 0.197917)
+position = Vector2(4.76837e-06, -2.86102e-06)
+scale = Vector2(0.494792, 0.494792)
 texture = ExtResource("3_mcb5i")

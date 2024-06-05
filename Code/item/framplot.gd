@@ -13,7 +13,7 @@ func InterAct():
 	
 	if SeedType and Ready and !CurrentBody.CurrentItem:
 		CurrentBody.PickUpItem(SeedType.SeedType)
-		plant.scale = Vector2(.1,.1)
+		plant.scale = Vector2(.2,.2)
 		SeedType = null
 		ShowLabel(false)
 		return
@@ -40,8 +40,9 @@ func _unhandled_input(event: InputEvent) -> void:
 func Growplant():
 	plant.visible = true
 	var tween  = get_tree().create_tween()
-	tween.tween_property(plant, "scale", Vector2(.6,.6), 5)
+	tween.tween_property(plant, "scale", Vector2(1,1), 5)
 	await  tween.finished
+	plant.texture = SeedType.ReadyPlantImage
 	ShowLabel(true)
 func  ShowLabel(canbeseen):
 	plant.visible = canbeseen

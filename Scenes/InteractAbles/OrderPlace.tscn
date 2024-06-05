@@ -7,7 +7,7 @@
 size = Vector2(259.667, 251.167)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lxqv7"]
-size = Vector2(310, 466.667)
+size = Vector2(508.333, 203.333)
 
 [node name="OrderPlace" type="StaticBody2D" node_paths=PackedStringArray("marker_2d", "inter_act_area") groups=["Seat"]]
 scale = Vector2(0.3, 0.3)
@@ -21,7 +21,7 @@ texture = ExtResource("1_i1u0w")
 [node name="Marker2D" type="Marker2D" parent="."]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(3.33333, -420)
+position = Vector2(200, 0)
 
 [node name="hitBox" type="CollisionShape2D" parent="."]
 position = Vector2(0.166664, 1.08332)
@@ -32,5 +32,5 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InterActArea2"]
-position = Vector2(0, 153.333)
+position = Vector2(-99.1667, 5.00001)
 shape = SubResource("RectangleShape2D_lxqv7")

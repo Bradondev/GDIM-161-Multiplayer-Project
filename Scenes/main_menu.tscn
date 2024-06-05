@@ -1,9 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://diex1v7ycromx"]
+[gd_scene load_steps=23 format=3 uid="uid://diex1v7ycromx"]
 
 [ext_resource type="Script" path="res://Code/main_menu.gd" id="1_5to2f"]
 [ext_resource type="Texture2D" uid="uid://buutlu5sacn03" path="res://art/Ui/start screen NO BUTTONS.png" id="2_fejxy"]
-[ext_resource type="Theme" uid="uid://c37q7rv7x4x28" path="res://Theme/RemapButton.tres" id="2_o1ngd"]
 [ext_resource type="PackedScene" uid="uid://c2klv67sy8r5k" path="res://Scenes/game_menu.tscn" id="3_0f2bh"]
+[ext_resource type="Theme" uid="uid://c37q7rv7x4x28" path="res://Scenes/Theme/RemapButton.tres" id="3_g7n13"]
 [ext_resource type="Script" path="res://Code/gameSaver.gd" id="4_cfa04"]
 [ext_resource type="Texture2D" uid="uid://wbdy3ock77tt" path="res://art/Ui/quit.png" id="4_mpuxx"]
 [ext_resource type="Texture2D" uid="uid://c7psx2sd5p375" path="res://art/Ui/quit hover.png" id="5_pla1y"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://2l3vmcn164mb" path="res://art/Ui/no go back.png" id="19_07dti"]
 [ext_resource type="Texture2D" uid="uid://4e1fudp086tq" path="res://art/Ui/no go back hover.png" id="20_0scus"]
 [ext_resource type="PackedScene" uid="uid://c0j8tgtgewtn2" path="res://transition.tscn" id="21_phmfv"]
+[ext_resource type="AudioStream" uid="uid://dft61xakrynht" path="res://Sound/Farm2forkmenutheme.mp3" id="22_xnxar"]
 
 [node name="mainMenu" type="Control" node_paths=PackedStringArray("GameSaver", "SaveHodler", "PopUp", "TransitonNode")]
 layout_mode = 3
@@ -79,7 +80,7 @@ layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../../HBoxContainer/NewGame")
 focus_neighbor_right = NodePath("../Settings")
-theme = ExtResource("2_o1ngd")
+theme = ExtResource("3_g7n13")
 texture_normal = ExtResource("4_mpuxx")
 texture_pressed = ExtResource("5_pla1y")
 texture_hover = ExtResource("5_pla1y")
@@ -91,7 +92,7 @@ size_flags_vertical = 3
 focus_neighbor_left = NodePath("../Quit")
 focus_neighbor_top = NodePath("../../HBoxContainer/Load")
 focus_neighbor_right = NodePath("../credit")
-theme = ExtResource("2_o1ngd")
+theme = ExtResource("3_g7n13")
 texture_normal = ExtResource("6_i1vth")
 texture_pressed = ExtResource("7_k4qxl")
 texture_hover = ExtResource("7_k4qxl")
@@ -102,7 +103,7 @@ layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_left = NodePath("../Settings")
 focus_neighbor_top = NodePath("../../HBoxContainer/Load")
-theme = ExtResource("2_o1ngd")
+theme = ExtResource("3_g7n13")
 texture_normal = ExtResource("8_teipo")
 texture_pressed = ExtResource("9_1je5v")
 texture_hover = ExtResource("9_1je5v")
@@ -123,7 +124,7 @@ size_flags_vertical = 3
 focus_neighbor_right = NodePath("../Load")
 focus_neighbor_bottom = NodePath("../../SubButtons/Quit")
 focus_mode = 1
-theme = ExtResource("2_o1ngd")
+theme = ExtResource("3_g7n13")
 texture_normal = ExtResource("12_7mdu7")
 texture_pressed = ExtResource("13_qv30i")
 texture_hover = ExtResource("13_qv30i")
@@ -135,7 +136,7 @@ size_flags_vertical = 3
 focus_neighbor_left = NodePath("../NewGame")
 focus_neighbor_bottom = NodePath("../../SubButtons/credit")
 focus_mode = 1
-theme = ExtResource("2_o1ngd")
+theme = ExtResource("3_g7n13")
 texture_normal = ExtResource("10_cyylf")
 texture_pressed = ExtResource("11_cpebo")
 texture_hover = ExtResource("11_cpebo")
@@ -157,7 +158,7 @@ offset_top = 801.0
 offset_right = 1599.0
 offset_bottom = 901.0
 size_flags_vertical = 3
-theme = ExtResource("2_o1ngd")
+theme = ExtResource("3_g7n13")
 theme_override_font_sizes/font_size = 48
 text = "Back"
 
@@ -185,7 +186,7 @@ offset_top = 801.0
 offset_right = 1599.0
 offset_bottom = 901.0
 size_flags_vertical = 3
-theme = ExtResource("2_o1ngd")
+theme = ExtResource("3_g7n13")
 theme_override_font_sizes/font_size = 48
 text = "Back"
 
@@ -215,7 +216,7 @@ metadata/_edit_group_ = true
 
 [node name="Label8" type="Label" parent="Credit/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_o1ngd")
+theme = ExtResource("3_g7n13")
 theme_override_font_sizes/font_size = 64
 text = "CREDITS"
 horizontal_alignment = 1
@@ -223,7 +224,7 @@ vertical_alignment = 1
 
 [node name="Label" type="Label" parent="Credit/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_o1ngd")
+theme = ExtResource("3_g7n13")
 theme_override_font_sizes/font_size = 48
 text = "Programmer - Brandon"
 horizontal_alignment = 1
@@ -231,7 +232,7 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="Credit/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_o1ngd")
+theme = ExtResource("3_g7n13")
 theme_override_font_sizes/font_size = 48
 text = "Producer- Euclid"
 horizontal_alignment = 1
@@ -239,7 +240,7 @@ vertical_alignment = 1
 
 [node name="Label6" type="Label" parent="Credit/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_o1ngd")
+theme = ExtResource("3_g7n13")
 theme_override_font_sizes/font_size = 48
 text = "Artist- Cat, Lizzy , Eric
 "
@@ -248,7 +249,7 @@ vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="Credit/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_o1ngd")
+theme = ExtResource("3_g7n13")
 theme_override_font_sizes/font_size = 48
 text = "Level Designer - Lizzy
 "
@@ -257,7 +258,7 @@ vertical_alignment = 1
 
 [node name="Label4" type="Label" parent="Credit/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_o1ngd")
+theme = ExtResource("3_g7n13")
 theme_override_font_sizes/font_size = 48
 text = "Game Designer - Will , Christian
 "
@@ -266,7 +267,7 @@ vertical_alignment = 1
 
 [node name="Label5" type="Label" parent="Credit/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_o1ngd")
+theme = ExtResource("3_g7n13")
 theme_override_font_sizes/font_size = 48
 text = "Narrative Designer- Will , Christian
 "
@@ -275,7 +276,7 @@ vertical_alignment = 1
 
 [node name="Label7" type="Label" parent="Credit/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_o1ngd")
+theme = ExtResource("3_g7n13")
 theme_override_font_sizes/font_size = 48
 text = "Game Designer - Will , Christian
 UX/UI Designer - Michelle ,Euclid"
@@ -289,7 +290,7 @@ offset_top = 801.0
 offset_right = 1599.0
 offset_bottom = 901.0
 size_flags_vertical = 3
-theme = ExtResource("2_o1ngd")
+theme = ExtResource("3_g7n13")
 theme_override_font_sizes/font_size = 48
 text = "Back"
 
@@ -324,7 +325,7 @@ layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../back")
 focus_neighbor_bottom = NodePath("../back")
-theme = ExtResource("2_o1ngd")
+theme = ExtResource("3_g7n13")
 texture_normal = ExtResource("17_1t6hh")
 texture_pressed = ExtResource("18_jo66c")
 texture_hover = ExtResource("18_jo66c")
@@ -335,7 +336,7 @@ layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Sure")
 focus_neighbor_bottom = NodePath("../Sure")
-theme = ExtResource("2_o1ngd")
+theme = ExtResource("3_g7n13")
 texture_normal = ExtResource("19_07dti")
 texture_pressed = ExtResource("20_0scus")
 texture_hover = ExtResource("20_0scus")
@@ -348,6 +349,14 @@ offset_right = 2.0
 offset_bottom = 4.0
 mouse_filter = 2
 color = Color(0.843137, 0.878431, 0.670588, 1)
+
+[node name="MainTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_xnxar")
+autoplay = true
+bus = &"Music"
+
+[node name="Sfx" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
 
 [connection signal="focus_entered" from="MainMenu/SubButtons/Quit" to="." method="_on_quit_focus_entered"]
 [connection signal="pressed" from="MainMenu/SubButtons/Quit" to="." method="_on_quit_pressed"]

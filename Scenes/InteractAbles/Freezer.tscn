@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://csj3wxgocxn1k"]
+
+[ext_resource type="Script" path="res://Scenes/InteractAbles/Freezer.gd" id="1_lw3f6"]
+[ext_resource type="Texture2D" uid="uid://dbglg7guldtc4" path="res://art/Objects/Freezer.PNG" id="2_8b1i6"]
+[ext_resource type="Texture2D" uid="uid://bmuynlhmy60gy" path="res://art/food/Tomato_512.PNG" id="3_3sesf"]
+[ext_resource type="Theme" uid="uid://c37q7rv7x4x28" path="res://Scenes/Theme/RemapButton.tres" id="4_2nkow"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thkrs"]
+size = Vector2(176, 148)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_utub6"]
+size = Vector2(122, 198)
+
+[node name="freezer" type="StaticBody2D" node_paths=PackedStringArray("icon_1", "label", "inter_act_area") groups=["frig"]]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_lw3f6")
+icon_1 = NodePath("Icon1")
+label = NodePath("Label")
+inter_act_area = NodePath("InterActArea")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("2_8b1i6")
+
+[node name="hitBox" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 6)
+shape = SubResource("RectangleShape2D_thkrs")
+
+[node name="InterActArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InterActArea"]
+position = Vector2(-3, -19)
+shape = SubResource("RectangleShape2D_utub6")
+
+[node name="Icon1" type="Sprite2D" parent="."]
+position = Vector2(-16, 8)
+scale = Vector2(0.202234, 0.203125)
+texture = ExtResource("3_3sesf")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -82.0
+offset_top = -100.0
+offset_right = 50.0
+offset_bottom = -13.0
+theme = ExtResource("4_2nkow")
+theme_override_font_sizes/font_size = 64
+text = "∞
+"
+horizontal_alignment = 1
+vertical_alignment = 1

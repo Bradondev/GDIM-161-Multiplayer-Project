@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cen73rcvpwton"]
+
+[ext_resource type="Texture2D" uid="uid://cu4hvhrji3may" path="res://art/Objects/Counter.PNG" id="1_w2r3a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thkrs"]
+size = Vector2(252, 260)
+
+[node name="trashCan" type="StaticBody2D"]
+scale = Vector2(0.2, 0.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_w2r3a")
+
+[node name="hitBox" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9.53674e-06)
+shape = SubResource("RectangleShape2D_thkrs")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b56uc7kuli8jd"]
+[gd_scene load_steps=33 format=3 uid="uid://b56uc7kuli8jd"]
 
 [ext_resource type="Script" path="res://Code/OverWorld.gd" id="1_4f4d8"]
 [ext_resource type="Texture2D" uid="uid://bkik5y4rdeblq" path="res://art/Ui/level/level select background.png" id="2_gp3yv"]
@@ -30,7 +30,8 @@
 [ext_resource type="Texture2D" uid="uid://bw0guek6j3nfu" path="res://art/Ui/level/judges placeholder.png" id="22_68bd0"]
 [ext_resource type="Texture2D" uid="uid://g03ewhxajsdg" path="res://art/Ui/level/level 4.png" id="22_h236i"]
 [ext_resource type="Texture2D" uid="uid://diuwjqxj1tvkp" path="res://art/Ui/level/cleared!.png" id="25_ouj8p"]
-[ext_resource type="Theme" uid="uid://c37q7rv7x4x28" path="res://Theme/RemapButton.tres" id="26_eqp1b"]
+[ext_resource type="Theme" uid="uid://c37q7rv7x4x28" path="res://Scenes/Theme/RemapButton.tres" id="26_eqp1b"]
+[ext_resource type="AudioStream" uid="uid://dft61xakrynht" path="res://Sound/Farm2forkmenutheme.mp3" id="32_7uwe7"]
 
 [node name="OverWorld" type="Node2D" node_paths=PackedStringArray("transition", "FirstLevel")]
 script = ExtResource("1_4f4d8")
@@ -346,6 +347,13 @@ stretch_mode = 4
 
 [node name="Transition" parent="CanvasLayer" instance=ExtResource("4_0j6et")]
 color = Color(0.843137, 0.878431, 0.670588, 1)
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("32_7uwe7")
+autoplay = true
+bus = &"Music"
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
 
 [connection signal="pressed" from="CanvasLayer/back arrow" to="CanvasLayer/back arrow" method="_on_pressed"]
 [connection signal="focus_entered" from="CanvasLayer/flower1" to="CanvasLayer/flower1" method="_on_focusflower_entered"]

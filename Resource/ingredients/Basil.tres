@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="ingredient" load_steps=4 format=3 uid="uid://cscspajefkqpy"]
 
+[ext_resource type="Texture2D" uid="uid://bbhvctqj316ry" path="res://art/food/New unprepared basil.png" id="1_djhv6"]
 [ext_resource type="Script" path="res://Code/food/ingredients.gd" id="1_du7l6"]
-[ext_resource type="Texture2D" uid="uid://cc0hht2gejx0t" path="res://art/food/UnPrepped Basil.png" id="1_xb384"]
-[ext_resource type="Texture2D" uid="uid://dy6tjdgvm7d2i" path="res://art/food/Prepped Basil.png" id="2_ptd0a"]
+[ext_resource type="Texture2D" uid="uid://bfyusgti1ifpq" path="res://art/food/new prepped basil.png" id="2_mf54e"]
 
 [resource]
 script = ExtResource("1_du7l6")
@@ -11,9 +11,10 @@ IsSpice = 0
 IsHot = 0
 IsPrepped = false
 CanBePreped = true
-PrepedIcon = ExtResource("2_ptd0a")
+PrepedIcon = ExtResource("2_mf54e")
 Name = "Basil"
-Icon = ExtResource("1_xb384")
+Icon = ExtResource("1_djhv6")
 IsSeed = false
 CanBeSent = true
 IsAnIngredient = true
+CanBeCooked = false

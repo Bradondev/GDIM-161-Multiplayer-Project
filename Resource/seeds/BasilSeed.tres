@@ -1,16 +1,18 @@
 [gd_resource type="Resource" script_class="Seed" load_steps=5 format=3 uid="uid://g5phjwsg3ymc"]
 
-[ext_resource type="Texture2D" uid="uid://bgt7qw3u33044" path="res://art/food/Seed.png" id="1_gbwpf"]
+[ext_resource type="Texture2D" uid="uid://da8xlg7pnun6l" path="res://art/food/new seeds.png" id="1_00x0u"]
 [ext_resource type="Script" path="res://Code/food/Seed.gd" id="1_kaula"]
-[ext_resource type="Texture2D" uid="uid://dm33x01gqt1go" path="res://art/food/mature basil plant.png" id="2_slno7"]
+[ext_resource type="Texture2D" uid="uid://dkkraqvcxvrd2" path="res://art/food/new mature basil.png" id="2_ugp7t"]
 [ext_resource type="Resource" uid="uid://cscspajefkqpy" path="res://Resource/ingredients/Basil.tres" id="3_108c3"]
 
 [resource]
 script = ExtResource("1_kaula")
 SeedType = ExtResource("3_108c3")
-PlantImage = ExtResource("2_slno7")
-ReadyPlantImage = ExtResource("2_slno7")
+PlantImage = ExtResource("2_ugp7t")
+ReadyPlantImage = ExtResource("2_ugp7t")
 Name = "BasilSeed"
-Icon = ExtResource("1_gbwpf")
+Icon = ExtResource("1_00x0u")
 IsSeed = true
 CanBeSent = false
+IsAnIngredient = false
+CanBeCooked = false

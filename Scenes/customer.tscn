@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://dktn02lg17y1f"]
+
+[ext_resource type="Script" path="res://Code/customer.gd" id="1_sna36"]
+[ext_resource type="Texture2D" uid="uid://bpqq3x2io020o" path="res://art/Objects/pig.PNG" id="2_tur3j"]
+[ext_resource type="Texture2D" uid="uid://38ke2p11ikao" path="res://art/Objects/giraffe .PNG" id="3_upava"]
+[ext_resource type="Texture2D" uid="uid://dwdegpr5m1abn" path="res://art/Objects/chicken.PNG" id="4_pcg8k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtl20"]
+size = Vector2(76.0463, 131.187)
+
+[node name="Customer" type="Node2D" node_paths=PackedStringArray("inter_act_area")]
+script = ExtResource("1_sna36")
+Sprites = Array[Texture2D]([ExtResource("2_tur3j"), ExtResource("3_upava"), ExtResource("4_pcg8k")])
+WaitTime = 25
+MaxScore = 4
+inter_act_area = NodePath("InterActArea2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_tur3j")
+
+[node name="InterActArea2" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="hitBox" type="CollisionShape2D" parent="InterActArea2"]
+position = Vector2(-3.5, -12)
+scale = Vector2(1.22294, 1.23488)
+shape = SubResource("RectangleShape2D_vtl20")
+
+[node name="item icon" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -120)
+scale = Vector2(0.25, 0.25)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

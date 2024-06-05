@@ -7,7 +7,7 @@ class_name  RemapButton
 func _init() -> void:
 	toggle_mode = true
 	#theme_type_variation = "RemapButton"
-	theme = load("res://Theme/RemapButton.tres")
+	theme = load("res://Scenes/Theme/RemapButton.tres")
 
 	
 func _ready() -> void: 

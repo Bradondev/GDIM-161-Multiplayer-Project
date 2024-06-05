@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ca77rkkd7rkm3"
+path="res://.godot/imported/Plowing_Dirt_SFX (1).mp3-41e9a69c08fd5a01a3c7710a1388996b.mp3str"
+
+[deps]
+
+source_file="res://Sound/Plowing_Dirt_SFX (1).mp3"
+dest_files=["res://.godot/imported/Plowing_Dirt_SFX (1).mp3-41e9a69c08fd5a01a3c7710a1388996b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

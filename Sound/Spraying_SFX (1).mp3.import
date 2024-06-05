@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dw104kvyinw"
+path="res://.godot/imported/Spraying_SFX (1).mp3-97841969f29592055f67a85cfb93dbd9.mp3str"
+
+[deps]
+
+source_file="res://Sound/Spraying_SFX (1).mp3"
+dest_files=["res://.godot/imported/Spraying_SFX (1).mp3-97841969f29592055f67a85cfb93dbd9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

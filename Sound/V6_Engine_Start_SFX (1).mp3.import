@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://mms6e0p8eedx"
+path="res://.godot/imported/V6_Engine_Start_SFX (1).mp3-ae45434806f5234bb055b7529a9ccbdc.mp3str"
+
+[deps]
+
+source_file="res://Sound/V6_Engine_Start_SFX (1).mp3"
+dest_files=["res://.godot/imported/V6_Engine_Start_SFX (1).mp3-ae45434806f5234bb055b7529a9ccbdc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

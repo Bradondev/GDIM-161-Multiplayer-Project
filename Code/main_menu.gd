@@ -16,6 +16,9 @@ var IsLoading = false
 var overWorld = preload("res://Scenes/OverWorld.tscn")
 
 func _ready() -> void:
+	#for button in get_tree().get_nodes_in_group("MenuButton"):
+		#button.
+	
 	TransitonNode.transition_in()
 	new_game.grab_focus()
 

@@ -6,13 +6,13 @@
 
 [resource]
 script = ExtResource("3_u7i52")
-Diet = "Meat"
+Diet = "Vegetarian"
 IsSpice = 0
-IsHot = 1
+IsHot = 0
 IsPrepped = false
 CanBePreped = true
 PrepedIcon = ExtResource("2_0cite")
-Name = "Soupbroth"
+Name = "lettuce"
 Icon = ExtResource("1_aa5v5")
 IsSeed = false
 CanBeSent = true

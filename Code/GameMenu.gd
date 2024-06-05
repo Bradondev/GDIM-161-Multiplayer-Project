@@ -27,7 +27,7 @@ func create_action_remap_items():
 		var action = action_items[index]
 		var label = Label.new()
 		label.text =action
-		label.theme  = load("res://Theme/RemapButton.tres")
+		label.theme  = load("res://Scenes/Theme/RemapButton.tres")
 		inputholder.add_child(label)
 		
 		

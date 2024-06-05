@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://Code/item/frig.gd" id="1_cakk7"]
 [ext_resource type="Texture2D" uid="uid://bppoab45fa2sq" path="res://art/Objects/Fridge.png" id="2_1vbdm"]
 [ext_resource type="Texture2D" uid="uid://bmuynlhmy60gy" path="res://art/food/Tomato_512.PNG" id="4_1y0df"]
-[ext_resource type="Theme" uid="uid://c37q7rv7x4x28" path="res://Theme/RemapButton.tres" id="4_soxkj"]
+[ext_resource type="Theme" uid="uid://c37q7rv7x4x28" path="res://Scenes/Theme/RemapButton.tres" id="4_soxkj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thkrs"]
 size = Vector2(176, 282)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utub6"]
-size = Vector2(236, 244)
+size = Vector2(250, 134)
 
 [node name="fridge" type="StaticBody2D" node_paths=PackedStringArray("icon_1", "label", "inter_act_area") groups=["frig"]]
 scale = Vector2(0.5, 0.5)
@@ -31,7 +31,7 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InterActArea"]
-position = Vector2(26, 6)
+position = Vector2(33, -1)
 shape = SubResource("RectangleShape2D_utub6")
 
 [node name="Icon1" type="Sprite2D" parent="."]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Code/item/PrepTable.gd" id="1_cg5io"]
 [ext_resource type="Texture2D" uid="uid://bmbhoagdin1ii" path="res://art/Objects/IMG_0200.PNG" id="2_wnynn"]
-[ext_resource type="FontFile" uid="uid://8pygeyu6tqig" path="res://Theme/Manjari-Regular.ttf" id="3_c45vu"]
+[ext_resource type="FontFile" uid="uid://8pygeyu6tqig" path="res://Scenes/Theme/Manjari-Regular.ttf" id="3_c45vu"]
 [ext_resource type="Texture2D" uid="uid://qpfg0x41wrop" path="res://art/food/Circle.png" id="4_6ht3p"]
 [ext_resource type="Texture2D" uid="uid://bmuynlhmy60gy" path="res://art/food/Tomato_512.PNG" id="4_a1fq8"]
 
@@ -36,6 +36,7 @@ shape = SubResource("RectangleShape2D_vyyoh")
 
 [node name="Label" type="RichTextLabel" parent="."]
 visible = false
+z_index = 2
 offset_left = -646.0
 offset_top = -414.0
 offset_right = -236.0
@@ -48,6 +49,7 @@ fit_content = true
 
 [node name="ProgressBar" type="TextureProgressBar" parent="."]
 visible = false
+z_index = 2
 offset_left = -552.0
 offset_top = -192.0
 offset_right = -40.0

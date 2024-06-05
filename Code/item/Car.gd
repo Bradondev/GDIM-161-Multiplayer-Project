@@ -47,7 +47,6 @@ func SendItem():
 		for item in Items:
 			if frig.Type.Name== item.Name:
 				frig.AddAmount(1)
-				Items.remove_at(Items.find(item))
 	
 	Items.clear()
 	UpdateIcon()
