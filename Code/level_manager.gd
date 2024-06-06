@@ -56,6 +56,7 @@ func _on_timer_2_timeout() -> void:
 			if NumberOfCustomer >= 3:
 				SpawnCritic()
 				NumberOfCustomer = 0
+				return
 			
 			NumberOfCustomer += 1
 			SpawnCustomer()

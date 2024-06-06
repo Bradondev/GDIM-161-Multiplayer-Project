@@ -21,7 +21,7 @@ texture = ExtResource("1_i1u0w")
 [node name="Marker2D" type="Marker2D" parent="."]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(200, 0)
+position = Vector2(220, 0)
 
 [node name="hitBox" type="CollisionShape2D" parent="."]
 position = Vector2(0.166664, 1.08332)

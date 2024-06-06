@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bmbhoagdin1ii" path="res://art/Objects/IMG_0200.PNG" id="2_wnynn"]
 [ext_resource type="FontFile" uid="uid://8pygeyu6tqig" path="res://Scenes/Theme/Manjari-Regular.ttf" id="3_c45vu"]
 [ext_resource type="Texture2D" uid="uid://qpfg0x41wrop" path="res://art/food/Circle.png" id="4_6ht3p"]
-[ext_resource type="Texture2D" uid="uid://bmuynlhmy60gy" path="res://art/food/Tomato_512.PNG" id="4_a1fq8"]
+[ext_resource type="Texture2D" uid="uid://ypnro0dhsrh3" path="res://art/food/new tomato.png" id="5_rdcb3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thkrs"]
 size = Vector2(507, 256.5)
@@ -37,10 +37,10 @@ shape = SubResource("RectangleShape2D_vyyoh")
 [node name="Label" type="RichTextLabel" parent="."]
 visible = false
 z_index = 2
-offset_left = -646.0
-offset_top = -414.0
-offset_right = -236.0
-offset_bottom = -200.0
+offset_left = -93.3333
+offset_top = -353.333
+offset_right = 316.667
+offset_bottom = -139.333
 theme_override_fonts/normal_font = ExtResource("3_c45vu")
 theme_override_font_sizes/normal_font_size = 96
 bbcode_enabled = true
@@ -50,11 +50,12 @@ fit_content = true
 [node name="ProgressBar" type="TextureProgressBar" parent="."]
 visible = false
 z_index = 2
-offset_left = -552.0
-offset_top = -192.0
-offset_right = -40.0
-offset_bottom = 320.0
+offset_left = -3.33331
+offset_top = -136.667
+offset_right = 508.667
+offset_bottom = 375.333
 scale = Vector2(0.5, 0.5)
 fill_mode = 4
 texture_under = ExtResource("4_6ht3p")
-texture_progress = ExtResource("4_a1fq8")
+texture_progress = ExtResource("5_rdcb3")
+texture_progress_offset = Vector2(120, 120)

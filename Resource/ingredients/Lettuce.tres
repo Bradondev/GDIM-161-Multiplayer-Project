@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ingredient" load_steps=4 format=3 uid="uid://fieeynuj64v2"]
 
-[ext_resource type="Texture2D" uid="uid://bvtpdpp2i7tth" path="res://art/food/Unprepared lettuce.png" id="1_aa5v5"]
+[ext_resource type="Texture2D" uid="uid://jixfcp4wdyjl" path="res://art/food/New unprepared lettuce.png" id="1_mkjej"]
 [ext_resource type="Texture2D" uid="uid://dp2fewqhoc4er" path="res://art/food/Prepped lettuce.png" id="2_0cite"]
 [ext_resource type="Script" path="res://Code/food/ingredients.gd" id="3_u7i52"]
 
@@ -13,7 +13,7 @@ IsPrepped = false
 CanBePreped = true
 PrepedIcon = ExtResource("2_0cite")
 Name = "lettuce"
-Icon = ExtResource("1_aa5v5")
+Icon = ExtResource("1_mkjej")
 IsSeed = false
 CanBeSent = true
 IsAnIngredient = true

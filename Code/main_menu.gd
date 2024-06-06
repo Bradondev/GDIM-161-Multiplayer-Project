@@ -13,12 +13,12 @@ extends Control
 @onready var new_game: TextureButton = $MainMenu/HBoxContainer/NewGame
 var IsLoading = false
 
-var overWorld = preload("res://Scenes/OverWorld.tscn")
+var overWorld = load("res://Scenes/OverWorld.tscn")
 
 func _ready() -> void:
 	#for button in get_tree().get_nodes_in_group("MenuButton"):
 		#button.
-	
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	TransitonNode.transition_in()
 	new_game.grab_focus()
 
@@ -36,6 +36,7 @@ func _on_settings_pressed() -> void:
 func _on_load_pressed() -> void:
 	if IsLoading:
 		return
+	IsLoading = true
 	print_debug("Load game")
 	TransitonNode.transition_out()
 	

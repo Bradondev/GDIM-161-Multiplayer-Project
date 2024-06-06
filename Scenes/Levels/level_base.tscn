@@ -17,7 +17,6 @@
 [ext_resource type="Resource" uid="uid://ctb5a4pntvmpj" path="res://Resource/ingredients/Tomato.tres" id="13_ce8ik"]
 [ext_resource type="Resource" uid="uid://da0fmypn5lm81" path="res://Resource/ingredients/Soupbroth.tres" id="14_ftd6i"]
 [ext_resource type="PackedScene" uid="uid://dm2puwp3hqmgg" path="res://Scenes/InteractAbles/TrashCan.tscn" id="15_ijq7m"]
-[ext_resource type="Texture2D" uid="uid://boejrlbthoag2" path="res://art/food/Watering can.png" id="16_nb00k"]
 [ext_resource type="Resource" uid="uid://dmy86cw12k6ha" path="res://Resource/food/Salad.tres" id="17_0uuu5"]
 [ext_resource type="Resource" uid="uid://blwfsybhtd2ax" path="res://Resource/food/TomatoBasilSoup.tres" id="18_ksds2"]
 [ext_resource type="Resource" uid="uid://ctsll4ykanoch" path="res://Resource/food/Pizza.tres" id="19_4epeh"]
@@ -32,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://cen73rcvpwton" path="res://Scenes/InteractAbles/Counter.tscn" id="28_pldhv"]
 [ext_resource type="PackedScene" uid="uid://bi5xtg2ye7k5x" path="res://Scenes/pause.tscn" id="29_xwryy"]
 [ext_resource type="Resource" uid="uid://fieeynuj64v2" path="res://Resource/ingredients/Lettuce.tres" id="31_exotf"]
+[ext_resource type="AudioStream" uid="uid://dk06wbosxji36" path="res://Sound/Farm_2_Fork_loopable.mp3" id="33_u1wwc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpbge"]
 size = Vector2(1, 900)
@@ -163,17 +163,12 @@ position = Vector2(384, 433)
 [node name="Farm4" parent="." instance=ExtResource("10_7w2y3")]
 position = Vector2(376, 739)
 
-[node name="WateringCan" type="Sprite2D" parent="."]
-position = Vector2(145, 86)
-scale = Vector2(0.327977, 0.289784)
-texture = ExtResource("16_nb00k")
-
 [node name="con" parent="." instance=ExtResource("19_8kfqs")]
 position = Vector2(1392, 231)
 scale = Vector2(0.5, 0.5)
 
 [node name="LevelManager" parent="." node_paths=PackedStringArray("SpawnArea", "ExitArea") instance=ExtResource("20_s5576")]
-position = Vector2(644, 29)
+position = Vector2(83, 16)
 possibleReices = Array[Resource("res://Code/food/repices.gd")]([ExtResource("17_0uuu5"), ExtResource("18_ksds2"), ExtResource("19_4epeh")])
 SpawnArea = NodePath("../Spawn")
 ExitArea = NodePath("../Exit")
@@ -194,15 +189,14 @@ position = Vector2(75, 753)
 SeedType = ExtResource("21_8sdr2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="Transition" parent="CanvasLayer" instance=ExtResource("3_sktrj")]
-mouse_filter = 2
-color = Color(0.843137, 0.878431, 0.670588, 1)
 
 [node name="Pause" parent="CanvasLayer" node_paths=PackedStringArray("Thingtopause") instance=ExtResource("29_xwryy")]
 visible = false
 Thingtopause = NodePath("../..")
+
+[node name="Transition" parent="CanvasLayer" instance=ExtResource("3_sktrj")]
+mouse_filter = 2
+color = Color(0.843137, 0.878431, 0.670588, 1)
 
 [node name="freezer" parent="." instance=ExtResource("27_b81um")]
 position = Vector2(1004, 841)
@@ -244,3 +238,8 @@ scale = Vector2(0.5, 0.5)
 [node name="counter5" parent="." instance=ExtResource("28_pldhv")]
 position = Vector2(1521, 360)
 scale = Vector2(0.5, 0.5)
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("33_u1wwc")
+autoplay = true
+bus = &"Music"

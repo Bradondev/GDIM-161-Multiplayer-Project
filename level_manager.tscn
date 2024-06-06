@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://blor6iwpyc8nk" path="res://Critic.tscn" id="3_2nu1r"]
 
 [node name="LevelManager" type="Node2D" node_paths=PackedStringArray("LevelTimer", "label")]
+z_index = 4
 scale = Vector2(0.6, 0.6)
 script = ExtResource("1_2vt5k")
 time = 300

@@ -1,19 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://blor6iwpyc8nk"]
+[gd_scene load_steps=5 format=3 uid="uid://blor6iwpyc8nk"]
 
 [ext_resource type="Script" path="res://Code/customer.gd" id="1_morwp"]
 [ext_resource type="Texture2D" uid="uid://buktgv7av30b2" path="res://art/Objects/capybara.PNG" id="2_mdoxd"]
+[ext_resource type="Texture2D" uid="uid://38ke2p11ikao" path="res://art/Objects/giraffe .PNG" id="3_uc0j1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vtl20"]
 size = Vector2(76.0463, 131.187)
 
 [node name="Customer" type="Node2D" node_paths=PackedStringArray("inter_act_area")]
 script = ExtResource("1_morwp")
-Sprites = Array[Texture2D]([ExtResource("2_mdoxd")])
+Sprites = Array[Texture2D]([ExtResource("2_mdoxd"), ExtResource("3_uc0j1")])
 WaitTime = 30
 inter_act_area = NodePath("InterActArea2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_mdoxd")
 
 [node name="InterActArea2" type="Area2D" parent="."]

@@ -17,12 +17,13 @@ func InterAct():
 		CurrentCustomer.MaxScore -= GradeFood()
 		CurrentBody.DropItem()
 		
-		ReSetTable()
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if CurrentBody:
 		if event.is_action_pressed("PlayerTwo_Interact"):
 			InterAct()
+			
+			
 func GradeFood():
 	CurrentCustomer.LeaveStore()
 	if CurrentBody.CurrentItem.IsSpicy == FoodNeeded.IsSpicy:

@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://dlxoyet3nwvyp" path="res://art/Objects/Trash_Can.PNG" id="2_0rh53"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thkrs"]
-size = Vector2(252, 336.5)
+size = Vector2(252, 250)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utub6"]
-size = Vector2(290, 380)
+size = Vector2(145, 340)
 
 [node name="trashCan" type="StaticBody2D" node_paths=PackedStringArray("inter_act_area")]
 scale = Vector2(0.2, 0.2)
@@ -18,7 +18,7 @@ inter_act_area = NodePath("InterActArea")
 texture = ExtResource("2_0rh53")
 
 [node name="hitBox" type="CollisionShape2D" parent="."]
-position = Vector2(0, 15.75)
+position = Vector2(0, -9.53674e-06)
 shape = SubResource("RectangleShape2D_thkrs")
 
 [node name="InterActArea" type="Area2D" parent="."]
@@ -26,5 +26,5 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InterActArea"]
-position = Vector2(-5, 0)
+position = Vector2(-5, 40)
 shape = SubResource("RectangleShape2D_utub6")

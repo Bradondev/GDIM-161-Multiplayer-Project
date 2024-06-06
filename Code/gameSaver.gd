@@ -1,6 +1,6 @@
 extends Node
 
-var LoadButton = preload("res://Scenes/SaveLoaderButton.tscn")
+var LoadButton = load("res://Scenes/SaveLoaderButton.tscn")
 func  Save_Game():
 	var saveData = SavedData.new()
 	

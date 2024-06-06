@@ -72,24 +72,26 @@ func CookItem():
 	
 	
 func FindReices():
-	# fix this
+
 	var IndexTemp = 0
 	for Reices in possibleReices:
-		var NeededIngrendients =  Reices.ingredients.duplicate(true)
+		var NeededIngrendients = []
 		var temp = 0
+		for ingredients in Currentingredients:
+			NeededIngrendients.append(ingredients.Name)
+			
+		
 		for  ingredients in Reices.ingredients :
-		
-		
-			for Cingredients in Currentingredients:
-				if Cingredients.Name ==  ingredients.Name:
-					Currentingredients.remove_at(Currentingredients.find(Cingredients))
-					print_debug(Cingredients.Name)
-					temp +=1 
+			
+			if ingredients.Name in NeededIngrendients:
+				print_debug(ingredients.Name)
+				temp +=1 
+				print_debug(temp)
 
-
-				if temp >=3:
-					print_debug(Reices)
-					return Reices
+		if temp >=3:
+			print_debug(Reices)
+			return Reices
+			
 	return null
 	
 func  ShowLabel(canbeseen):

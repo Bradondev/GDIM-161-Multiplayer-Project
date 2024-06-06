@@ -18,6 +18,8 @@ var Stars:int
 @onready var judges: TextureRect = $"../judges"
 
 @export var levelIconpng :Texture2D
+
+var Isloading = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	await parent.setupdone
@@ -33,9 +35,13 @@ func SetToInvaild():
 
 
 func LoadLevel():
+	if Isloading:return
+	Isloading = true
 	transition.transition_out()
 	await transition.transition_out_done
 	get_tree().change_scene_to_packed(Level)
+
+	
 
 
 func _on_start_focus_exited() -> void:

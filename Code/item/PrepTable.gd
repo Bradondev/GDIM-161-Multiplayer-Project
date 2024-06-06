@@ -12,7 +12,8 @@ func InterAct():
 	if CurrentBody.speed == 0:
 		return
 	var CurrentItem = CurrentBody.CurrentItem
-	
+	if CurrentItem.IsPrepped:
+		return
 	if !CurrentItem:
 		print_debug("has item")
 		return
